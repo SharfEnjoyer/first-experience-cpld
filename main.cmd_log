@@ -1,0 +1,104 @@
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+tsim -intstyle ise main main.nga 
+netgen -intstyle ise -sdf_anno true -sdf_path "netgen/fit" -insert_glbl true -w -dir netgen/fit -ofmt verilog -sim main.nga main_timesim.v 
+xst -intstyle ise -ifn "E:/ise_project/try_parallel_port/main.xst" -ofn "E:/ise_project/try_parallel_port/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc main.ucf -p xc95288xl-TQ144-6 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc95288xl-6-TQ144 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+hprep6 -s IEEE1149 -n main -i main 

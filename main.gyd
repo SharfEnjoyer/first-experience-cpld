@@ -1,0 +1,104 @@
+Pin Freeze File:  version P.20131013
+
+95288XL144 XC95288XL-6-TQ144
+ADR<0> S:PIN110
+ADR<1> S:PIN111
+ADR<2> S:PIN112
+ADR<3> S:PIN113
+ADR<4> S:PIN115
+ADR<5> S:PIN124
+ADR<6> S:PIN126
+ADR<7> S:PIN128
+ADR<8> S:PIN129
+ADR<9> S:PIN130
+BRD S:PIN3
+BWR S:PIN30
+CLK S:PIN38
+RES S:PIN143
+SDA_OUT4 S:PIN33
+SDA_OUT3 S:PIN48
+SDA_OUT2 S:PIN9
+SDA_OUT1 S:PIN22
+SCL_OUT1 S:PIN23
+SCL_OUT2 S:PIN10
+SCL_OUT3 S:PIN49
+SCL_OUT4 S:PIN34
+Data<0> S:PIN98
+Data<1> S:PIN100
+Data<2> S:PIN101
+Data<3> S:PIN102
+Data<4> S:PIN103
+Data<5> S:PIN104
+Data<6> S:PIN105
+Data<7> S:PIN107
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 EXP18_
+PARTITION FB1_3 EXP19_ sensor_data_r<0> EXP20_ i2c/state_FSM_FFd8
+		 $OpTx$FX_DC$21 SDA_MASTER$BUF2 i2c/state_FSM_FFd4 _and0000
+		 $OpTx$$OpTx$FX_DC$45_INV$798 EXP21_ i2c/i<0> EXP22_
+		 EXP23_ EXP24_ SDA_EN EXP25_
+		
+PARTITION FB2_1 $OpTx$$OpTx$FX_DC$47_INV$800 SDA_MASTER$BUF1 _and0001 EXP26_
+		 i2c/i<1> EXP27_ $OpTx$$OpTx$FX_DC$18_INV$797 i2c/state_FSM_FFd19
+		 EXP28_ EXP29_ i2c/state_FSM_FFd15 EXP30_
+		 i2c/i<2> EXP31_ EXP32_ EXP33_
+		 i2c/i<3> EXP34_
+PARTITION FB3_1 i2c/state_FSM_FFd22 i2c_end i2c/state_FSM_FFd1 i2c/state_FSM_FFd13
+		 i2c/state_FSM_FFd18 i2c/state_FSM_FFd2 i2c/state_FSM_FFd20 i2c/state_FSM_FFd21
+		 i2c/state_FSM_FFd5 i2c/state_FSM_FFd9 $OpTx$$OpTx$FX_DC$46_INV$799 sensor_n<0>/sensor_n<0>_RSTF__$INT
+		
+PARTITION FB3_14 EXP35_ SDA_MASTER EXP36_
+
+PARTITION FB4_1 i2c/temp_reg<5> EXP37_ i2c/temp_reg<6> i2c/temp_reg<0>
+		
+PARTITION FB4_6 EXP38_ i2c/temp_reg<4> i2c/temp_reg<3> i2c/temp_reg<2>
+		 i2c/temp_reg<1> EXP39_
+PARTITION FB4_17 EXP40_ i2c/temp_reg<7>
+PARTITION FB5_1 i2c/state_FSM_FFd3 _and0003
+PARTITION FB5_12 EXP41_ i2c/temp<6> EXP42_ i2c/temp<5>
+		 EXP43_ i2c/temp<4> i2c/state_FSM_FFd7
+PARTITION FB6_1 i2c/state_FSM_FFd6 EXP44_
+PARTITION FB6_6 EXP45_ i2c/temp_output<2> i2c/temp_output<1> EXP46_
+		 i2c/state_FSM_FFd12 i2c/state_FSM_FFd10 EXP47_ i2c/temp<7>
+		 EXP48_ i2c/temp_output<3> i2c/temp_output<0> EXP49_
+		
+
+PARTITION FB7_1 EXP50_ EXP51_ i2c/temp<3> EXP52_
+		 EXP53_ EXP54_ EXP55_ EXP56_
+		 EXP57_ i2c/temp<2> EXP58_ SDA_MASTER$BUF0
+		 i2c/state_FSM_FFd16 i2c/temp<0> _and0002 i2c/state_FSM_FFd11
+		 EXP59_ i2c/temp<1>
+PARTITION FB8_1 i2c/temp_output<7> EXP60_
+PARTITION FB8_7 EXP61_ i2c/temp_output<5> i2c/temp_output<4> EXP62_
+		 sensor_data_r<4> EXP63_ sensor_data_r<3> EXP64_
+		 sensor_data_r<2> i2c/temp_output<6> EXP65_
+
+PARTITION FB9_1 EXP66_
+PARTITION FB9_4 sensor_reg<7> sensor_reg<6> sensor_reg<5> sensor_reg<1>
+		 sensor_reg<0> sensor_n<7> sensor_n<6> sensor_n<1>
+		 sensor_n<0> sensor_data_w<7> sensor_data_w<6> sensor_data_w<1>
+		 sensor_data_w<0> outDATA<5>/outDATA<5>_SETF outDATA<4>/outDATA<4>_SETF
+PARTITION FB10_1 i2c/state_FSM_FFd17 EXP67_
+PARTITION FB10_13 EXP68_ i2c/state_FSM_FFd14 EXP69_ sensor_data_r<5>
+		 EXP70_ sensor_data_r<1>
+PARTITION FB11_14 EXP71_ EXP72_ SCL EXP73_
+		 EXP74_
+PARTITION FB12_1 outDATA<6>/outDATA<6>_RSTF EXP75_
+PARTITION FB12_15 EXP76_ sensor_data_r<7> EXP77_ sensor_data_r<6>
+		
+PARTITION FB13_17 EXP78_ outDATA<7>/outDATA<7>_SETF
+PARTITION FB14_1 sensor_reg<4> sensor_reg<3> outDATA<1> sensor_reg<2>
+		 outDATA<2> outDATA<3> sensor_n<5> outDATA<4>
+		 sensor_n<4> outDATA<5> outDATA<6> sensor_n<3>
+		 sensor_n<2> sensor_data_w<5> outDATA<7> sensor_data_w<4>
+		 sensor_data_w<3> sensor_data_w<2>
+
+PARTITION FB16_1 outDATA<0>/outDATA<0>_RSTF EXP79_
+PARTITION FB16_12 outDATA<0>
+PARTITION FB16_14 EXP80_ outDATA<3>/outDATA<3>_RSTF EXP81_ outDATA<2>/outDATA<2>_RSTF
+		 outDATA<1>/outDATA<1>_SETF
+

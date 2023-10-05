@@ -1,0 +1,2 @@
+vhdtdtfi -lib work E:/ise_project/try_parallel_port/i2c_master.v -lang verilog -prj try_parallel_port -o i2c_master.spl -module i2c_master -template {C:/Program Files/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft} -deleteonerror 
+spl2sym -intstyle ise -family xc9500xl i2c_master.spl E:/ise_project/try_parallel_port/i2c_master.sym 

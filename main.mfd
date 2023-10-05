@@ -1,0 +1,3866 @@
+MDF Database:  version 1.0
+MDF_INFO | main | XC95288XL-6-TQ144
+MACROCELL | 2 | 14 | SDA_MASTER
+ATTRIBUTES | 8816514 | 0
+OUTPUTMC | 6 | 2 | 14 | 2 | 15 | 1 | 1 | 0 | 7 | 2 | 13 | 6 | 12
+INPUTS | 11 | i2c/state_FSM_FFd1  | i2c/state_FSM_FFd16  | i2c/temp<7>  | SDA_OUT4  | i2c/state_FSM_FFd22  | EXP35_.EXP  | EXP36_.EXP  | RES  | sensor_n<5>  | sensor_n<6>  | SDA_EN
+INPUTMC | 10 | 2 | 2 | 6 | 12 | 5 | 12 | 2 | 14 | 2 | 0 | 2 | 13 | 2 | 15 | 13 | 6 | 8 | 9 | 0 | 16
+INPUTP | 1 | 263
+IMPORTS | 2 | 2 | 13 | 2 | 15
+EQ | 24 | 
+   SDA_OUT4.D = i2c/state_FSM_FFd1
+	# SDA_OUT4 & i2c/state_FSM_FFd22
+	# i2c/state_FSM_FFd16 & i2c/temp<7>
+;Imported pterms FB3_14
+	# sensor_n<0> & i2c/state_FSM_FFd22
+	# SDA_OUT4 & !i2c/i<3> & i2c/state_FSM_FFd6
+	# i2c/temp_reg<7> & !i2c/i<3> & i2c/state_FSM_FFd14
+	# !i2c/i<3> & i2c/state_FSM_FFd19 & i2c/temp<7>
+;Imported pterms FB3_16
+	# sensor_n<1> & !i2c/i<3> & i2c/state_FSM_FFd10 & 
+	i2c/temp<7>
+	# !sensor_n<1> & i2c/temp_output<7> & !i2c/i<3> & 
+	i2c/state_FSM_FFd10
+	# SDA_OUT4 & !i2c/state_FSM_FFd6 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/state_FSM_FFd4 & 
+	!i2c/state_FSM_FFd10 & !i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & 
+	!i2c/state_FSM_FFd2 & !i2c/state_FSM_FFd15
+	# i2c/i<3> & i2c/state_FSM_FFd6 & !sensor_data_r<0> & 
+	!sensor_data_r<1> & !sensor_data_r<2> & !sensor_data_r<3> & 
+	!sensor_data_r<4> & !sensor_data_r<5> & !sensor_data_r<6> & 
+	!sensor_data_r<7>;
+   SDA_OUT4.CLK = CLK;	// GCK
+   SDA_OUT4.AP = RES;
+   SDA_OUT4.OE = sensor_n<5> & sensor_n<6> & SDA_EN;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 8 | 11 | sensor_n<0>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 30 | 2 | 13 | 5 | 15 | 5 | 7 | 5 | 5 | 5 | 14 | 7 | 8 | 7 | 6 | 7 | 15 | 7 | 0 | 3 | 3 | 3 | 6 | 3 | 8 | 3 | 7 | 3 | 5 | 3 | 0 | 3 | 2 | 3 | 16 | 2 | 0 | 2 | 7 | 10 | 14 | 0 | 15 | 7 | 16 | 3 | 1 | 3 | 9 | 3 | 10 | 3 | 17 | 5 | 6 | 7 | 1 | 7 | 7 | 15 | 1
+INPUTS | 12 | Data<0>.PIN  | sensor_n<0>/sensor_n<0>_RSTF__$INT  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 2 | 11
+INPUTP | 11 | 176 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<0>.D = Data<0>.PIN;
+   sensor_n<0>.CLK = BWR;	// GCK
+   sensor_n<0>.AR = !sensor_n<0>/sensor_n<0>_RSTF__$INT;
+   sensor_n<0>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 10 | sensor_n<1>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 6 | 1 | 9 | 5 | 0 | 1 | 10 | 15 | 17 | 1 | 8 | 2 | 15
+INPUTS | 12 | Data<1>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 185 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<1>.D = Data<1>.PIN;
+   sensor_n<1>.CLK = BWR;	// GCK
+   sensor_n<1>.AR = RES;
+   sensor_n<1>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 6 | sensor_n<5>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 73 | 2 | 14 | 1 | 15 | 5 | 0 | 0 | 5 | 5 | 9 | 0 | 11 | 1 | 2 | 1 | 11 | 5 | 10 | 9 | 13 | 1 | 10 | 10 | 13 | 9 | 0 | 0 | 14 | 5 | 12 | 0 | 3 | 9 | 16 | 7 | 13 | 7 | 11 | 7 | 9 | 9 | 14 | 11 | 16 | 6 | 13 | 4 | 16 | 11 | 14 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 4 | 12 | 6 | 11 | 1 | 1 | 0 | 7 | 0 | 9 | 1 | 0 | 6 | 14 | 4 | 1 | 8 | 16 | 0 | 6 | 0 | 0 | 0 | 2 | 0 | 4 | 0 | 10 | 0 | 13 | 0 | 17 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 13 | 1 | 14 | 1 | 17 | 4 | 11 | 4 | 15 | 4 | 17 | 5 | 1 | 5 | 8 | 5 | 11 | 5 | 13 | 6 | 0 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 7 | 6 | 8 | 6 | 10 | 6 | 15 | 6 | 16 | 9 | 1 | 9 | 12 | 10 | 16 | 10 | 17
+INPUTS | 12 | Data<5>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 190 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<5>.D = Data<5>.PIN;
+   sensor_n<5>.CLK = BWR;	// GCK
+   sensor_n<5>.AR = RES;
+   sensor_n<5>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 9 | sensor_n<6>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 73 | 2 | 14 | 1 | 15 | 5 | 0 | 0 | 5 | 5 | 9 | 0 | 11 | 1 | 2 | 1 | 11 | 5 | 10 | 9 | 13 | 1 | 10 | 10 | 13 | 9 | 0 | 0 | 14 | 5 | 12 | 0 | 3 | 9 | 16 | 7 | 13 | 7 | 11 | 7 | 9 | 9 | 14 | 11 | 16 | 6 | 13 | 4 | 16 | 11 | 14 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 4 | 12 | 6 | 11 | 1 | 1 | 0 | 7 | 0 | 9 | 1 | 0 | 6 | 14 | 4 | 1 | 11 | 0 | 0 | 0 | 0 | 2 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 13 | 0 | 17 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 13 | 1 | 14 | 1 | 17 | 4 | 11 | 4 | 15 | 4 | 17 | 5 | 1 | 5 | 8 | 5 | 11 | 5 | 13 | 6 | 0 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 7 | 6 | 8 | 6 | 10 | 6 | 15 | 6 | 16 | 9 | 1 | 9 | 12 | 10 | 16 | 10 | 17
+INPUTS | 12 | Data<6>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 191 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<6>.D = Data<6>.PIN;
+   sensor_n<6>.CLK = BWR;	// GCK
+   sensor_n<6>.AR = RES;
+   sensor_n<6>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 15 | sensor_data_w<0>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 5 | 15 | 15 | 0 | 8 | 16
+INPUTS | 13 | Data<0>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | sensor_reg<5>
+INPUTMC | 1 | 8 | 5
+INPUTP | 12 | 176 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 8 | 16
+EQ | 8 | 
+   sensor_data_w<0>.D = Data<0>.PIN;
+   sensor_data_w<0>.CLK = BWR;	// GCK
+   sensor_data_w<0>.AR = RES;
+   sensor_data_w<0>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+    sensor_data_w<0>.EXP  =  sensor_reg<5> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 14 | sensor_data_w<1>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 5 | 7 | 15 | 17 | 5 | 6
+INPUTS | 12 | Data<1>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 185 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<1>.D = Data<1>.PIN;
+   sensor_data_w<1>.CLK = BWR;	// GCK
+   sensor_data_w<1>.AR = RES;
+   sensor_data_w<1>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 17 | sensor_data_w<2>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 5 | 6 | 15 | 16 | 5 | 5
+INPUTS | 12 | Data<2>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 186 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<2>.D = Data<2>.PIN;
+   sensor_data_w<2>.CLK = BWR;	// GCK
+   sensor_data_w<2>.AR = RES;
+   sensor_data_w<2>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 16 | sensor_data_w<3>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 5 | 14 | 15 | 14 | 5 | 15
+INPUTS | 12 | Data<3>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 187 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<3>.D = Data<3>.PIN;
+   sensor_data_w<3>.CLK = BWR;	// GCK
+   sensor_data_w<3>.AR = RES;
+   sensor_data_w<3>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 15 | sensor_data_w<4>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 7 | 8 | 8 | 17 | 7 | 7
+INPUTS | 12 | Data<4>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 188 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<4>.D = Data<4>.PIN;
+   sensor_data_w<4>.CLK = BWR;	// GCK
+   sensor_data_w<4>.AR = RES;
+   sensor_data_w<4>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 13 | sensor_data_w<5>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 7 | 7 | 8 | 16 | 7 | 6
+INPUTS | 12 | Data<5>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 190 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<5>.D = Data<5>.PIN;
+   sensor_data_w<5>.CLK = BWR;	// GCK
+   sensor_data_w<5>.AR = RES;
+   sensor_data_w<5>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 13 | sensor_data_w<6>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 7 | 15 | 11 | 0 | 7 | 16
+INPUTS | 12 | Data<6>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 191 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<6>.D = Data<6>.PIN;
+   sensor_data_w<6>.CLK = BWR;	// GCK
+   sensor_data_w<6>.AR = RES;
+   sensor_data_w<6>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 12 | sensor_data_w<7>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 7 | 0 | 12 | 17 | 7 | 1
+INPUTS | 12 | Data<7>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 195 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_data_w<7>.D = Data<7>.PIN;
+   sensor_data_w<7>.CLK = BWR;	// GCK
+   sensor_data_w<7>.AR = RES;
+   sensor_data_w<7>.CE = ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 7 | sensor_reg<0>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 2 | 3 | 3 | 15 | 1
+INPUTS | 12 | Data<0>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 176 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<0>.D = Data<0>.PIN;
+   sensor_reg<0>.CLK = BWR;	// GCK
+   sensor_reg<0>.AR = RES;
+   sensor_reg<0>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 6 | sensor_reg<1>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 9 | 15 | 0 | 3 | 10
+INPUTS | 12 | Data<1>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 185 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<1>.D = Data<1>.PIN;
+   sensor_reg<1>.CLK = BWR;	// GCK
+   sensor_reg<1>.AR = RES;
+   sensor_reg<1>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 3 | sensor_reg<2>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 8 | 15 | 15 | 3 | 9
+INPUTS | 12 | Data<2>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 186 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<2>.D = Data<2>.PIN;
+   sensor_reg<2>.CLK = BWR;	// GCK
+   sensor_reg<2>.AR = RES;
+   sensor_reg<2>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 1 | sensor_reg<3>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 7 | 15 | 13 | 3 | 6
+INPUTS | 12 | Data<3>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 187 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<3>.D = Data<3>.PIN;
+   sensor_reg<3>.CLK = BWR;	// GCK
+   sensor_reg<3>.AR = RES;
+   sensor_reg<3>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 0 | sensor_reg<4>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 6 | 8 | 0 | 3 | 5
+INPUTS | 12 | Data<4>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 188 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<4>.D = Data<4>.PIN;
+   sensor_reg<4>.CLK = BWR;	// GCK
+   sensor_reg<4>.AR = RES;
+   sensor_reg<4>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 5 | sensor_reg<5>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 0 | 8 | 15 | 3 | 17
+INPUTS | 12 | Data<5>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 190 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<5>.D = Data<5>.PIN;
+   sensor_reg<5>.CLK = BWR;	// GCK
+   sensor_reg<5>.AR = RES;
+   sensor_reg<5>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 4 | sensor_reg<6>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 2 | 3 | 1 | 11 | 1
+INPUTS | 12 | Data<6>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 191 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<6>.D = Data<6>.PIN;
+   sensor_reg<6>.CLK = BWR;	// GCK
+   sensor_reg<6>.AR = RES;
+   sensor_reg<6>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 3 | sensor_reg<7>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 3 | 17 | 12 | 16 | 3 | 16
+INPUTS | 12 | Data<7>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 195 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_reg<7>.D = Data<7>.PIN;
+   sensor_reg<7>.CLK = BWR;	// GCK
+   sensor_reg<7>.AR = RES;
+   sensor_reg<7>.CE = !ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 5 | 15 | i2c/temp_output<0>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 4 | 5 | 15 | 5 | 7 | 5 | 16 | 5 | 14
+INPUTS | 7 | sensor_n<0>  | i2c/temp_output<0>  | i2c/state_FSM_FFd22  | sensor_data_w<0>  | sensor_data_w<3>  | RES  | EXP49_.EXP
+INPUTMC | 6 | 8 | 11 | 5 | 15 | 2 | 0 | 8 | 15 | 13 | 16 | 5 | 16
+INPUTP | 1 | 263
+EXPORTS | 1 | 5 | 14
+IMPORTS | 1 | 5 | 16
+EQ | 12 | 
+   i2c/temp_output<0>.D = sensor_n<0> & sensor_data_w<0> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_output<0> & 
+	i2c/state_FSM_FFd22
+;Imported pterms FB6_17
+	# i2c/temp_output<0> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7;
+   i2c/temp_output<0>.CLK = CLK;	// GCK
+   i2c/temp_output<0>.AP = RES & sensor_data_w<0>;
+   i2c/temp_output<0>.AR = RES & !sensor_data_w<0>;
+    i2c/temp_output<0>.EXP  =  sensor_n<0> & sensor_data_w<3> & 
+	i2c/state_FSM_FFd22
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 7 | i2c/temp_output<1>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 5 | 7 | 5 | 6
+INPUTS | 8 | i2c/temp_output<0>  | i2c/state_FSM_FFd7  | i2c/temp_output<1>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<1>  | RES  | i2c/temp_output<2>.EXP
+INPUTMC | 7 | 5 | 15 | 4 | 17 | 5 | 7 | 2 | 0 | 8 | 11 | 8 | 14 | 5 | 6
+INPUTP | 1 | 263
+IMPORTS | 1 | 5 | 6
+EQ | 11 | 
+   i2c/temp_output<1>.D = i2c/temp_output<0> & i2c/state_FSM_FFd7
+	# !sensor_n<0> & i2c/temp_output<1> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_output<1> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB6_7
+	# sensor_n<0> & sensor_data_w<1> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<1>.CLK = CLK;	// GCK
+   i2c/temp_output<1>.AP = RES & sensor_data_w<1>;
+   i2c/temp_output<1>.AR = RES & !sensor_data_w<1>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 6 | i2c/temp_output<2>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 4 | 5 | 6 | 5 | 14 | 5 | 5 | 5 | 7
+INPUTS | 9 | i2c/temp_output<1>  | i2c/state_FSM_FFd7  | i2c/temp_output<2>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<2>  | RES  | sensor_data_w<1>  | EXP45_.EXP
+INPUTMC | 8 | 5 | 7 | 4 | 17 | 5 | 6 | 2 | 0 | 8 | 11 | 13 | 17 | 8 | 14 | 5 | 5
+INPUTP | 1 | 263
+EXPORTS | 1 | 5 | 7
+IMPORTS | 1 | 5 | 5
+EQ | 13 | 
+   i2c/temp_output<2>.D = i2c/temp_output<1> & i2c/state_FSM_FFd7
+	# i2c/temp_output<2> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB6_6
+	# sensor_n<0> & sensor_data_w<2> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_output<2> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<2>.CLK = CLK;	// GCK
+   i2c/temp_output<2>.AP = RES & sensor_data_w<2>;
+   i2c/temp_output<2>.AR = RES & !sensor_data_w<2>;
+    i2c/temp_output<2>.EXP  =  sensor_n<0> & sensor_data_w<1> & 
+	i2c/state_FSM_FFd22
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 14 | i2c/temp_output<3>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 5 | 14 | 7 | 8
+INPUTS | 8 | i2c/temp_output<2>  | i2c/state_FSM_FFd7  | i2c/temp_output<3>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<3>  | RES  | i2c/temp_output<0>.EXP
+INPUTMC | 7 | 5 | 6 | 4 | 17 | 5 | 14 | 2 | 0 | 8 | 11 | 13 | 16 | 5 | 15
+INPUTP | 1 | 263
+IMPORTS | 1 | 5 | 15
+EQ | 11 | 
+   i2c/temp_output<3>.D = i2c/temp_output<2> & i2c/state_FSM_FFd7
+	# !sensor_n<0> & i2c/temp_output<3> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_output<3> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB6_16
+	# sensor_n<0> & sensor_data_w<3> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<3>.CLK = CLK;	// GCK
+   i2c/temp_output<3>.AP = RES & sensor_data_w<3>;
+   i2c/temp_output<3>.AR = RES & !sensor_data_w<3>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 8 | i2c/temp_output<4>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 7 | 8 | 7 | 7
+INPUTS | 8 | i2c/temp_output<3>  | i2c/state_FSM_FFd7  | i2c/temp_output<4>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<4>  | RES  | i2c/temp_output<5>.EXP
+INPUTMC | 7 | 5 | 14 | 4 | 17 | 7 | 8 | 2 | 0 | 8 | 11 | 13 | 15 | 7 | 7
+INPUTP | 1 | 263
+IMPORTS | 1 | 7 | 7
+EQ | 11 | 
+   i2c/temp_output<4>.D = i2c/temp_output<3> & i2c/state_FSM_FFd7
+	# !sensor_n<0> & i2c/temp_output<4> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_output<4> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB8_8
+	# sensor_n<0> & sensor_data_w<4> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<4>.CLK = CLK;	// GCK
+   i2c/temp_output<4>.AP = RES & sensor_data_w<4>;
+   i2c/temp_output<4>.AR = RES & !sensor_data_w<4>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 7 | i2c/temp_output<5>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 4 | 7 | 7 | 7 | 15 | 7 | 6 | 7 | 8
+INPUTS | 9 | i2c/temp_output<4>  | i2c/state_FSM_FFd7  | i2c/temp_output<5>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<5>  | RES  | sensor_data_w<4>  | EXP61_.EXP
+INPUTMC | 8 | 7 | 8 | 4 | 17 | 7 | 7 | 2 | 0 | 8 | 11 | 13 | 13 | 13 | 15 | 7 | 6
+INPUTP | 1 | 263
+EXPORTS | 1 | 7 | 8
+IMPORTS | 1 | 7 | 6
+EQ | 13 | 
+   i2c/temp_output<5>.D = i2c/temp_output<4> & i2c/state_FSM_FFd7
+	# i2c/temp_output<5> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB8_7
+	# sensor_n<0> & sensor_data_w<5> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_output<5> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<5>.CLK = CLK;	// GCK
+   i2c/temp_output<5>.AP = RES & sensor_data_w<5>;
+   i2c/temp_output<5>.AR = RES & !sensor_data_w<5>;
+    i2c/temp_output<5>.EXP  =  sensor_n<0> & sensor_data_w<4> & 
+	i2c/state_FSM_FFd22
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 15 | i2c/temp_output<6>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 7 | 15 | 7 | 0
+INPUTS | 8 | i2c/temp_output<5>  | i2c/state_FSM_FFd7  | i2c/temp_output<6>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<6>  | RES  | EXP65_.EXP
+INPUTMC | 7 | 7 | 7 | 4 | 17 | 7 | 15 | 2 | 0 | 8 | 11 | 8 | 13 | 7 | 16
+INPUTP | 1 | 263
+IMPORTS | 1 | 7 | 16
+EQ | 11 | 
+   i2c/temp_output<6>.D = i2c/temp_output<5> & i2c/state_FSM_FFd7
+	# !sensor_n<0> & i2c/temp_output<6> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_output<6> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB8_17
+	# sensor_n<0> & sensor_data_w<6> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<6>.CLK = CLK;	// GCK
+   i2c/temp_output<6>.AP = RES & sensor_data_w<6>;
+   i2c/temp_output<6>.AR = RES & !sensor_data_w<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 0 | i2c/temp_output<7>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 7 | 0 | 2 | 15
+INPUTS | 8 | i2c/temp_output<6>  | i2c/state_FSM_FFd7  | i2c/temp_output<7>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_data_w<7>  | RES  | EXP60_.EXP
+INPUTMC | 7 | 7 | 15 | 4 | 17 | 7 | 0 | 2 | 0 | 8 | 11 | 8 | 12 | 7 | 1
+INPUTP | 1 | 263
+IMPORTS | 1 | 7 | 1
+EQ | 11 | 
+   i2c/temp_output<7>.D = i2c/temp_output<6> & i2c/state_FSM_FFd7
+	# !sensor_n<0> & i2c/temp_output<7> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_output<7> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+;Imported pterms FB8_2
+	# sensor_n<0> & sensor_data_w<7> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_output<7>.CLK = CLK;	// GCK
+   i2c/temp_output<7>.AP = RES & sensor_data_w<7>;
+   i2c/temp_output<7>.AR = RES & !sensor_data_w<7>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 3 | i2c/temp_reg<0>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 3 | 3 | 3 | 9
+INPUTS | 6 | sensor_n<0>  | i2c/temp_reg<0>  | i2c/state_FSM_FFd22  | sensor_reg<0>  | i2c/state_FSM_FFd11  | RES
+INPUTMC | 5 | 8 | 11 | 3 | 3 | 2 | 0 | 8 | 7 | 6 | 15
+INPUTP | 1 | 263
+EQ | 9 | 
+   i2c/temp_reg<0>.D = sensor_n<0> & sensor_reg<0> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<0> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_reg<0> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11;
+   i2c/temp_reg<0>.CLK = CLK;	// GCK
+   i2c/temp_reg<0>.AP = RES & sensor_reg<0>;
+   i2c/temp_reg<0>.AR = RES & !sensor_reg<0>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 9 | i2c/temp_reg<1>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 3 | 3 | 9 | 3 | 8 | 3 | 10
+INPUTS | 9 | i2c/temp_reg<0>  | i2c/state_FSM_FFd11  | i2c/temp_reg<1>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<1>  | RES  | sensor_reg<2>  | EXP39_.EXP
+INPUTMC | 8 | 3 | 3 | 6 | 15 | 3 | 9 | 2 | 0 | 8 | 11 | 8 | 6 | 13 | 3 | 3 | 10
+INPUTP | 1 | 263
+EXPORTS | 1 | 3 | 8
+IMPORTS | 1 | 3 | 10
+EQ | 13 | 
+   i2c/temp_reg<1>.D = i2c/temp_reg<0> & i2c/state_FSM_FFd11
+	# i2c/temp_reg<1> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_11
+	# sensor_n<0> & sensor_reg<1> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<1> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<1>.CLK = CLK;	// GCK
+   i2c/temp_reg<1>.AP = RES & sensor_reg<1>;
+   i2c/temp_reg<1>.AR = RES & !sensor_reg<1>;
+    i2c/temp_reg<1>.EXP  =  sensor_n<0> & sensor_reg<2> & 
+	i2c/state_FSM_FFd22
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 8 | i2c/temp_reg<2>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 3 | 8 | 3 | 7
+INPUTS | 8 | i2c/temp_reg<1>  | i2c/state_FSM_FFd11  | i2c/temp_reg<2>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<2>  | RES  | i2c/temp_reg<1>.EXP
+INPUTMC | 7 | 3 | 9 | 6 | 15 | 3 | 8 | 2 | 0 | 8 | 11 | 13 | 3 | 3 | 9
+INPUTP | 1 | 263
+IMPORTS | 1 | 3 | 9
+EQ | 11 | 
+   i2c/temp_reg<2>.D = i2c/temp_reg<1> & i2c/state_FSM_FFd11
+	# !sensor_n<0> & i2c/temp_reg<2> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_reg<2> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_10
+	# sensor_n<0> & sensor_reg<2> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<2>.CLK = CLK;	// GCK
+   i2c/temp_reg<2>.AP = RES & sensor_reg<2>;
+   i2c/temp_reg<2>.AR = RES & !sensor_reg<2>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 7 | i2c/temp_reg<3>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 3 | 7 | 3 | 6
+INPUTS | 8 | i2c/temp_reg<2>  | i2c/state_FSM_FFd11  | i2c/temp_reg<3>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<3>  | RES  | i2c/temp_reg<4>.EXP
+INPUTMC | 7 | 3 | 8 | 6 | 15 | 3 | 7 | 2 | 0 | 8 | 11 | 13 | 1 | 3 | 6
+INPUTP | 1 | 263
+IMPORTS | 1 | 3 | 6
+EQ | 11 | 
+   i2c/temp_reg<3>.D = i2c/temp_reg<2> & i2c/state_FSM_FFd11
+	# !sensor_n<0> & i2c/temp_reg<3> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_reg<3> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_7
+	# sensor_n<0> & sensor_reg<3> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<3>.CLK = CLK;	// GCK
+   i2c/temp_reg<3>.AP = RES & sensor_reg<3>;
+   i2c/temp_reg<3>.AR = RES & !sensor_reg<3>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 6 | i2c/temp_reg<4>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 4 | 3 | 6 | 3 | 0 | 3 | 5 | 3 | 7
+INPUTS | 9 | i2c/temp_reg<3>  | i2c/state_FSM_FFd11  | i2c/temp_reg<4>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<4>  | RES  | sensor_reg<3>  | EXP38_.EXP
+INPUTMC | 8 | 3 | 7 | 6 | 15 | 3 | 6 | 2 | 0 | 8 | 11 | 13 | 0 | 13 | 1 | 3 | 5
+INPUTP | 1 | 263
+EXPORTS | 1 | 3 | 7
+IMPORTS | 1 | 3 | 5
+EQ | 13 | 
+   i2c/temp_reg<4>.D = i2c/temp_reg<3> & i2c/state_FSM_FFd11
+	# i2c/temp_reg<4> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_6
+	# sensor_n<0> & sensor_reg<4> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<4> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<4>.CLK = CLK;	// GCK
+   i2c/temp_reg<4>.AP = RES & sensor_reg<4>;
+   i2c/temp_reg<4>.AR = RES & !sensor_reg<4>;
+    i2c/temp_reg<4>.EXP  =  sensor_n<0> & sensor_reg<3> & 
+	i2c/state_FSM_FFd22
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 0 | i2c/temp_reg<5>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 3 | 0 | 3 | 2
+INPUTS | 8 | i2c/temp_reg<4>  | i2c/state_FSM_FFd11  | i2c/temp_reg<5>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<5>  | RES  | i2c/temp_reg<7>.EXP
+INPUTMC | 7 | 3 | 6 | 6 | 15 | 3 | 0 | 2 | 0 | 8 | 11 | 8 | 5 | 3 | 17
+INPUTP | 1 | 263
+IMPORTS | 1 | 3 | 17
+EQ | 11 | 
+   i2c/temp_reg<5>.D = i2c/temp_reg<4> & i2c/state_FSM_FFd11
+	# !sensor_n<0> & i2c/temp_reg<5> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_reg<5> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_18
+	# sensor_n<0> & sensor_reg<5> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<5>.CLK = CLK;	// GCK
+   i2c/temp_reg<5>.AP = RES & sensor_reg<5>;
+   i2c/temp_reg<5>.AR = RES & !sensor_reg<5>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 2 | i2c/temp_reg<6>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 2 | 3 | 2 | 3 | 17
+INPUTS | 8 | i2c/temp_reg<5>  | i2c/state_FSM_FFd11  | i2c/temp_reg<6>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<6>  | RES  | EXP37_.EXP
+INPUTMC | 7 | 3 | 0 | 6 | 15 | 3 | 2 | 2 | 0 | 8 | 11 | 8 | 4 | 3 | 1
+INPUTP | 1 | 263
+IMPORTS | 1 | 3 | 1
+EQ | 11 | 
+   i2c/temp_reg<6>.D = i2c/temp_reg<5> & i2c/state_FSM_FFd11
+	# !sensor_n<0> & i2c/temp_reg<6> & 
+	i2c/state_FSM_FFd22
+	# i2c/temp_reg<6> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_2
+	# sensor_n<0> & sensor_reg<6> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<6>.CLK = CLK;	// GCK
+   i2c/temp_reg<6>.AP = RES & sensor_reg<6>;
+   i2c/temp_reg<6>.AR = RES & !sensor_reg<6>;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 3 | 17 | i2c/temp_reg<7>
+ATTRIBUTES | 8553360 | 0
+OUTPUTMC | 4 | 2 | 13 | 3 | 17 | 3 | 16 | 3 | 0
+INPUTS | 9 | i2c/temp_reg<6>  | i2c/state_FSM_FFd11  | i2c/temp_reg<7>  | i2c/state_FSM_FFd22  | sensor_n<0>  | sensor_reg<7>  | RES  | sensor_reg<5>  | EXP40_.EXP
+INPUTMC | 8 | 3 | 2 | 6 | 15 | 3 | 17 | 2 | 0 | 8 | 11 | 8 | 3 | 8 | 5 | 3 | 16
+INPUTP | 1 | 263
+EXPORTS | 1 | 3 | 0
+IMPORTS | 1 | 3 | 16
+EQ | 13 | 
+   i2c/temp_reg<7>.D = i2c/temp_reg<6> & i2c/state_FSM_FFd11
+	# i2c/temp_reg<7> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd11
+;Imported pterms FB4_17
+	# sensor_n<0> & sensor_reg<7> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<7> & 
+	i2c/state_FSM_FFd22;
+   i2c/temp_reg<7>.CLK = CLK;	// GCK
+   i2c/temp_reg<7>.AP = RES & sensor_reg<7>;
+   i2c/temp_reg<7>.AR = RES & !sensor_reg<7>;
+    i2c/temp_reg<7>.EXP  =  sensor_n<0> & sensor_reg<5> & 
+	i2c/state_FSM_FFd22
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 13 | 12 | sensor_n<2>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 6 | 15 | 15 | 16 | 6 | 1
+INPUTS | 12 | Data<2>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 186 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<2>.D = Data<2>.PIN;
+   sensor_n<2>.CLK = BWR;	// GCK
+   sensor_n<2>.AR = RES;
+   sensor_n<2>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 11 | sensor_n<3>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 6 | 7 | 15 | 14 | 6 | 11
+INPUTS | 12 | Data<3>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 187 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<3>.D = Data<3>.PIN;
+   sensor_n<3>.CLK = BWR;	// GCK
+   sensor_n<3>.AR = RES;
+   sensor_n<3>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 13 | 8 | sensor_n<4>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 3 | 8 | 17 | 6 | 5 | 6 | 6
+INPUTS | 12 | Data<4>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 188 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<4>.D = Data<4>.PIN;
+   sensor_n<4>.CLK = BWR;	// GCK
+   sensor_n<4>.AR = RES;
+   sensor_n<4>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 8 | 8 | sensor_n<7>
+ATTRIBUTES | 8553296 | 0
+OUTPUTMC | 1 | 12 | 17
+INPUTS | 12 | Data<7>.PIN  | RES  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTP | 12 | 195 | 263 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 5 | 
+   sensor_n<7>.D = Data<7>.PIN;
+   sensor_n<7>.CLK = BWR;	// GCK
+   sensor_n<7>.AR = RES;
+   sensor_n<7>.CE = !ADR<1> & !ADR<3> & !ADR<2> & !ADR<0> & !ADR<7> & 
+	!ADR<5> & ADR<6> & ADR<4> & !ADR<8> & !ADR<9>;
+GLOBALS | 1 | 2 | BWR
+
+MACROCELL | 15 | 11 | outDATA<0>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 15 | 0
+INPUTS | 7 | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | outDATA<0>/outDATA<0>_RSTF
+INPUTMC | 1 | 15 | 0
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<0>.D = Gnd;
+   Data<0>.CLK = Gnd;
+   Data<0>.AP = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<0>/outDATA<0>_RSTF;
+   Data<0>.AR = outDATA<0>/outDATA<0>_RSTF;
+   !Data<0>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 2 | outDATA<1>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 15 | 17
+INPUTS | 7 | outDATA<1>/outDATA<1>_SETF  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 15 | 17
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<1>.D = Gnd;
+   Data<1>.CLK = Gnd;
+   Data<1>.AP = outDATA<1>/outDATA<1>_SETF;
+   Data<1>.AR = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<1>/outDATA<1>_SETF;
+   !Data<1>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 4 | outDATA<2>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 15 | 16
+INPUTS | 7 | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | outDATA<2>/outDATA<2>_RSTF
+INPUTMC | 1 | 15 | 16
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<2>.D = Gnd;
+   Data<2>.CLK = Gnd;
+   Data<2>.AP = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<2>/outDATA<2>_RSTF;
+   Data<2>.AR = outDATA<2>/outDATA<2>_RSTF;
+   !Data<2>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 5 | outDATA<3>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 15 | 14
+INPUTS | 7 | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | outDATA<3>/outDATA<3>_RSTF
+INPUTMC | 1 | 15 | 14
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<3>.D = Gnd;
+   Data<3>.CLK = Gnd;
+   Data<3>.AP = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<3>/outDATA<3>_RSTF;
+   Data<3>.AR = outDATA<3>/outDATA<3>_RSTF;
+   !Data<3>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 7 | outDATA<4>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 8 | 17
+INPUTS | 7 | outDATA<4>/outDATA<4>_SETF  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 8 | 17
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<4>.D = Gnd;
+   Data<4>.CLK = Gnd;
+   Data<4>.AP = outDATA<4>/outDATA<4>_SETF;
+   Data<4>.AR = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<4>/outDATA<4>_SETF;
+   !Data<4>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 9 | outDATA<5>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 8 | 16
+INPUTS | 7 | outDATA<5>/outDATA<5>_SETF  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 8 | 16
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<5>.D = Gnd;
+   Data<5>.CLK = Gnd;
+   Data<5>.AP = outDATA<5>/outDATA<5>_SETF;
+   Data<5>.AR = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<5>/outDATA<5>_SETF;
+   !Data<5>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 10 | outDATA<6>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 11 | 0
+INPUTS | 7 | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | outDATA<6>/outDATA<6>_RSTF
+INPUTMC | 1 | 11 | 0
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<6>.D = Gnd;
+   Data<6>.CLK = Gnd;
+   Data<6>.AP = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<6>/outDATA<6>_RSTF;
+   Data<6>.AR = outDATA<6>/outDATA<6>_RSTF;
+   !Data<6>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 13 | 14 | outDATA<7>
+ATTRIBUTES | 8799154 | 0
+OUTPUTMC | 1 | 12 | 17
+INPUTS | 7 | outDATA<7>/outDATA<7>_SETF  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 12 | 17
+INPUTP | 6 | 231 | 225 | 227 | 207 | 234 | 235
+EQ | 6 | 
+   Data<7>.D = Gnd;
+   Data<7>.CLK = Gnd;
+   Data<7>.AP = outDATA<7>/outDATA<7>_SETF;
+   Data<7>.AR = !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9> & !outDATA<7>/outDATA<7>_SETF;
+   !Data<7>.OE = BRD;	// GTS
+GLOBALS | 1 | 5 | BRD
+
+MACROCELL | 1 | 16 | i2c/i<3>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 60 | 2 | 13 | 1 | 16 | 4 | 17 | 0 | 5 | 5 | 9 | 0 | 12 | 1 | 3 | 1 | 12 | 0 | 8 | 5 | 8 | 9 | 12 | 1 | 8 | 10 | 14 | 9 | 0 | 0 | 16 | 5 | 1 | 0 | 3 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 2 | 3 | 2 | 4 | 2 | 8 | 2 | 9 | 6 | 8 | 4 | 14 | 11 | 15 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 4 | 11 | 0 | 4 | 0 | 6 | 0 | 11 | 0 | 13 | 0 | 15 | 0 | 17 | 1 | 0 | 1 | 7 | 1 | 11 | 1 | 15 | 1 | 17 | 2 | 15 | 5 | 13 | 6 | 3 | 6 | 14 | 6 | 16 | 7 | 9 | 7 | 11 | 7 | 13 | 9 | 1 | 9 | 14 | 9 | 16 | 10 | 17 | 11 | 14 | 11 | 16
+INPUTS | 9 | i2c/i<3>  | i2c/state_FSM_FFd4  | i2c/i<0>  | $OpTx$$OpTx$FX_DC$45_INV$798  | i2c/i<1>  | i2c/i<2>  | EXP33_.EXP  | EXP34_.EXP  | RES
+INPUTMC | 8 | 1 | 16 | 0 | 8 | 0 | 12 | 0 | 10 | 1 | 4 | 1 | 12 | 1 | 15 | 1 | 17
+INPUTP | 1 | 263
+IMPORTS | 2 | 1 | 15 | 1 | 17
+EQ | 43 | 
+   i2c/i<3>.D = i2c/i<3> & i2c/state_FSM_FFd4
+	# i2c/i<3> & !i2c/i<0> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+	# i2c/i<3> & !i2c/i<1> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+	# i2c/i<3> & !i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+;Imported pterms FB2_16
+	# sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/i<0> & i2c/i<1> & i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+;Imported pterms FB2_18
+	# sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+;Imported pterms FB2_1
+	# sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+	# i2c/i<3> & !i2c/state_FSM_FFd6 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17 & 
+	$OpTx$$OpTx$FX_DC$45_INV$798;
+   i2c/i<3>.CLK = CLK;	// GCK
+   i2c/i<3>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 0 | i2c/state_FSM_FFd22
+ATTRIBUTES | 8553344 | 0
+OUTPUTMC | 32 | 2 | 14 | 5 | 15 | 5 | 7 | 5 | 6 | 5 | 14 | 7 | 8 | 7 | 7 | 7 | 15 | 7 | 0 | 3 | 3 | 3 | 9 | 3 | 8 | 3 | 7 | 3 | 6 | 3 | 0 | 3 | 2 | 3 | 17 | 2 | 0 | 2 | 7 | 10 | 14 | 0 | 15 | 2 | 1 | 2 | 13 | 3 | 1 | 3 | 5 | 3 | 10 | 3 | 16 | 5 | 5 | 5 | 16 | 7 | 1 | 7 | 6 | 7 | 16
+INPUTS | 4 | i2c/state_FSM_FFd1  | sensor_n<0>  | i2c/state_FSM_FFd22  | RES
+INPUTMC | 3 | 2 | 2 | 8 | 11 | 2 | 0
+INPUTP | 1 | 263
+EQ | 4 | 
+   i2c/state_FSM_FFd22.D = i2c/state_FSM_FFd1
+	# !sensor_n<0> & i2c/state_FSM_FFd22;
+   i2c/state_FSM_FFd22.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd22.AP = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 0 | i2c/state_FSM_FFd6
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 29 | 2 | 13 | 1 | 14 | 0 | 12 | 1 | 3 | 1 | 11 | 0 | 8 | 0 | 16 | 0 | 3 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 2 | 8 | 11 | 15 | 2 | 10 | 0 | 2 | 0 | 14 | 1 | 0 | 1 | 6 | 2 | 15 | 7 | 9 | 7 | 11 | 7 | 13 | 9 | 14 | 9 | 16 | 11 | 14 | 11 | 16
+INPUTS | 9 | sensor_n<1>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd8  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | EXP44_.EXP  | RES
+INPUTMC | 6 | 8 | 10 | 4 | 0 | 0 | 5 | 13 | 6 | 8 | 9 | 5 | 1
+INPUTP | 3 | 39 | 61 | 263
+IMPORTS | 1 | 5 | 1
+EQ | 15 | 
+   !i2c/state_FSM_FFd6.D = !sensor_n<1> & !i2c/state_FSM_FFd3
+	# !i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd3
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd3 & 
+	SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd3 & 
+	SDA_OUT1.PIN
+;Imported pterms FB6_2
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd3 & 
+	SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd3 & 
+	SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd3;
+   i2c/state_FSM_FFd6.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd6.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 17 | i2c/state_FSM_FFd7
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 36 | 5 | 13 | 5 | 7 | 5 | 6 | 5 | 14 | 7 | 8 | 7 | 7 | 7 | 15 | 7 | 0 | 0 | 10 | 1 | 4 | 5 | 10 | 6 | 16 | 5 | 12 | 6 | 11 | 4 | 16 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 14 | 4 | 12 | 0 | 13 | 0 | 14 | 1 | 5 | 1 | 6 | 4 | 15 | 4 | 17 | 5 | 9 | 5 | 11 | 5 | 16 | 6 | 1 | 6 | 3 | 6 | 6 | 6 | 7 | 6 | 8 | 6 | 14 | 10 | 17
+INPUTS | 15 | i2c/state_FSM_FFd9  | RES  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd21  | i2c/temp<4>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/temp<3>
+INPUTMC | 12 | 2 | 9 | 13 | 6 | 8 | 9 | 4 | 17 | 6 | 12 | 2 | 7 | 4 | 16 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 6 | 2
+INPUTP | 3 | 263 | 20 | 89
+EXPORTS | 1 | 4 | 16
+EQ | 9 | 
+   i2c/state_FSM_FFd7.D = i2c/state_FSM_FFd9;
+   i2c/state_FSM_FFd7.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd7.AR = RES;
+    i2c/state_FSM_FFd7.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<4> & !i2c/temp<3>
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 5 | i2c/state_FSM_FFd8
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 40 | 1 | 15 | 5 | 0 | 0 | 5 | 0 | 11 | 1 | 2 | 1 | 11 | 1 | 10 | 10 | 13 | 0 | 14 | 0 | 2 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 11 | 15 | 1 | 0 | 0 | 0 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 13 | 0 | 17 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 8 | 1 | 9 | 1 | 13 | 1 | 14 | 7 | 9 | 7 | 11 | 7 | 13 | 9 | 14 | 9 | 16 | 10 | 16 | 10 | 17 | 11 | 14 | 11 | 16
+INPUTS | 13 | i2c/i<3>  | i2c/state_FSM_FFd10  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | $OpTx$FX_DC$21.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 5 | 10 | 13 | 6 | 8 | 9 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 6
+INPUTP | 4 | 39 | 61 | 89 | 263
+IMPORTS | 1 | 0 | 6
+EQ | 12 | 
+   i2c/state_FSM_FFd8.D = i2c/i<3> & i2c/state_FSM_FFd10
+	# sensor_n<5> & sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd8 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd8 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd8 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT1.PIN
+;Imported pterms FB1_7
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd8 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN;
+   i2c/state_FSM_FFd8.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd8.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 9 | i2c/state_FSM_FFd12
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 32 | 1 | 14 | 5 | 9 | 1 | 2 | 1 | 7 | 5 | 10 | 1 | 10 | 5 | 12 | 6 | 13 | 4 | 16 | 6 | 16 | 6 | 8 | 6 | 1 | 4 | 14 | 4 | 12 | 1 | 6 | 1 | 0 | 1 | 5 | 1 | 13 | 1 | 17 | 4 | 11 | 4 | 13 | 5 | 8 | 6 | 0 | 6 | 2 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 6 | 6 | 7 | 6 | 10 | 6 | 11 | 6 | 15
+INPUTS | 13 | i2c/i<3>  | i2c/state_FSM_FFd14  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | SDA_OUT1.PIN  | i2c/state_FSM_FFd7  | SDA_OUT2.PIN  | EXP46_.EXP  | RES
+INPUTMC | 10 | 1 | 16 | 9 | 13 | 13 | 6 | 8 | 9 | 5 | 9 | 0 | 12 | 1 | 4 | 1 | 12 | 4 | 17 | 5 | 8
+INPUTP | 3 | 39 | 20 | 263
+EXPORTS | 1 | 5 | 10
+IMPORTS | 1 | 5 | 8
+EQ | 16 | 
+   i2c/state_FSM_FFd12.D = i2c/i<3> & i2c/state_FSM_FFd14
+	# !sensor_n<5> & !sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT1.PIN
+;Imported pterms FB6_9
+	# sensor_n<5> & sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT3.PIN;
+   i2c/state_FSM_FFd12.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd12.AR = RES;
+    i2c/state_FSM_FFd12.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2>
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 12 | i2c/state_FSM_FFd16
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 30 | 2 | 14 | 0 | 10 | 1 | 4 | 1 | 7 | 6 | 16 | 5 | 12 | 6 | 11 | 4 | 16 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 14 | 4 | 12 | 0 | 13 | 0 | 14 | 1 | 5 | 1 | 6 | 2 | 15 | 4 | 15 | 4 | 17 | 5 | 11 | 5 | 13 | 6 | 1 | 6 | 3 | 6 | 5 | 6 | 6 | 6 | 7 | 6 | 8 | 6 | 14 | 10 | 17
+INPUTS | 3 | i2c/state_FSM_FFd18  | RES  | SDA_OUT4
+INPUTMC | 2 | 2 | 4 | 2 | 14
+INPUTP | 1 | 263
+EXPORTS | 1 | 6 | 11
+EQ | 4 | 
+   i2c/state_FSM_FFd16.D = i2c/state_FSM_FFd18;
+   i2c/state_FSM_FFd16.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd16.AR = RES;
+    i2c/state_FSM_FFd16.EXP  =  SDA_OUT4
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 12 | i2c/i<0>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 44 | 1 | 16 | 4 | 17 | 0 | 5 | 5 | 9 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 8 | 5 | 8 | 9 | 12 | 1 | 8 | 9 | 1 | 9 | 0 | 0 | 14 | 5 | 1 | 4 | 11 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 6 | 8 | 4 | 14 | 11 | 15 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 0 | 4 | 0 | 6 | 0 | 10 | 0 | 11 | 0 | 13 | 0 | 17 | 1 | 3 | 1 | 7 | 1 | 11 | 1 | 15 | 5 | 13 | 6 | 3 | 6 | 14 | 6 | 16 | 10 | 17
+INPUTS | 9 | i2c/i<0>  | i2c/state_FSM_FFd4  | i2c/i<3>  | i2c/state_FSM_FFd19  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd10  | EXP21_.EXP  | EXP22_.EXP  | RES
+INPUTMC | 8 | 0 | 12 | 0 | 8 | 1 | 16 | 1 | 7 | 5 | 0 | 5 | 10 | 0 | 11 | 0 | 13
+INPUTP | 1 | 263
+IMPORTS | 2 | 0 | 11 | 0 | 13
+EQ | 66 | 
+   !i2c/i<0>.T = i2c/i<0> & i2c/state_FSM_FFd4
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & i2c/i<0>
+	# !i2c/i<3> & i2c/i<0> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/i<0> & i2c/state_FSM_FFd19
+;Imported pterms FB1_12
+	# !i2c/i<3> & i2c/i<0> & i2c/state_FSM_FFd14
+	# sensor_n<6> & i2c/state_FSM_FFd8 & i2c/i<0> & 
+	$OpTx$FX_DC$21
+	# sensor_n<6> & i2c/i<0> & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797 & $OpTx$FX_DC$21
+	# sensor_n<5> & !sensor_n<6> & i2c/i<0> & 
+	SDA_OUT2.PIN & !$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<0> & 
+	SDA_OUT1.PIN & !$OpTx$$OpTx$FX_DC$18_INV$797
+;Imported pterms FB1_11
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & $OpTx$$OpTx$FX_DC$18_INV$797
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT1.PIN
+	# sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & $OpTx$$OpTx$FX_DC$18_INV$797 & 
+	$OpTx$FX_DC$21
+;Imported pterms FB1_14
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<0> & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<0> & SDA_OUT1.PIN
+	# i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/i<0> & i2c/i<1> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/i<0> & i2c/i<2> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3
+;Imported pterms FB1_15
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & !i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & 
+	SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT4.PIN & 
+	$OpTx$FX_DC$21
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & !i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT3.PIN & 
+	$OpTx$FX_DC$21
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & $OpTx$$OpTx$FX_DC$18_INV$797;
+   i2c/i<0>.CLK = CLK;	// GCK
+   i2c/i<0>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 4 | i2c/i<1>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 43 | 1 | 16 | 4 | 17 | 0 | 5 | 5 | 9 | 0 | 6 | 1 | 4 | 1 | 12 | 0 | 8 | 5 | 8 | 9 | 12 | 1 | 8 | 9 | 1 | 9 | 0 | 0 | 13 | 5 | 1 | 4 | 11 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 6 | 8 | 4 | 14 | 11 | 15 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 0 | 4 | 0 | 17 | 1 | 2 | 1 | 3 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 15 | 5 | 13 | 6 | 3 | 6 | 14 | 6 | 16 | 10 | 17
+INPUTS | 9 | i2c/i<1>  | i2c/state_FSM_FFd4  | i2c/state_FSM_FFd7  | i2c/i<0>  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd11  | EXP26_.EXP  | EXP27_.EXP  | RES
+INPUTMC | 8 | 1 | 4 | 0 | 8 | 4 | 17 | 0 | 12 | 6 | 12 | 6 | 15 | 1 | 3 | 1 | 5
+INPUTP | 1 | 263
+IMPORTS | 2 | 1 | 3 | 1 | 5
+EQ | 46 | 
+   !i2c/i<1>.T = i2c/state_FSM_FFd7 & !i2c/i<0>
+	# i2c/state_FSM_FFd16 & !i2c/i<0>
+	# !i2c/i<0> & i2c/state_FSM_FFd11
+	# i2c/i<1> & i2c/state_FSM_FFd4
+;Imported pterms FB2_4
+	# !i2c/i<0> & i2c/state_FSM_FFd3
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & i2c/i<1>
+	# !i2c/i<3> & i2c/i<1> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/i<1> & i2c/state_FSM_FFd14
+	# !i2c/i<3> & i2c/i<1> & i2c/state_FSM_FFd19
+;Imported pterms FB2_3
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+;Imported pterms FB2_6
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/i<1> & !i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3
+;Imported pterms FB2_7
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17;
+   i2c/i<1>.CLK = CLK;	// GCK
+   i2c/i<1>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 12 | i2c/i<2>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 41 | 1 | 16 | 4 | 17 | 0 | 5 | 5 | 9 | 0 | 6 | 1 | 12 | 0 | 8 | 5 | 8 | 9 | 12 | 1 | 8 | 9 | 1 | 9 | 0 | 0 | 13 | 5 | 1 | 4 | 11 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 6 | 8 | 4 | 14 | 11 | 15 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 0 | 4 | 0 | 17 | 1 | 7 | 1 | 10 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 15 | 5 | 13 | 6 | 3 | 6 | 14 | 6 | 16 | 10 | 17
+INPUTS | 10 | i2c/i<2>  | i2c/state_FSM_FFd4  | i2c/i<0>  | $OpTx$$OpTx$FX_DC$45_INV$798  | i2c/i<1>  | i2c/i<3>  | i2c/state_FSM_FFd19  | EXP30_.EXP  | EXP31_.EXP  | RES
+INPUTMC | 9 | 1 | 12 | 0 | 8 | 0 | 12 | 0 | 10 | 1 | 4 | 1 | 16 | 1 | 7 | 1 | 11 | 1 | 13
+INPUTP | 1 | 263
+IMPORTS | 2 | 1 | 11 | 1 | 13
+EQ | 46 | 
+   i2c/i<2>.D = i2c/i<2> & i2c/state_FSM_FFd4
+	# !i2c/i<3> & i2c/i<2> & i2c/state_FSM_FFd19
+	# !i2c/i<0> & i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+	# !i2c/i<1> & i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+;Imported pterms FB2_12
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & i2c/i<2>
+	# !i2c/i<3> & i2c/i<2> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/i<2> & i2c/state_FSM_FFd14
+	# i2c/i<0> & i2c/i<1> & !i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT1.PIN
+;Imported pterms FB2_11
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT3.PIN
+;Imported pterms FB2_14
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT1.PIN
+;Imported pterms FB2_15
+	# sensor_n<5> & sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & i2c/i<2> & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17 & 
+	$OpTx$$OpTx$FX_DC$45_INV$798;
+   i2c/i<2>.CLK = CLK;	// GCK
+   i2c/i<2>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 15 | i2c/state_FSM_FFd11
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 18 | 3 | 3 | 3 | 9 | 3 | 8 | 3 | 7 | 3 | 6 | 3 | 0 | 3 | 2 | 3 | 17 | 0 | 10 | 1 | 4 | 9 | 13 | 9 | 12 | 0 | 13 | 0 | 14 | 1 | 5 | 1 | 6 | 10 | 17 | 6 | 16
+INPUTS | 9 | i2c/state_FSM_FFd13  | RES  | sensor_n<2>  | i2c/state_FSM_FFd12  | i2c/temp<1>  | i2c/state_FSM_FFd21  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN
+INPUTMC | 7 | 2 | 3 | 13 | 12 | 5 | 9 | 6 | 17 | 2 | 7 | 13 | 6 | 8 | 9
+INPUTP | 2 | 263 | 39
+EXPORTS | 1 | 6 | 16
+EQ | 7 | 
+   i2c/state_FSM_FFd11.D = i2c/state_FSM_FFd13;
+   i2c/state_FSM_FFd11.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd11.AR = RES;
+    i2c/state_FSM_FFd11.EXP  =  sensor_n<2> & i2c/state_FSM_FFd12 & i2c/temp<1>
+	# sensor_n<2> & i2c/state_FSM_FFd21 & i2c/temp<1>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT1.PIN
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 7 | i2c/state_FSM_FFd21
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 27 | 4 | 12 | 10 | 15 | 5 | 12 | 6 | 11 | 4 | 16 | 2 | 6 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 14 | 2 | 15 | 4 | 15 | 4 | 17 | 5 | 11 | 5 | 13 | 6 | 0 | 6 | 1 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 6 | 6 | 7 | 6 | 8 | 6 | 10 | 6 | 14 | 6 | 15 | 6 | 16
+INPUTS | 3 | sensor_n<0>  | i2c/state_FSM_FFd22  | RES
+INPUTMC | 2 | 8 | 11 | 2 | 0
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd21.D = sensor_n<0> & i2c/state_FSM_FFd22;
+   i2c/state_FSM_FFd21.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd21.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 0 | i2c/state_FSM_FFd3
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 18 | 5 | 0 | 0 | 2 | 1 | 3 | 5 | 1 | 0 | 3 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 11 | 15 | 0 | 10 | 0 | 13 | 0 | 14 | 1 | 5 | 1 | 6 | 10 | 17
+INPUTS | 2 | i2c/state_FSM_FFd5  | RES
+INPUTMC | 1 | 2 | 8
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd3.D = i2c/state_FSM_FFd5;
+   i2c/state_FSM_FFd3.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd3.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 8 | i2c/state_FSM_FFd4
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 12 | 1 | 9 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 8 | 1 | 10 | 2 | 15 | 0 | 10 | 0 | 14 | 1 | 8 | 10 | 17
+INPUTS | 7 | i2c/i<3>  | i2c/state_FSM_FFd6  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd4  | RES
+INPUTMC | 6 | 1 | 16 | 5 | 0 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 8
+INPUTP | 1 | 263
+EQ | 5 | 
+   i2c/state_FSM_FFd4.D = i2c/i<3> & i2c/state_FSM_FFd6
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	i2c/state_FSM_FFd4;
+   i2c/state_FSM_FFd4.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd4.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 10 | i2c/state_FSM_FFd10
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 13 | 1 | 6 | 1 | 14 | 0 | 5 | 0 | 12 | 1 | 3 | 1 | 11 | 0 | 15 | 2 | 9 | 2 | 10 | 0 | 14 | 0 | 17 | 1 | 0 | 2 | 15
+INPUTS | 9 | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd12  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd12.EXP  | RES
+INPUTMC | 5 | 4 | 17 | 5 | 9 | 13 | 6 | 8 | 9 | 5 | 9
+INPUTP | 4 | 39 | 61 | 89 | 263
+IMPORTS | 1 | 5 | 9
+EQ | 14 | 
+   !i2c/state_FSM_FFd10.D = !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	SDA_OUT1.PIN
+;Imported pterms FB6_10
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2>;
+   i2c/state_FSM_FFd10.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd10.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 9 | 13 | i2c/state_FSM_FFd14
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 14 | 2 | 13 | 1 | 14 | 5 | 9 | 0 | 11 | 1 | 3 | 1 | 11 | 0 | 15 | 2 | 3 | 2 | 10 | 0 | 14 | 0 | 17 | 1 | 0 | 1 | 6 | 2 | 15
+INPUTS | 9 | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd17  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | EXP68_.EXP  | RES
+INPUTMC | 5 | 6 | 15 | 9 | 0 | 13 | 6 | 8 | 9 | 9 | 12
+INPUTP | 4 | 39 | 61 | 89 | 263
+IMPORTS | 1 | 9 | 12
+EQ | 14 | 
+   !i2c/state_FSM_FFd14.D = !i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd17
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd11 & 
+	SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd11 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd11 & 
+	SDA_OUT1.PIN
+;Imported pterms FB10_13
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd11 & 
+	SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd11;
+   i2c/state_FSM_FFd14.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd14.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 7 | i2c/state_FSM_FFd19
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 15 | 2 | 13 | 1 | 14 | 0 | 12 | 1 | 3 | 1 | 12 | 9 | 0 | 0 | 15 | 2 | 4 | 2 | 10 | 0 | 14 | 0 | 17 | 1 | 0 | 1 | 6 | 2 | 15 | 1 | 8
+INPUTS | 13 | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd20  | RES  | sensor_n<5>  | sensor_n<6>  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | SDA_OUT2.PIN  | i2c/state_FSM_FFd8  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd17
+INPUTMC | 11 | 6 | 12 | 2 | 6 | 13 | 6 | 8 | 9 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 5 | 5 | 9 | 9 | 0
+INPUTP | 2 | 263 | 20
+EXPORTS | 1 | 1 | 8
+EQ | 8 | 
+   !i2c/state_FSM_FFd19.D = !i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd20;
+   i2c/state_FSM_FFd19.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd19.AR = RES;
+    i2c/state_FSM_FFd19.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd17
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 5 | i2c/state_FSM_FFd2
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 8 | 0 | 14 | 1 | 14 | 2 | 2 | 1 | 0 | 1 | 6 | 10 | 14 | 0 | 16 | 2 | 15
+INPUTS | 2 | i2c/state_FSM_FFd15  | RES
+INPUTMC | 1 | 1 | 10
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd2.D = i2c/state_FSM_FFd15;
+   i2c/state_FSM_FFd2.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd2.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 10 | i2c/state_FSM_FFd15
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 9 | 0 | 14 | 1 | 14 | 0 | 16 | 1 | 0 | 1 | 6 | 2 | 5 | 2 | 15 | 10 | 17 | 1 | 11
+INPUTS | 13 | i2c/state_FSM_FFd8  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd4  | i2c/state_FSM_FFd17  | sensor_n<1>  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | i2c/i<2>  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | EXP29_.EXP  | RES
+INPUTMC | 9 | 0 | 5 | 5 | 9 | 0 | 8 | 9 | 0 | 8 | 10 | 13 | 6 | 8 | 9 | 1 | 12 | 1 | 9
+INPUTP | 4 | 39 | 61 | 89 | 263
+EXPORTS | 1 | 1 | 11
+IMPORTS | 1 | 1 | 9
+EQ | 38 | 
+   !i2c/state_FSM_FFd15.D = !i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd4 & !i2c/state_FSM_FFd17
+	# sensor_n<1> & !sensor_n<5> & !sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT1.PIN
+;Imported pterms FB2_10
+	# sensor_n<1> & sensor_n<5> & sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT4.PIN
+	# sensor_n<1> & !sensor_n<5> & sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT1.PIN
+;Imported pterms FB2_9
+	# sensor_n<1> & sensor_n<5> & !sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT2.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT1.PIN
+;Imported pterms FB2_8
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd17;
+   i2c/state_FSM_FFd15.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd15.AR = RES;
+    i2c/state_FSM_FFd15.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT3.PIN
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 10 | 15 | SCL
+ATTRIBUTES | 8553344 | 0
+OUTPUTMC | 6 | 10 | 14 | 0 | 9 | 1 | 1 | 6 | 14 | 4 | 1 | 10 | 17
+INPUTS | 7 | i2c/state_FSM_FFd5  | i2c/state_FSM_FFd9  | i2c/state_FSM_FFd21  | i2c/state_FSM_FFd13  | EXP72_.EXP  | EXP73_.EXP  | RES
+INPUTMC | 6 | 2 | 8 | 2 | 9 | 2 | 7 | 2 | 3 | 10 | 14 | 10 | 16
+INPUTP | 1 | 263
+IMPORTS | 2 | 10 | 14 | 10 | 16
+EQ | 47 | 
+   SCL.D = i2c/state_FSM_FFd21
+	# i2c/state_FSM_FFd13
+	# i2c/state_FSM_FFd5
+	# i2c/state_FSM_FFd9
+;Imported pterms FB11_15
+	# i2c/state_FSM_FFd2
+	# i2c/state_FSM_FFd18
+	# sensor_n<0> & i2c/state_FSM_FFd22
+	# i2c/state_FSM_FFd22 & SCL
+	# i2c/i<3> & SCL & !$OpTx$$OpTx$FX_DC$46_INV$799
+;Imported pterms FB11_14
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<6> & SDA_OUT1.PIN & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+;Imported pterms FB11_17
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & SDA_OUT4.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# sensor_n<5> & SDA_OUT4.PIN & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# !sensor_n<5> & SDA_OUT1.PIN & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# sensor_n<6> & SDA_OUT4.PIN & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+;Imported pterms FB11_18
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & SDA_OUT1.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	i2c/state_FSM_FFd4
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & 
+	!i2c/state_FSM_FFd4 & !i2c/state_FSM_FFd15 & SCL & !i2c/state_FSM_FFd20 & 
+	$OpTx$$OpTx$FX_DC$18_INV$797 & $OpTx$$OpTx$FX_DC$46_INV$799;
+   SCL.CLK = CLK;	// GCK
+   SCL.AP = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 9 | 0 | i2c/state_FSM_FFd17
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 11 | 1 | 14 | 1 | 2 | 1 | 7 | 9 | 13 | 1 | 10 | 9 | 0 | 1 | 6 | 1 | 0 | 1 | 5 | 1 | 17 | 9 | 1
+INPUTS | 13 | i2c/i<3>  | i2c/state_FSM_FFd19  | sensor_n<5>  | sensor_n<6>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd17  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | EXP67_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 1 | 7 | 13 | 6 | 8 | 9 | 0 | 12 | 1 | 4 | 1 | 12 | 9 | 0 | 9 | 1
+INPUTP | 4 | 39 | 61 | 89 | 263
+IMPORTS | 1 | 9 | 1
+EQ | 12 | 
+   i2c/state_FSM_FFd17.D = i2c/i<3> & i2c/state_FSM_FFd19
+	# sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/state_FSM_FFd17 & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/state_FSM_FFd17 & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/state_FSM_FFd17 & !SDA_OUT1.PIN
+;Imported pterms FB10_2
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/state_FSM_FFd17 & !SDA_OUT2.PIN;
+   i2c/state_FSM_FFd17.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd17.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 16 | SDA_EN
+ATTRIBUTES | 8553344 | 0
+OUTPUTMC | 8 | 2 | 14 | 0 | 16 | 6 | 11 | 1 | 1 | 0 | 7 | 0 | 0 | 0 | 15 | 0 | 17
+INPUTS | 8 | i2c/state_FSM_FFd6  | SDA_EN  | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd15  | i2c/i<3>  | EXP24_.EXP  | EXP25_.EXP  | RES
+INPUTMC | 7 | 5 | 0 | 0 | 16 | 2 | 5 | 1 | 10 | 1 | 16 | 0 | 15 | 0 | 17
+INPUTP | 1 | 263
+IMPORTS | 2 | 0 | 15 | 0 | 17
+EQ | 26 | 
+   SDA_EN.D = i2c/state_FSM_FFd2
+	# i2c/state_FSM_FFd15
+	# i2c/i<3> & i2c/state_FSM_FFd6
+	# i2c/state_FSM_FFd6 & SDA_EN
+;Imported pterms FB1_16
+	# sensor_n<0> & i2c/state_FSM_FFd22
+	# !i2c/i<3> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/state_FSM_FFd14
+	# i2c/state_FSM_FFd22 & SDA_EN
+	# !i2c/i<3> & i2c/state_FSM_FFd19 & SDA_EN
+;Imported pterms FB1_18
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT1.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	SDA_EN
+	# !i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & SDA_EN
+;Imported pterms FB1_1
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT2.PIN;
+   SDA_EN.CLK = CLK;	// GCK
+   SDA_EN.AP = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 5 | 12 | i2c/temp<7>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 6 | 2 | 14 | 5 | 12 | 2 | 13 | 2 | 15 | 5 | 11 | 5 | 13
+INPUTS | 12 | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21  | i2c/temp<6>  | i2c/state_FSM_FFd16  | i2c/temp<7>  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | EXP47_.EXP  | EXP48_.EXP  | RES
+INPUTMC | 10 | 4 | 17 | 5 | 9 | 2 | 7 | 4 | 12 | 6 | 12 | 5 | 12 | 13 | 6 | 8 | 9 | 5 | 11 | 5 | 13
+INPUTP | 2 | 39 | 263
+IMPORTS | 2 | 5 | 11 | 5 | 13
+EQ | 31 | 
+   !i2c/temp<7>.D = i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<6>
+	# !i2c/state_FSM_FFd12 & i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<6>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7>
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT1.PIN
+;Imported pterms FB6_12
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT1.PIN
+;Imported pterms FB6_14
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<7> & !i2c/temp<6>
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<7>;
+   i2c/temp<7>.CLK = CLK;	// GCK
+   i2c/temp<7>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 3 | sensor_data_r<0>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 6 | 0 | 4 | 0 | 3 | 9 | 16 | 15 | 0 | 0 | 2 | 2 | 15
+INPUTS | 12 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<0>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd3  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | EXP19_.EXP  | EXP20_.EXP  | RES
+INPUTMC | 8 | 1 | 16 | 5 | 0 | 0 | 3 | 13 | 6 | 8 | 9 | 4 | 0 | 0 | 2 | 0 | 4
+INPUTP | 4 | 39 | 61 | 89 | 263
+IMPORTS | 2 | 0 | 2 | 0 | 4
+EQ | 25 | 
+   sensor_data_r<0>.D = i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<0>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd3 & 
+	SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd3 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd3 & 
+	SDA_OUT1.PIN
+;Imported pterms FB1_3
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd3 & 
+	SDA_OUT2.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd3 & sensor_data_r<0>
+;Imported pterms FB1_5
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<0>;
+   sensor_data_r<0>.CLK = CLK;	// GCK
+   sensor_data_r<0>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 9 | 17 | sensor_data_r<1>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 15 | 17 | 9 | 17 | 7 | 13 | 2 | 15 | 9 | 16
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<1>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP70_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 9 | 17 | 4 | 0 | 5 | 0 | 9 | 16
+INPUTP | 1 | 263
+IMPORTS | 1 | 9 | 16
+EQ | 18 | 
+   sensor_data_r<1>.D = i2c/state_FSM_FFd3 & sensor_data_r<1>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<1>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<1>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<1>
+;Imported pterms FB10_17
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<0>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT1.PIN;
+   sensor_data_r<1>.CLK = CLK;	// GCK
+   sensor_data_r<1>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 14 | sensor_data_r<2>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 15 | 16 | 7 | 14 | 7 | 11 | 2 | 15 | 7 | 13
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<2>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP64_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 7 | 14 | 4 | 0 | 5 | 0 | 7 | 13
+INPUTP | 1 | 263
+IMPORTS | 1 | 7 | 13
+EQ | 18 | 
+   sensor_data_r<2>.D = i2c/state_FSM_FFd3 & sensor_data_r<2>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<2>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<2>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<2>
+;Imported pterms FB8_14
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<1>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT1.PIN;
+   sensor_data_r<2>.CLK = CLK;	// GCK
+   sensor_data_r<2>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 12 | sensor_data_r<3>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 15 | 14 | 7 | 12 | 7 | 9 | 2 | 15 | 7 | 11
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<3>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP63_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 7 | 12 | 4 | 0 | 5 | 0 | 7 | 11
+INPUTP | 1 | 263
+IMPORTS | 1 | 7 | 11
+EQ | 18 | 
+   sensor_data_r<3>.D = i2c/state_FSM_FFd3 & sensor_data_r<3>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<3>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<3>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<3>
+;Imported pterms FB8_12
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<2>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT1.PIN;
+   sensor_data_r<3>.CLK = CLK;	// GCK
+   sensor_data_r<3>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 10 | sensor_data_r<4>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 8 | 17 | 7 | 10 | 9 | 14 | 2 | 15 | 7 | 9
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<4>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP62_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 7 | 10 | 4 | 0 | 5 | 0 | 7 | 9
+INPUTP | 1 | 263
+IMPORTS | 1 | 7 | 9
+EQ | 18 | 
+   sensor_data_r<4>.D = i2c/state_FSM_FFd3 & sensor_data_r<4>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<4>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<4>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<4>
+;Imported pterms FB8_10
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<3>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT1.PIN;
+   sensor_data_r<4>.CLK = CLK;	// GCK
+   sensor_data_r<4>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 9 | 15 | sensor_data_r<5>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 8 | 16 | 9 | 15 | 11 | 16 | 2 | 15 | 9 | 14
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<5>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP69_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 9 | 15 | 4 | 0 | 5 | 0 | 9 | 14
+INPUTP | 1 | 263
+IMPORTS | 1 | 9 | 14
+EQ | 18 | 
+   sensor_data_r<5>.D = i2c/state_FSM_FFd3 & sensor_data_r<5>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<5>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<5>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<5>
+;Imported pterms FB10_15
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<4>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT1.PIN;
+   sensor_data_r<5>.CLK = CLK;	// GCK
+   sensor_data_r<5>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 11 | 17 | sensor_data_r<6>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 11 | 0 | 11 | 17 | 11 | 14 | 2 | 15 | 11 | 16
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<6>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP77_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 11 | 17 | 4 | 0 | 5 | 0 | 11 | 16
+INPUTP | 1 | 263
+IMPORTS | 1 | 11 | 16
+EQ | 18 | 
+   sensor_data_r<6>.D = i2c/state_FSM_FFd3 & sensor_data_r<6>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<6>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<6>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<6>
+;Imported pterms FB12_17
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<5>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT1.PIN;
+   sensor_data_r<6>.CLK = CLK;	// GCK
+   sensor_data_r<6>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 2 | i2c/state_FSM_FFd1
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 3 | 2 | 14 | 2 | 0 | 2 | 1
+INPUTS | 2 | i2c/state_FSM_FFd2  | RES
+INPUTMC | 1 | 2 | 5
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd1.D = i2c/state_FSM_FFd2;
+   i2c/state_FSM_FFd1.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd1.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 3 | i2c/state_FSM_FFd13
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 2 | 6 | 15 | 10 | 15
+INPUTS | 3 | i2c/i<3>  | i2c/state_FSM_FFd14  | RES
+INPUTMC | 2 | 1 | 16 | 9 | 13
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd13.D = !i2c/i<3> & i2c/state_FSM_FFd14;
+   i2c/state_FSM_FFd13.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd13.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 4 | i2c/state_FSM_FFd18
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 2 | 6 | 12 | 10 | 14
+INPUTS | 3 | i2c/i<3>  | i2c/state_FSM_FFd19  | RES
+INPUTMC | 2 | 1 | 16 | 1 | 7
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd18.D = !i2c/i<3> & i2c/state_FSM_FFd19;
+   i2c/state_FSM_FFd18.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd18.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 8 | i2c/state_FSM_FFd5
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 2 | 4 | 0 | 10 | 15
+INPUTS | 3 | i2c/i<3>  | i2c/state_FSM_FFd6  | RES
+INPUTMC | 2 | 1 | 16 | 5 | 0
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd5.D = !i2c/i<3> & i2c/state_FSM_FFd6;
+   i2c/state_FSM_FFd5.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd5.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 9 | i2c/state_FSM_FFd9
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 2 | 4 | 17 | 10 | 15
+INPUTS | 3 | i2c/i<3>  | i2c/state_FSM_FFd10  | RES
+INPUTMC | 2 | 1 | 16 | 5 | 10
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd9.D = !i2c/i<3> & i2c/state_FSM_FFd10;
+   i2c/state_FSM_FFd9.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd9.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 13 | i2c/temp<0>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 6 | 6 | 13 | 6 | 16 | 6 | 0 | 6 | 1 | 6 | 2 | 6 | 14
+INPUTS | 8 | i2c/state_FSM_FFd12  | i2c/temp<0>  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | SDA_OUT4.PIN  | _and0002.EXP  | RES
+INPUTMC | 5 | 5 | 9 | 6 | 13 | 13 | 6 | 8 | 9 | 6 | 14
+INPUTP | 3 | 39 | 61 | 263
+IMPORTS | 1 | 6 | 14
+EQ | 17 | 
+   !i2c/temp<0>.T = i2c/state_FSM_FFd12 & i2c/temp<0>
+	# !i2c/state_FSM_FFd12 & !i2c/temp<0>
+	# sensor_n<5> & sensor_n<6> & !i2c/temp<0> & 
+	SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/temp<0> & 
+	SDA_OUT1.PIN
+;Imported pterms FB7_15
+	# sensor_n<5> & !sensor_n<6> & !i2c/temp<0> & 
+	SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/temp<0> & 
+	SDA_OUT3.PIN
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd21 & i2c/temp<0>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/temp<0>;
+   i2c/temp<0>.CLK = CLK;	// GCK
+   i2c/temp<0>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 16 | i2c/temp<4>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 4 | 4 | 16 | 4 | 14 | 4 | 15 | 4 | 17
+INPUTS | 12 | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21  | i2c/temp<3>  | i2c/state_FSM_FFd16  | i2c/temp<4>  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | EXP43_.EXP  | i2c/state_FSM_FFd7.EXP  | RES
+INPUTMC | 10 | 4 | 17 | 5 | 9 | 2 | 7 | 6 | 2 | 6 | 12 | 4 | 16 | 13 | 6 | 8 | 9 | 4 | 15 | 4 | 17
+INPUTP | 2 | 39 | 263
+IMPORTS | 2 | 4 | 15 | 4 | 17
+EQ | 32 | 
+   !i2c/temp<4>.D = i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd12 & i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4>
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB5_16
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT1.PIN
+;Imported pterms FB5_15
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<4>
+;Imported pterms FB5_18
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<4> & !i2c/temp<3>;
+   i2c/temp<4>.CLK = CLK;	// GCK
+   i2c/temp<4>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 11 | 15 | sensor_data_r<7>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 4 | 12 | 17 | 11 | 15 | 2 | 15 | 11 | 14
+INPUTS | 10 | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | sensor_data_r<7>  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd6  | EXP76_.EXP  | RES
+INPUTMC | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 11 | 15 | 4 | 0 | 5 | 0 | 11 | 14
+INPUTP | 1 | 263
+IMPORTS | 1 | 11 | 14
+EQ | 18 | 
+   sensor_data_r<7>.D = i2c/state_FSM_FFd3 & sensor_data_r<7>
+	# i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<7>
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	sensor_data_r<7>
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<7>
+;Imported pterms FB12_15
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<6>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT1.PIN;
+   sensor_data_r<7>.CLK = CLK;	// GCK
+   sensor_data_r<7>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 6 | i2c/state_FSM_FFd20
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 2 | 1 | 7 | 10 | 17
+INPUTS | 2 | i2c/state_FSM_FFd21  | RES
+INPUTMC | 1 | 2 | 7
+INPUTP | 1 | 263
+EQ | 3 | 
+   i2c/state_FSM_FFd20.D = i2c/state_FSM_FFd21;
+   i2c/state_FSM_FFd20.CLK = CLK;	// GCK
+   i2c/state_FSM_FFd20.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 17 | i2c/temp<1>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 9 | 6 | 16 | 6 | 8 | 6 | 0 | 6 | 1 | 6 | 2 | 6 | 7 | 6 | 10 | 6 | 11 | 6 | 15
+INPUTS | 15 | i2c/i<3>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd21  | sensor_n<5>  | sensor_n<6>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT4.PIN  | EXP50_.EXP  | EXP59_.EXP  | RES
+INPUTMC | 11 | 1 | 16 | 4 | 17 | 6 | 12 | 0 | 12 | 1 | 4 | 1 | 12 | 2 | 7 | 13 | 6 | 8 | 9 | 6 | 0 | 6 | 16
+INPUTP | 4 | 20 | 89 | 61 | 263
+IMPORTS | 2 | 6 | 0 | 6 | 16
+EQ | 49 | 
+   !i2c/temp<1>.T = sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21
+;Imported pterms FB7_1
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT1.PIN
+;Imported pterms FB7_2
+	# !sensor_n<2> & !i2c/temp<0> & !i2c/temp<1>
+	# i2c/state_FSM_FFd7 & i2c/temp<0> & i2c/temp<1>
+	# i2c/state_FSM_FFd16 & i2c/temp<0> & i2c/temp<1>
+	# !sensor_n<2> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<1>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+;Imported pterms FB7_3
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1>
+;Imported pterms FB7_17
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<1>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<0> & !i2c/temp<1>
+;Imported pterms FB7_16
+	# sensor_n<2> & i2c/state_FSM_FFd12 & i2c/temp<1>
+	# sensor_n<2> & i2c/state_FSM_FFd21 & i2c/temp<1>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT1.PIN;
+   i2c/temp<1>.CLK = CLK;	// GCK
+   i2c/temp<1>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 9 | i2c/temp<2>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 8 | 6 | 8 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 6 | 6 | 7 | 6 | 10 | 6 | 11
+INPUTS | 15 | i2c/i<3>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd21  | sensor_n<5>  | sensor_n<6>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT4.PIN  | EXP57_.EXP  | EXP58_.EXP  | RES
+INPUTMC | 11 | 1 | 16 | 4 | 17 | 6 | 12 | 0 | 12 | 1 | 4 | 1 | 12 | 2 | 7 | 13 | 6 | 8 | 9 | 6 | 8 | 6 | 10
+INPUTP | 4 | 20 | 89 | 61 | 263
+IMPORTS | 2 | 6 | 8 | 6 | 10
+EQ | 48 | 
+   !i2c/temp<2>.T = sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21
+;Imported pterms FB7_9
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<2>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<1> & !i2c/temp<2>
+;Imported pterms FB7_8
+	# sensor_n<3> & i2c/state_FSM_FFd12 & i2c/temp<2>
+	# sensor_n<3> & i2c/state_FSM_FFd21 & i2c/temp<2>
+	# i2c/state_FSM_FFd7 & i2c/temp<1> & i2c/temp<2>
+	# i2c/state_FSM_FFd16 & i2c/temp<1> & i2c/temp<2>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT1.PIN
+;Imported pterms FB7_11
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT1.PIN
+;Imported pterms FB7_12
+	# !sensor_n<3> & !i2c/temp<1> & !i2c/temp<2>
+	# !sensor_n<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<2>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2>;
+   i2c/temp<2>.CLK = CLK;	// GCK
+   i2c/temp<2>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 2 | i2c/temp<3>
+ATTRIBUTES | 4358976 | 0
+OUTPUTMC | 8 | 4 | 16 | 4 | 17 | 4 | 15 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 6 | 6 | 1
+INPUTS | 16 | i2c/i<3>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd21  | sensor_n<5>  | sensor_n<6>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd12  | i2c/temp<0>  | i2c/temp<1>  | EXP52_.EXP  | RES
+INPUTMC | 13 | 1 | 16 | 4 | 17 | 6 | 12 | 0 | 12 | 1 | 4 | 1 | 12 | 2 | 7 | 13 | 6 | 8 | 9 | 5 | 9 | 6 | 13 | 6 | 17 | 6 | 3
+INPUTP | 3 | 20 | 89 | 263
+EXPORTS | 1 | 6 | 1
+IMPORTS | 1 | 6 | 3
+EQ | 50 | 
+   !i2c/temp<3>.T = sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21
+;Imported pterms FB7_4
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<3>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<2> & !i2c/temp<3>
+;Imported pterms FB7_5
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_6
+	# sensor_n<4> & i2c/state_FSM_FFd12 & i2c/temp<3>
+	# sensor_n<4> & i2c/state_FSM_FFd21 & i2c/temp<3>
+	# i2c/state_FSM_FFd16 & i2c/temp<2> & i2c/temp<3>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_7
+	# !sensor_n<4> & !i2c/temp<2> & !i2c/temp<3>
+	# i2c/state_FSM_FFd7 & i2c/temp<2> & i2c/temp<3>
+	# !sensor_n<4> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3>;
+   i2c/temp<3>.CLK = CLK;	// GCK
+   i2c/temp<3>.CE = !RES;
+    i2c/temp<3>.EXP  =  !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1>
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 14 | i2c/temp<5>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 4 | 4 | 14 | 4 | 12 | 4 | 13 | 4 | 15
+INPUTS | 12 | i2c/state_FSM_FFd7  | i2c/temp<4>  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21  | i2c/temp<5>  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | EXP42_.EXP  | RES
+INPUTMC | 11 | 4 | 17 | 4 | 16 | 6 | 12 | 5 | 9 | 2 | 7 | 4 | 14 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 4 | 13
+INPUTP | 1 | 263
+EXPORTS | 1 | 4 | 15
+IMPORTS | 1 | 4 | 13
+EQ | 20 | 
+   i2c/temp<5>.D = i2c/state_FSM_FFd7 & i2c/temp<4>
+	# i2c/state_FSM_FFd16 & i2c/temp<4>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & i2c/temp<5>
+;Imported pterms FB5_14
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<5>;
+   i2c/temp<5>.CLK = CLK;	// GCK
+   i2c/temp<5>.CE = !RES;
+    i2c/temp<5>.EXP  =  !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<4>
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 4 | 12 | i2c/temp<6>
+ATTRIBUTES | 8553280 | 0
+OUTPUTMC | 5 | 5 | 12 | 4 | 12 | 4 | 11 | 5 | 11 | 5 | 13
+INPUTS | 11 | i2c/state_FSM_FFd7  | i2c/temp<5>  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21  | i2c/temp<6>  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN  | EXP41_.EXP  | RES
+INPUTMC | 9 | 4 | 17 | 4 | 14 | 6 | 12 | 5 | 9 | 2 | 7 | 4 | 12 | 13 | 6 | 8 | 9 | 4 | 11
+INPUTP | 2 | 39 | 263
+IMPORTS | 1 | 4 | 11
+EQ | 17 | 
+   i2c/temp<6>.D = i2c/state_FSM_FFd7 & i2c/temp<5>
+	# i2c/state_FSM_FFd16 & i2c/temp<5>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT1.PIN
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & i2c/temp<6>
+;Imported pterms FB5_12
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT3.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<6>;
+   i2c/temp<6>.CLK = CLK;	// GCK
+   i2c/temp<6>.CE = !RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 2 | 1 | i2c_end
+ATTRIBUTES | 8553232 | 0
+OUTPUTMC | 2 | 2 | 1 | 2 | 11
+INPUTS | 4 | i2c/state_FSM_FFd1  | i2c/state_FSM_FFd22  | i2c_end  | RES
+INPUTMC | 3 | 2 | 2 | 2 | 0 | 2 | 1
+INPUTP | 1 | 263
+EQ | 4 | 
+   i2c_end.D = i2c/state_FSM_FFd1
+	# !i2c/state_FSM_FFd22 & i2c_end;
+   i2c_end.CLK = CLK;	// GCK
+   i2c_end.AR = RES;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 6 | 11 | SDA_MASTER$BUF0
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 6 | 10
+INPUTS | 11 | sensor_n<3>  | sensor_n<5>  | sensor_n<6>  | SDA_EN  | i2c/temp<1>  | i2c/temp<2>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21  | i2c/state_FSM_FFd16.EXP
+INPUTMC | 11 | 13 | 11 | 13 | 6 | 8 | 9 | 0 | 16 | 6 | 17 | 6 | 9 | 4 | 17 | 6 | 12 | 5 | 9 | 2 | 7 | 6 | 12
+EXPORTS | 1 | 6 | 10
+IMPORTS | 1 | 6 | 12
+EQ | 10 | 
+   SDA_OUT3 = ;Imported pterms FB7_13
+	  SDA_OUT4;
+   SDA_OUT3.OE = !sensor_n<5> & sensor_n<6> & SDA_EN;
+    SDA_MASTER$BUF0.EXP  =  !sensor_n<3> & !i2c/temp<1> & !i2c/temp<2>
+	# !sensor_n<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<2>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2>
+
+MACROCELL | 1 | 1 | SDA_MASTER$BUF1
+ATTRIBUTES | 265986 | 0
+OUTPUTMC | 1 | 1 | 2
+INPUTS | 5 | SDA_OUT4  | sensor_n<5>  | sensor_n<6>  | SDA_EN  | SCL
+INPUTMC | 5 | 2 | 14 | 13 | 6 | 8 | 9 | 0 | 16 | 10 | 15
+EXPORTS | 1 | 1 | 2
+EQ | 3 | 
+   SDA_OUT2 = SDA_OUT4;
+   SDA_OUT2.OE = sensor_n<5> & !sensor_n<6> & SDA_EN;
+    SDA_MASTER$BUF1.EXP  =  sensor_n<5> & !sensor_n<6> & SCL
+
+MACROCELL | 0 | 7 | SDA_MASTER$BUF2
+ATTRIBUTES | 265986 | 0
+INPUTS | 4 | SDA_OUT4  | sensor_n<5>  | sensor_n<6>  | SDA_EN
+INPUTMC | 4 | 2 | 14 | 13 | 6 | 8 | 9 | 0 | 16
+EQ | 2 | 
+   SDA_OUT1 = SDA_OUT4;
+   SDA_OUT1.OE = !sensor_n<5> & !sensor_n<6> & SDA_EN;
+
+MACROCELL | 0 | 9 | _and0000
+ATTRIBUTES | 264960 | 0
+INPUTS | 3 | sensor_n<5>  | sensor_n<6>  | SCL
+INPUTMC | 3 | 13 | 6 | 8 | 9 | 10 | 15
+EQ | 1 | 
+   SCL_OUT1 = !sensor_n<5> & !sensor_n<6> & SCL;
+
+MACROCELL | 1 | 2 | _and0001
+ATTRIBUTES | 264960 | 0
+OUTPUTMC | 1 | 1 | 3
+INPUTS | 9 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/i<1>  | SDA_OUT4.PIN  | i2c/state_FSM_FFd17  | i2c/state_FSM_FFd8  | SDA_OUT3.PIN  | SDA_MASTER$BUF1.EXP
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 5 | 9 | 1 | 4 | 9 | 0 | 0 | 5 | 1 | 1
+INPUTP | 2 | 61 | 89
+EXPORTS | 1 | 1 | 3
+IMPORTS | 1 | 1 | 1
+EQ | 12 | 
+   SCL_OUT2 = ;Imported pterms FB2_2
+	  sensor_n<5> & !sensor_n<6> & SCL;
+    _and0001.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+
+MACROCELL | 6 | 14 | _and0002
+ATTRIBUTES | 264960 | 0
+OUTPUTMC | 1 | 6 | 13
+INPUTS | 13 | sensor_n<5>  | sensor_n<6>  | SCL  | i2c/temp<0>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd21  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>
+INPUTMC | 11 | 13 | 6 | 8 | 9 | 10 | 15 | 6 | 13 | 4 | 17 | 6 | 12 | 2 | 7 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 2 | 20 | 89
+EXPORTS | 1 | 6 | 13
+EQ | 9 | 
+   SCL_OUT3 = !sensor_n<5> & sensor_n<6> & SCL;
+    _and0002.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/temp<0> & 
+	SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/temp<0> & 
+	SDA_OUT3.PIN
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd21 & i2c/temp<0>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/temp<0>
+
+MACROCELL | 4 | 1 | _and0003
+ATTRIBUTES | 264960 | 0
+INPUTS | 3 | sensor_n<5>  | sensor_n<6>  | SCL
+INPUTMC | 3 | 13 | 6 | 8 | 9 | 10 | 15
+EQ | 1 | 
+   SCL_OUT4 = sensor_n<5> & sensor_n<6> & SCL;
+
+MACROCELL | 2 | 11 | sensor_n<0>/sensor_n<0>_RSTF__$INT
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 8 | 11
+INPUTS | 2 | RES  | i2c_end
+INPUTMC | 1 | 2 | 1
+INPUTP | 1 | 263
+EQ | 1 | 
+   sensor_n<0>/sensor_n<0>_RSTF__$INT = !RES & !i2c_end;
+
+MACROCELL | 15 | 0 | outDATA<0>/outDATA<0>_RSTF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 2 | 15 | 11 | 15 | 17
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<0>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<0>  | sensor_data_w<0>  | sensor_reg<1>  | EXP79_.EXP
+INPUTMC | 5 | 15 | 11 | 0 | 3 | 8 | 15 | 8 | 6 | 15 | 1
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+EXPORTS | 1 | 15 | 17
+IMPORTS | 1 | 15 | 1
+EQ | 20 | 
+   outDATA<0>/outDATA<0>_RSTF = ADR<3> & !ADR<7> & !ADR<5> & !Data<0> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & !Data<0> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# !sensor_data_w<0> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & !sensor_data_r<0> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB16_2
+	# !sensor_n<0> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# !sensor_reg<0> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+    outDATA<0>/outDATA<0>_RSTF.EXP  =  sensor_reg<1> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+MACROCELL | 15 | 17 | outDATA<1>/outDATA<1>_SETF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 2
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<1>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<1>  | sensor_data_w<1>  | sensor_n<1>  | outDATA<0>/outDATA<0>_RSTF.EXP
+INPUTMC | 5 | 13 | 2 | 9 | 17 | 8 | 14 | 8 | 10 | 15 | 0
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 15 | 0
+EQ | 17 | 
+   outDATA<1>/outDATA<1>_SETF = ADR<3> & !ADR<7> & !ADR<5> & Data<1> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & Data<1> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# sensor_n<1> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# sensor_data_w<1> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & sensor_data_r<1> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB16_1
+	# sensor_reg<1> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 15 | 16 | outDATA<2>/outDATA<2>_RSTF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 4
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<2>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<2>  | sensor_data_w<2>  | sensor_n<2>  | EXP81_.EXP
+INPUTMC | 5 | 13 | 4 | 7 | 14 | 13 | 17 | 13 | 12 | 15 | 15
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 15 | 15
+EQ | 17 | 
+   outDATA<2>/outDATA<2>_RSTF = ADR<3> & !ADR<7> & !ADR<5> & !Data<2> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & !Data<2> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# !sensor_data_w<2> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# !sensor_n<2> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & !sensor_data_r<2> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB16_16
+	# !sensor_reg<2> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 15 | 14 | outDATA<3>/outDATA<3>_RSTF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 5
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<3>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<3>  | sensor_data_w<3>  | sensor_n<3>  | EXP80_.EXP
+INPUTMC | 5 | 13 | 5 | 7 | 12 | 13 | 16 | 13 | 11 | 15 | 13
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 15 | 13
+EQ | 17 | 
+   outDATA<3>/outDATA<3>_RSTF = ADR<3> & !ADR<7> & !ADR<5> & !Data<3> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & !Data<3> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# !sensor_data_w<3> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# !sensor_n<3> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & !sensor_data_r<3> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB16_14
+	# !sensor_reg<3> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 8 | 17 | outDATA<4>/outDATA<4>_SETF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 7
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<4>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<4>  | sensor_data_w<4>  | sensor_n<4>  | EXP66_.EXP
+INPUTMC | 5 | 13 | 7 | 7 | 10 | 13 | 15 | 13 | 8 | 8 | 0
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 8 | 0
+EQ | 17 | 
+   outDATA<4>/outDATA<4>_SETF = ADR<3> & !ADR<7> & !ADR<5> & Data<4> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & Data<4> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# sensor_data_w<4> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# sensor_n<4> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & sensor_data_r<4> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB9_1
+	# sensor_reg<4> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 8 | 16 | outDATA<5>/outDATA<5>_SETF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 9
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<5>  | sensor_data_w<5>  | sensor_n<5>  | sensor_data_w<0>.EXP
+INPUTMC | 5 | 13 | 9 | 9 | 15 | 13 | 13 | 13 | 6 | 8 | 15
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 8 | 15
+EQ | 17 | 
+   outDATA<5>/outDATA<5>_SETF = ADR<3> & !ADR<7> & !ADR<5> & Data<5> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & Data<5> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# sensor_n<5> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# sensor_data_w<5> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & sensor_data_r<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB9_16
+	# sensor_reg<5> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 11 | 0 | outDATA<6>/outDATA<6>_RSTF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 10
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<6>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<6>  | sensor_data_w<6>  | sensor_n<6>  | EXP75_.EXP
+INPUTMC | 5 | 13 | 10 | 11 | 17 | 8 | 13 | 8 | 9 | 11 | 1
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 11 | 1
+EQ | 17 | 
+   outDATA<6>/outDATA<6>_RSTF = ADR<3> & !ADR<7> & !ADR<5> & !Data<6> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & !Data<6> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# !sensor_n<6> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# !sensor_data_w<6> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & !sensor_data_r<6> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB12_2
+	# !sensor_reg<6> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 12 | 17 | outDATA<7>/outDATA<7>_SETF
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 1 | 13 | 14
+INPUTS | 15 | ADR<2>  | ADR<7>  | ADR<5>  | Data<7>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | ADR<3>  | ADR<1>  | ADR<0>  | sensor_data_r<7>  | sensor_data_w<7>  | sensor_n<7>  | EXP78_.EXP
+INPUTMC | 5 | 13 | 14 | 11 | 15 | 8 | 12 | 8 | 8 | 12 | 16
+INPUTP | 10 | 202 | 231 | 225 | 227 | 207 | 234 | 235 | 204 | 201 | 199
+IMPORTS | 1 | 12 | 16
+EQ | 17 | 
+   outDATA<7>/outDATA<7>_SETF = ADR<3> & !ADR<7> & !ADR<5> & Data<7> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# ADR<2> & !ADR<7> & !ADR<5> & Data<7> & ADR<6> & 
+	ADR<4> & !ADR<8> & !ADR<9>
+	# sensor_data_w<7> & ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# sensor_n<7> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# ADR<1> & !ADR<3> & !ADR<2> & ADR<0> & !ADR<7> & 
+	!ADR<5> & sensor_data_r<7> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+;Imported pterms FB13_17
+	# sensor_reg<7> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>;
+
+MACROCELL | 0 | 10 | $OpTx$$OpTx$FX_DC$45_INV$798
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 7 | 1 | 16 | 1 | 12 | 1 | 0 | 1 | 11 | 1 | 14 | 1 | 15 | 0 | 11
+INPUTS | 13 | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/state_FSM_FFd4  | $OpTx$$OpTx$FX_DC$18_INV$797  | sensor_n<5>  | sensor_n<6>  | SDA_OUT2.PIN  | SDA_OUT1.PIN  | $OpTx$FX_DC$21
+INPUTMC | 11 | 4 | 17 | 6 | 12 | 6 | 15 | 4 | 0 | 0 | 5 | 0 | 12 | 0 | 8 | 1 | 6 | 13 | 6 | 8 | 9 | 0 | 6
+INPUTP | 2 | 20 | 39
+EXPORTS | 1 | 0 | 11
+EQ | 15 | 
+   $OpTx$$OpTx$FX_DC$45_INV$798 = !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3;
+    $OpTx$$OpTx$FX_DC$45_INV$798.EXP  =  !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & $OpTx$$OpTx$FX_DC$18_INV$797
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT1.PIN
+	# sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & $OpTx$$OpTx$FX_DC$18_INV$797 & 
+	$OpTx$FX_DC$21
+
+MACROCELL | 1 | 6 | $OpTx$$OpTx$FX_DC$18_INV$797
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 7 | 0 | 11 | 10 | 13 | 0 | 10 | 0 | 14 | 10 | 16 | 10 | 17 | 1 | 5
+INPUTS | 17 | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd17  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | i2c/i<1>  | SDA_OUT2.PIN  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd15
+INPUTMC | 16 | 5 | 9 | 9 | 0 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 4 | 5 | 0 | 4 | 17 | 6 | 12 | 6 | 15 | 4 | 0 | 5 | 10 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10
+INPUTP | 1 | 20
+EXPORTS | 1 | 1 | 5
+EQ | 12 | 
+   $OpTx$$OpTx$FX_DC$18_INV$797 = !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd17;
+    $OpTx$$OpTx$FX_DC$18_INV$797.EXP  =  sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17
+
+MACROCELL | 0 | 6 | $OpTx$FX_DC$21
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 4 | 0 | 11 | 0 | 10 | 0 | 14 | 0 | 5
+INPUTS | 10 | sensor_n<5>  | SDA_OUT3.PIN  | SDA_OUT4.PIN  | sensor_n<6>  | i2c/i<3>  | i2c/state_FSM_FFd8  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | SDA_OUT2.PIN
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 3 | 89 | 61 | 20
+EXPORTS | 1 | 0 | 5
+EQ | 4 | 
+   $OpTx$FX_DC$21 = sensor_n<5> & SDA_OUT4.PIN
+	# !sensor_n<5> & SDA_OUT3.PIN;
+    $OpTx$FX_DC$21.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd8 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+
+MACROCELL | 2 | 10 | $OpTx$$OpTx$FX_DC$46_INV$799
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 2 | 10 | 14 | 10 | 17
+INPUTS | 4 | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19
+INPUTMC | 4 | 5 | 0 | 5 | 10 | 9 | 13 | 1 | 7
+EQ | 2 | 
+   $OpTx$$OpTx$FX_DC$46_INV$799 = !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19;
+
+MACROCELL | 1 | 0 | $OpTx$$OpTx$FX_DC$47_INV$800
+ATTRIBUTES | 133888 | 0
+OUTPUTMC | 4 | 10 | 13 | 10 | 16 | 10 | 17 | 1 | 17
+INPUTS | 16 | i2c/state_FSM_FFd8  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd17  | sensor_n<5>  | sensor_n<6>  | i2c/i<3>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd15  | $OpTx$$OpTx$FX_DC$45_INV$798
+INPUTMC | 13 | 0 | 5 | 5 | 9 | 9 | 0 | 13 | 6 | 8 | 9 | 1 | 16 | 5 | 0 | 5 | 10 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10 | 0 | 10
+INPUTP | 3 | 61 | 20 | 89
+EXPORTS | 1 | 1 | 17
+EQ | 13 | 
+   $OpTx$$OpTx$FX_DC$47_INV$800 = !i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd17;
+    $OpTx$$OpTx$FX_DC$47_INV$800.EXP  =  sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+	# i2c/i<3> & !i2c/state_FSM_FFd6 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17 & 
+	$OpTx$$OpTx$FX_DC$45_INV$798
+
+MACROCELL | 0 | 0 | EXP18_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 17
+INPUTS | 5 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | SDA_EN  | SDA_OUT2.PIN
+INPUTMC | 4 | 13 | 6 | 8 | 9 | 0 | 5 | 0 | 16
+INPUTP | 1 | 20
+EXPORTS | 1 | 0 | 17
+EQ | 2 | 
+       EXP18_.EXP  =  sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT2.PIN
+
+MACROCELL | 0 | 2 | EXP19_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 3
+INPUTS | 7 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd3  | SDA_OUT2.PIN  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd8  | sensor_data_r<0>
+INPUTMC | 6 | 13 | 6 | 8 | 9 | 4 | 0 | 5 | 0 | 0 | 5 | 0 | 3
+INPUTP | 1 | 20
+EXPORTS | 1 | 0 | 3
+EQ | 4 | 
+       EXP19_.EXP  =  sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd3 & 
+	SDA_OUT2.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd3 & sensor_data_r<0>
+
+MACROCELL | 0 | 4 | EXP20_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 3
+INPUTS | 12 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<0>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>
+INPUTMC | 8 | 13 | 6 | 8 | 9 | 0 | 5 | 0 | 3 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 0 | 3
+EQ | 10 | 
+       EXP20_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<0> & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd8 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & sensor_data_r<0>
+
+MACROCELL | 0 | 11 | EXP21_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 12
+INPUTS | 11 | i2c/i<3>  | i2c/i<0>  | i2c/state_FSM_FFd14  | sensor_n<6>  | i2c/state_FSM_FFd8  | $OpTx$FX_DC$21  | $OpTx$$OpTx$FX_DC$18_INV$797  | sensor_n<5>  | SDA_OUT2.PIN  | SDA_OUT1.PIN  | $OpTx$$OpTx$FX_DC$45_INV$798.EXP
+INPUTMC | 9 | 1 | 16 | 0 | 12 | 9 | 13 | 8 | 9 | 0 | 5 | 0 | 6 | 1 | 6 | 13 | 6 | 0 | 10
+INPUTP | 2 | 20 | 39
+EXPORTS | 1 | 0 | 12
+IMPORTS | 1 | 0 | 10
+EQ | 23 | 
+       EXP21_.EXP  =  !i2c/i<3> & i2c/i<0> & i2c/state_FSM_FFd14
+	# sensor_n<6> & i2c/state_FSM_FFd8 & i2c/i<0> & 
+	$OpTx$FX_DC$21
+	# sensor_n<6> & i2c/i<0> & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797 & $OpTx$FX_DC$21
+	# sensor_n<5> & !sensor_n<6> & i2c/i<0> & 
+	SDA_OUT2.PIN & !$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<0> & 
+	SDA_OUT1.PIN & !$OpTx$$OpTx$FX_DC$18_INV$797
+;Imported pterms FB1_11
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & $OpTx$$OpTx$FX_DC$18_INV$797
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT1.PIN
+	# sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & $OpTx$$OpTx$FX_DC$18_INV$797 & 
+	$OpTx$FX_DC$21
+
+MACROCELL | 0 | 13 | EXP22_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 12
+INPUTS | 14 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | i2c/i<0>  | SDA_OUT2.PIN  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd3  | i2c/i<1>  | i2c/i<2>  | EXP23_.EXP
+INPUTMC | 12 | 13 | 6 | 8 | 9 | 0 | 5 | 0 | 12 | 1 | 16 | 4 | 17 | 6 | 12 | 6 | 15 | 4 | 0 | 1 | 4 | 1 | 12 | 0 | 14
+INPUTP | 2 | 20 | 39
+EXPORTS | 1 | 0 | 12
+IMPORTS | 1 | 0 | 14
+EQ | 35 | 
+       EXP22_.EXP  =  sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<0> & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<0> & SDA_OUT1.PIN
+	# i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/i<0> & i2c/i<1> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/i<0> & i2c/i<2> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3
+;Imported pterms FB1_15
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & !i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & 
+	SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT4.PIN & 
+	$OpTx$FX_DC$21
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & !i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT3.PIN & 
+	$OpTx$FX_DC$21
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & $OpTx$$OpTx$FX_DC$18_INV$797
+
+MACROCELL | 0 | 14 | EXP23_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 13
+INPUTS | 19 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd8  | i2c/state_FSM_FFd16  | i2c/i<0>  | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd4  | SDA_OUT4.PIN  | $OpTx$FX_DC$21  | SDA_OUT3.PIN  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd15  | $OpTx$$OpTx$FX_DC$18_INV$797
+INPUTMC | 17 | 13 | 6 | 8 | 9 | 4 | 17 | 0 | 5 | 6 | 12 | 0 | 12 | 6 | 15 | 4 | 0 | 0 | 8 | 0 | 6 | 5 | 0 | 5 | 10 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10 | 1 | 6
+INPUTP | 2 | 61 | 89
+EXPORTS | 1 | 0 | 13
+EQ | 21 | 
+       EXP23_.EXP  =  sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & !i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & 
+	SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT4.PIN & 
+	$OpTx$FX_DC$21
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & !i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/state_FSM_FFd11 & 
+	!i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd4 & SDA_OUT3.PIN & 
+	$OpTx$FX_DC$21
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd16 & i2c/i<0> & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & $OpTx$$OpTx$FX_DC$18_INV$797
+
+MACROCELL | 0 | 15 | EXP24_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 16
+INPUTS | 7 | sensor_n<0>  | i2c/state_FSM_FFd22  | i2c/i<3>  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | SDA_EN  | i2c/state_FSM_FFd19
+INPUTMC | 7 | 8 | 11 | 2 | 0 | 1 | 16 | 5 | 10 | 9 | 13 | 0 | 16 | 1 | 7
+EXPORTS | 1 | 0 | 16
+EQ | 5 | 
+       EXP24_.EXP  =  sensor_n<0> & i2c/state_FSM_FFd22
+	# !i2c/i<3> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/state_FSM_FFd14
+	# i2c/state_FSM_FFd22 & SDA_EN
+	# !i2c/i<3> & i2c/state_FSM_FFd19 & SDA_EN
+
+MACROCELL | 0 | 17 | EXP25_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 16
+INPUTS | 15 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | SDA_EN  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | EXP18_.EXP
+INPUTMC | 12 | 13 | 6 | 8 | 9 | 0 | 5 | 0 | 16 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 5 | 10 | 9 | 13 | 1 | 7 | 0 | 0
+INPUTP | 3 | 61 | 89 | 39
+EXPORTS | 1 | 0 | 16
+IMPORTS | 1 | 0 | 0
+EQ | 13 | 
+       EXP25_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT1.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	SDA_EN
+	# !i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & SDA_EN
+;Imported pterms FB1_1
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_EN & SDA_OUT2.PIN
+
+MACROCELL | 1 | 3 | EXP26_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 4
+INPUTS | 9 | i2c/i<0>  | i2c/state_FSM_FFd3  | i2c/i<3>  | i2c/state_FSM_FFd6  | i2c/i<1>  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | _and0001.EXP
+INPUTMC | 9 | 0 | 12 | 4 | 0 | 1 | 16 | 5 | 0 | 1 | 4 | 5 | 10 | 9 | 13 | 1 | 7 | 1 | 2
+EXPORTS | 1 | 1 | 4
+IMPORTS | 1 | 1 | 2
+EQ | 16 | 
+       EXP26_.EXP  =  !i2c/i<0> & i2c/state_FSM_FFd3
+	# !i2c/i<3> & i2c/state_FSM_FFd6 & i2c/i<1>
+	# !i2c/i<3> & i2c/i<1> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/i<1> & i2c/state_FSM_FFd14
+	# !i2c/i<3> & i2c/i<1> & i2c/state_FSM_FFd19
+;Imported pterms FB2_3
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+
+MACROCELL | 1 | 5 | EXP27_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 4
+INPUTS | 13 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | i2c/i<1>  | SDA_OUT4.PIN  | SDA_OUT1.PIN  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd17  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd3  | $OpTx$$OpTx$FX_DC$18_INV$797.EXP
+INPUTMC | 11 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 4 | 5 | 9 | 9 | 0 | 4 | 17 | 6 | 12 | 6 | 15 | 4 | 0 | 1 | 6
+INPUTP | 2 | 61 | 39
+EXPORTS | 1 | 1 | 4
+IMPORTS | 1 | 1 | 6
+EQ | 22 | 
+       EXP27_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd16 & 
+	!i2c/i<1> & !i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3
+;Imported pterms FB2_7
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<1> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<1> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<1> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd16 & 
+	!i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17
+
+MACROCELL | 1 | 8 | EXP28_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 9
+INPUTS | 14 | sensor_n<1>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd4  | SDA_OUT2.PIN  | i2c/state_FSM_FFd8  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/state_FSM_FFd19.EXP
+INPUTMC | 10 | 8 | 10 | 13 | 6 | 8 | 9 | 0 | 8 | 0 | 5 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 1 | 7
+INPUTP | 4 | 20 | 61 | 89 | 39
+EXPORTS | 1 | 1 | 9
+IMPORTS | 1 | 1 | 7
+EQ | 16 | 
+       EXP28_.EXP  =  sensor_n<1> & sensor_n<5> & !sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT2.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT1.PIN
+;Imported pterms FB2_8
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd17
+
+MACROCELL | 1 | 9 | EXP29_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 10
+INPUTS | 9 | sensor_n<1>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd4  | SDA_OUT4.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd8  | SDA_OUT1.PIN  | EXP28_.EXP
+INPUTMC | 6 | 8 | 10 | 13 | 6 | 8 | 9 | 0 | 8 | 0 | 5 | 1 | 8
+INPUTP | 3 | 61 | 89 | 39
+EXPORTS | 1 | 1 | 10
+IMPORTS | 1 | 1 | 8
+EQ | 27 | 
+       EXP29_.EXP  =  sensor_n<1> & sensor_n<5> & sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT4.PIN
+	# sensor_n<1> & !sensor_n<5> & sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT1.PIN
+;Imported pterms FB2_9
+	# sensor_n<1> & sensor_n<5> & !sensor_n<6> & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd4 & !SDA_OUT2.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT1.PIN
+;Imported pterms FB2_8
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd17
+
+MACROCELL | 1 | 11 | EXP30_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 12
+INPUTS | 13 | i2c/i<3>  | i2c/state_FSM_FFd6  | i2c/i<2>  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/i<0>  | i2c/i<1>  | $OpTx$$OpTx$FX_DC$45_INV$798  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | SDA_OUT1.PIN  | i2c/state_FSM_FFd15.EXP
+INPUTMC | 12 | 1 | 16 | 5 | 0 | 1 | 12 | 5 | 10 | 9 | 13 | 0 | 12 | 1 | 4 | 0 | 10 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 10
+INPUTP | 1 | 39
+EXPORTS | 1 | 1 | 12
+IMPORTS | 1 | 1 | 10
+EQ | 12 | 
+       EXP30_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & i2c/i<2>
+	# !i2c/i<3> & i2c/i<2> & i2c/state_FSM_FFd10
+	# !i2c/i<3> & i2c/i<2> & i2c/state_FSM_FFd14
+	# i2c/i<0> & i2c/i<1> & !i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT1.PIN
+;Imported pterms FB2_11
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT3.PIN
+
+MACROCELL | 1 | 13 | EXP31_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 12
+INPUTS | 10 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | i2c/i<2>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | i2c/state_FSM_FFd12  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | EXP32_.EXP
+INPUTMC | 6 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 12 | 5 | 9 | 1 | 14
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 1 | 12
+IMPORTS | 1 | 1 | 14
+EQ | 24 | 
+       EXP31_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	i2c/i<2> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/i<2> & SDA_OUT1.PIN
+;Imported pterms FB2_15
+	# sensor_n<5> & sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & i2c/i<2> & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17 & 
+	$OpTx$$OpTx$FX_DC$45_INV$798
+
+MACROCELL | 1 | 14 | EXP32_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 13
+INPUTS | 17 | sensor_n<5>  | sensor_n<6>  | i2c/i<2>  | i2c/state_FSM_FFd17  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd8  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd10  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd15  | $OpTx$$OpTx$FX_DC$45_INV$798
+INPUTMC | 13 | 13 | 6 | 8 | 9 | 1 | 12 | 9 | 0 | 5 | 0 | 0 | 5 | 5 | 9 | 5 | 10 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10 | 0 | 10
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 1 | 13
+EQ | 13 | 
+       EXP32_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<2> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+	# !i2c/state_FSM_FFd6 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd12 & i2c/i<2> & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17 & 
+	$OpTx$$OpTx$FX_DC$45_INV$798
+
+MACROCELL | 1 | 15 | EXP33_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 16
+INPUTS | 12 | sensor_n<5>  | sensor_n<6>  | i2c/i<3>  | i2c/state_FSM_FFd8  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | $OpTx$$OpTx$FX_DC$45_INV$798
+INPUTMC | 8 | 13 | 6 | 8 | 9 | 1 | 16 | 0 | 5 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 10
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 1 | 16
+EQ | 10 | 
+       EXP33_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd8 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/i<0> & i2c/i<1> & i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$45_INV$798
+
+MACROCELL | 1 | 17 | EXP34_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 16
+INPUTS | 10 | sensor_n<5>  | sensor_n<6>  | i2c/i<3>  | i2c/state_FSM_FFd12  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/state_FSM_FFd17  | $OpTx$$OpTx$FX_DC$47_INV$800.EXP
+INPUTMC | 6 | 13 | 6 | 8 | 9 | 1 | 16 | 5 | 9 | 9 | 0 | 1 | 0
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 1 | 16
+IMPORTS | 1 | 1 | 0
+EQ | 22 | 
+       EXP34_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd12 & SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT1.PIN
+;Imported pterms FB2_1
+	# sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/i<3> & 
+	i2c/state_FSM_FFd17 & SDA_OUT3.PIN
+	# i2c/i<3> & !i2c/state_FSM_FFd6 & 
+	!i2c/state_FSM_FFd8 & !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd10 & 
+	!i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & !i2c/state_FSM_FFd2 & 
+	!i2c/state_FSM_FFd15 & !i2c/state_FSM_FFd17 & 
+	$OpTx$$OpTx$FX_DC$45_INV$798
+
+MACROCELL | 2 | 13 | EXP35_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 14
+INPUTS | 9 | sensor_n<0>  | i2c/state_FSM_FFd22  | SDA_OUT4  | i2c/i<3>  | i2c/state_FSM_FFd6  | i2c/temp_reg<7>  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | i2c/temp<7>
+INPUTMC | 9 | 8 | 11 | 2 | 0 | 2 | 14 | 1 | 16 | 5 | 0 | 3 | 17 | 9 | 13 | 1 | 7 | 5 | 12
+EXPORTS | 1 | 2 | 14
+EQ | 4 | 
+       EXP35_.EXP  =  sensor_n<0> & i2c/state_FSM_FFd22
+	# SDA_OUT4 & !i2c/i<3> & i2c/state_FSM_FFd6
+	# i2c/temp_reg<7> & !i2c/i<3> & i2c/state_FSM_FFd14
+	# !i2c/i<3> & i2c/state_FSM_FFd19 & i2c/temp<7>
+
+MACROCELL | 2 | 15 | EXP36_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 14
+INPUTS | 22 | sensor_n<1>  | i2c/i<3>  | i2c/state_FSM_FFd10  | i2c/temp<7>  | i2c/temp_output<7>  | SDA_OUT4  | i2c/state_FSM_FFd6  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd21  | i2c/state_FSM_FFd4  | i2c/state_FSM_FFd14  | i2c/state_FSM_FFd19  | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd15  | sensor_data_r<0>  | sensor_data_r<1>  | sensor_data_r<2>  | sensor_data_r<3>  | sensor_data_r<4>  | sensor_data_r<5>  | sensor_data_r<6>  | sensor_data_r<7>
+INPUTMC | 22 | 8 | 10 | 1 | 16 | 5 | 10 | 5 | 12 | 7 | 0 | 2 | 14 | 5 | 0 | 6 | 12 | 2 | 7 | 0 | 8 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10 | 0 | 3 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 11 | 15
+EXPORTS | 1 | 2 | 14
+EQ | 12 | 
+       EXP36_.EXP  =  sensor_n<1> & !i2c/i<3> & i2c/state_FSM_FFd10 & 
+	i2c/temp<7>
+	# !sensor_n<1> & i2c/temp_output<7> & !i2c/i<3> & 
+	i2c/state_FSM_FFd10
+	# SDA_OUT4 & !i2c/state_FSM_FFd6 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/state_FSM_FFd4 & 
+	!i2c/state_FSM_FFd10 & !i2c/state_FSM_FFd14 & !i2c/state_FSM_FFd19 & 
+	!i2c/state_FSM_FFd2 & !i2c/state_FSM_FFd15
+	# i2c/i<3> & i2c/state_FSM_FFd6 & !sensor_data_r<0> & 
+	!sensor_data_r<1> & !sensor_data_r<2> & !sensor_data_r<3> & 
+	!sensor_data_r<4> & !sensor_data_r<5> & !sensor_data_r<6> & 
+	!sensor_data_r<7>
+
+MACROCELL | 3 | 1 | EXP37_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 2
+INPUTS | 3 | sensor_n<0>  | sensor_reg<6>  | i2c/state_FSM_FFd22
+INPUTMC | 3 | 8 | 11 | 8 | 4 | 2 | 0
+EXPORTS | 1 | 3 | 2
+EQ | 2 | 
+       EXP37_.EXP  =  sensor_n<0> & sensor_reg<6> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 3 | 5 | EXP38_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 6
+INPUTS | 4 | sensor_n<0>  | sensor_reg<4>  | i2c/state_FSM_FFd22  | i2c/temp_reg<4>
+INPUTMC | 4 | 8 | 11 | 13 | 0 | 2 | 0 | 3 | 6
+EXPORTS | 1 | 3 | 6
+EQ | 4 | 
+       EXP38_.EXP  =  sensor_n<0> & sensor_reg<4> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<4> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 3 | 10 | EXP39_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 9
+INPUTS | 4 | sensor_n<0>  | sensor_reg<1>  | i2c/state_FSM_FFd22  | i2c/temp_reg<1>
+INPUTMC | 4 | 8 | 11 | 8 | 6 | 2 | 0 | 3 | 9
+EXPORTS | 1 | 3 | 9
+EQ | 4 | 
+       EXP39_.EXP  =  sensor_n<0> & sensor_reg<1> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<1> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 3 | 16 | EXP40_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 17
+INPUTS | 4 | sensor_n<0>  | sensor_reg<7>  | i2c/state_FSM_FFd22  | i2c/temp_reg<7>
+INPUTMC | 4 | 8 | 11 | 8 | 3 | 2 | 0 | 3 | 17
+EXPORTS | 1 | 3 | 17
+EQ | 4 | 
+       EXP40_.EXP  =  sensor_n<0> & sensor_reg<7> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_reg<7> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 4 | 11 | EXP41_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 12
+INPUTS | 11 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/temp<6>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>
+INPUTMC | 8 | 13 | 6 | 8 | 9 | 5 | 9 | 4 | 12 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 3 | 61 | 20 | 89
+EXPORTS | 1 | 4 | 12
+EQ | 8 | 
+       EXP41_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<6> & SDA_OUT3.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<6>
+
+MACROCELL | 4 | 13 | EXP42_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 14
+INPUTS | 12 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/temp<5>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>
+INPUTMC | 8 | 13 | 6 | 8 | 9 | 5 | 9 | 4 | 14 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 4 | 14
+EQ | 10 | 
+       EXP42_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<5> & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<5>
+
+MACROCELL | 4 | 15 | EXP43_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 16
+INPUTS | 12 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd21  | i2c/temp<4>  | i2c/temp<3>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | SDA_OUT1.PIN  | i2c/temp<5>.EXP
+INPUTMC | 8 | 13 | 6 | 8 | 9 | 2 | 7 | 4 | 16 | 6 | 2 | 4 | 17 | 6 | 12 | 4 | 14
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 4 | 16
+IMPORTS | 1 | 4 | 14
+EQ | 14 | 
+       EXP43_.EXP  =  sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<4> & !i2c/temp<3> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<4> & SDA_OUT1.PIN
+;Imported pterms FB5_15
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<4>
+
+MACROCELL | 5 | 1 | EXP44_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 0
+INPUTS | 9 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd3  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 4 | 0 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 2 | 20 | 89
+EXPORTS | 1 | 5 | 0
+EQ | 6 | 
+       EXP44_.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd3 & 
+	SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd3 & 
+	SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd3
+
+MACROCELL | 5 | 5 | EXP45_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 6
+INPUTS | 4 | sensor_n<0>  | sensor_data_w<2>  | i2c/state_FSM_FFd22  | i2c/temp_output<2>
+INPUTMC | 4 | 8 | 11 | 13 | 17 | 2 | 0 | 5 | 6
+EXPORTS | 1 | 5 | 6
+EQ | 4 | 
+       EXP45_.EXP  =  sensor_n<0> & sensor_data_w<2> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_output<2> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 5 | 8 | EXP46_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 9
+INPUTS | 10 | sensor_n<5>  | sensor_n<6>  | i2c/i<3>  | i2c/state_FSM_FFd12  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 1 | 16 | 5 | 9 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 3 | 61 | 20 | 89
+EXPORTS | 1 | 5 | 9
+EQ | 6 | 
+       EXP46_.EXP  =  sensor_n<5> & sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/i<3> & 
+	i2c/state_FSM_FFd12 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & !SDA_OUT3.PIN
+
+MACROCELL | 5 | 11 | EXP47_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 12
+INPUTS | 11 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd21  | i2c/temp<7>  | i2c/temp<6>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | SDA_OUT1.PIN
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 2 | 7 | 5 | 12 | 4 | 12 | 4 | 17 | 6 | 12
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 5 | 12
+EQ | 8 | 
+       EXP47_.EXP  =  sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<7> & !i2c/temp<6> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT1.PIN
+
+MACROCELL | 5 | 13 | EXP48_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 12
+INPUTS | 14 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd21  | i2c/temp<7>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/temp<6>
+INPUTMC | 11 | 13 | 6 | 8 | 9 | 4 | 17 | 6 | 12 | 2 | 7 | 5 | 12 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 4 | 12
+INPUTP | 3 | 61 | 20 | 89
+EXPORTS | 1 | 5 | 12
+EQ | 11 | 
+       EXP48_.EXP  =  sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & !i2c/temp<7> & SDA_OUT3.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<7> & !i2c/temp<6>
+	# !i2c/i<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<7>
+
+MACROCELL | 5 | 16 | EXP49_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 15
+INPUTS | 3 | i2c/temp_output<0>  | i2c/state_FSM_FFd22  | i2c/state_FSM_FFd7
+INPUTMC | 3 | 5 | 15 | 2 | 0 | 4 | 17
+EXPORTS | 1 | 5 | 15
+EQ | 2 | 
+       EXP49_.EXP  =  i2c/temp_output<0> & !i2c/state_FSM_FFd22 & 
+	!i2c/state_FSM_FFd7
+
+MACROCELL | 6 | 0 | EXP50_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 17
+INPUTS | 11 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/temp<1>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd21  | i2c/temp<0>  | SDA_OUT1.PIN  | EXP51_.EXP
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 5 | 9 | 6 | 17 | 2 | 7 | 6 | 13 | 6 | 1
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 6 | 17
+IMPORTS | 1 | 6 | 1
+EQ | 21 | 
+       EXP50_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT1.PIN
+;Imported pterms FB7_2
+	# !sensor_n<2> & !i2c/temp<0> & !i2c/temp<1>
+	# i2c/state_FSM_FFd7 & i2c/temp<0> & i2c/temp<1>
+	# i2c/state_FSM_FFd16 & i2c/temp<0> & i2c/temp<1>
+	# !sensor_n<2> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<1>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+;Imported pterms FB7_3
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1>
+
+MACROCELL | 6 | 1 | EXP51_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 0
+INPUTS | 8 | sensor_n<2>  | i2c/temp<0>  | i2c/temp<1>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21  | i2c/temp<3>.EXP
+INPUTMC | 8 | 13 | 12 | 6 | 13 | 6 | 17 | 4 | 17 | 6 | 12 | 5 | 9 | 2 | 7 | 6 | 2
+EXPORTS | 1 | 6 | 0
+IMPORTS | 1 | 6 | 2
+EQ | 10 | 
+       EXP51_.EXP  =  !sensor_n<2> & !i2c/temp<0> & !i2c/temp<1>
+	# i2c/state_FSM_FFd7 & i2c/temp<0> & i2c/temp<1>
+	# i2c/state_FSM_FFd16 & i2c/temp<0> & i2c/temp<1>
+	# !sensor_n<2> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<1>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+;Imported pterms FB7_3
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1>
+
+MACROCELL | 6 | 3 | EXP52_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 2
+INPUTS | 16 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd21  | SDA_OUT4.PIN  | i2c/temp<2>  | i2c/temp<3>  | SDA_OUT2.PIN  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/state_FSM_FFd12  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | EXP53_.EXP
+INPUTMC | 13 | 13 | 6 | 8 | 9 | 4 | 17 | 6 | 12 | 2 | 7 | 6 | 9 | 6 | 2 | 1 | 16 | 5 | 9 | 0 | 12 | 1 | 4 | 1 | 12 | 6 | 4
+INPUTP | 3 | 61 | 20 | 39
+EXPORTS | 1 | 6 | 2
+IMPORTS | 1 | 6 | 4
+EQ | 38 | 
+       EXP52_.EXP  =  sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<3>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<2> & !i2c/temp<3>
+;Imported pterms FB7_5
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_6
+	# sensor_n<4> & i2c/state_FSM_FFd12 & i2c/temp<3>
+	# sensor_n<4> & i2c/state_FSM_FFd21 & i2c/temp<3>
+	# i2c/state_FSM_FFd16 & i2c/temp<2> & i2c/temp<3>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_7
+	# !sensor_n<4> & !i2c/temp<2> & !i2c/temp<3>
+	# i2c/state_FSM_FFd7 & i2c/temp<2> & i2c/temp<3>
+	# !sensor_n<4> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3>
+
+MACROCELL | 6 | 4 | EXP53_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 3
+INPUTS | 11 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/temp<3>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd21  | i2c/temp<2>  | SDA_OUT4.PIN  | SDA_OUT1.PIN  | EXP54_.EXP
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 5 | 9 | 6 | 2 | 2 | 7 | 6 | 9 | 6 | 5
+INPUTP | 4 | 20 | 89 | 61 | 39
+EXPORTS | 1 | 6 | 3
+IMPORTS | 1 | 6 | 5
+EQ | 27 | 
+       EXP53_.EXP  =  sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_6
+	# sensor_n<4> & i2c/state_FSM_FFd12 & i2c/temp<3>
+	# sensor_n<4> & i2c/state_FSM_FFd21 & i2c/temp<3>
+	# i2c/state_FSM_FFd16 & i2c/temp<2> & i2c/temp<3>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_7
+	# !sensor_n<4> & !i2c/temp<2> & !i2c/temp<3>
+	# i2c/state_FSM_FFd7 & i2c/temp<2> & i2c/temp<3>
+	# !sensor_n<4> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3>
+
+MACROCELL | 6 | 5 | EXP54_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 4
+INPUTS | 11 | sensor_n<4>  | i2c/state_FSM_FFd12  | i2c/temp<3>  | i2c/state_FSM_FFd21  | i2c/state_FSM_FFd16  | i2c/temp<2>  | sensor_n<5>  | sensor_n<6>  | SDA_OUT4.PIN  | SDA_OUT1.PIN  | EXP55_.EXP
+INPUTMC | 9 | 13 | 8 | 5 | 9 | 6 | 2 | 2 | 7 | 6 | 12 | 6 | 9 | 13 | 6 | 8 | 9 | 6 | 6
+INPUTP | 2 | 61 | 39
+EXPORTS | 1 | 6 | 4
+IMPORTS | 1 | 6 | 6
+EQ | 16 | 
+       EXP54_.EXP  =  sensor_n<4> & i2c/state_FSM_FFd12 & i2c/temp<3>
+	# sensor_n<4> & i2c/state_FSM_FFd21 & i2c/temp<3>
+	# i2c/state_FSM_FFd16 & i2c/temp<2> & i2c/temp<3>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<3> & SDA_OUT1.PIN
+;Imported pterms FB7_7
+	# !sensor_n<4> & !i2c/temp<2> & !i2c/temp<3>
+	# i2c/state_FSM_FFd7 & i2c/temp<2> & i2c/temp<3>
+	# !sensor_n<4> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3>
+
+MACROCELL | 6 | 6 | EXP55_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 5
+INPUTS | 7 | sensor_n<4>  | i2c/temp<2>  | i2c/temp<3>  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd12  | i2c/state_FSM_FFd21
+INPUTMC | 7 | 13 | 8 | 6 | 9 | 6 | 2 | 4 | 17 | 6 | 12 | 5 | 9 | 2 | 7
+EXPORTS | 1 | 6 | 5
+EQ | 8 | 
+       EXP55_.EXP  =  !sensor_n<4> & !i2c/temp<2> & !i2c/temp<3>
+	# i2c/state_FSM_FFd7 & i2c/temp<2> & i2c/temp<3>
+	# !sensor_n<4> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<3>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<2> & !i2c/temp<3>
+
+MACROCELL | 6 | 7 | EXP56_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 8
+INPUTS | 10 | sensor_n<3>  | i2c/state_FSM_FFd12  | i2c/temp<2>  | i2c/state_FSM_FFd21  | i2c/state_FSM_FFd7  | i2c/temp<1>  | i2c/state_FSM_FFd16  | sensor_n<5>  | sensor_n<6>  | SDA_OUT1.PIN
+INPUTMC | 9 | 13 | 11 | 5 | 9 | 6 | 9 | 2 | 7 | 4 | 17 | 6 | 17 | 6 | 12 | 13 | 6 | 8 | 9
+INPUTP | 1 | 39
+EXPORTS | 1 | 6 | 8
+EQ | 6 | 
+       EXP56_.EXP  =  sensor_n<3> & i2c/state_FSM_FFd12 & i2c/temp<2>
+	# sensor_n<3> & i2c/state_FSM_FFd21 & i2c/temp<2>
+	# i2c/state_FSM_FFd7 & i2c/temp<1> & i2c/temp<2>
+	# i2c/state_FSM_FFd16 & i2c/temp<1> & i2c/temp<2>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT1.PIN
+
+MACROCELL | 6 | 8 | EXP57_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 9
+INPUTS | 16 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd21  | i2c/temp<1>  | i2c/temp<2>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/state_FSM_FFd12  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | EXP56_.EXP
+INPUTMC | 13 | 13 | 6 | 8 | 9 | 2 | 7 | 6 | 17 | 6 | 9 | 4 | 17 | 6 | 12 | 1 | 16 | 5 | 9 | 0 | 12 | 1 | 4 | 1 | 12 | 6 | 7
+INPUTP | 3 | 20 | 89 | 39
+EXPORTS | 1 | 6 | 9
+IMPORTS | 1 | 6 | 7
+EQ | 17 | 
+       EXP57_.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<2>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<1> & !i2c/temp<2>
+;Imported pterms FB7_8
+	# sensor_n<3> & i2c/state_FSM_FFd12 & i2c/temp<2>
+	# sensor_n<3> & i2c/state_FSM_FFd21 & i2c/temp<2>
+	# i2c/state_FSM_FFd7 & i2c/temp<1> & i2c/temp<2>
+	# i2c/state_FSM_FFd16 & i2c/temp<1> & i2c/temp<2>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT1.PIN
+
+MACROCELL | 6 | 10 | EXP58_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 9
+INPUTS | 11 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd12  | i2c/temp<2>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd21  | i2c/temp<1>  | SDA_OUT1.PIN  | SDA_MASTER$BUF0.EXP
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 5 | 9 | 6 | 9 | 2 | 7 | 6 | 17 | 6 | 11
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 6 | 9
+IMPORTS | 1 | 6 | 11
+EQ | 18 | 
+       EXP58_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<2> & SDA_OUT3.PIN
+	# sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT4.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2> & SDA_OUT1.PIN
+;Imported pterms FB7_12
+	# !sensor_n<3> & !i2c/temp<1> & !i2c/temp<2>
+	# !sensor_n<3> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/temp<2>
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd12 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21
+	# !i2c/state_FSM_FFd12 & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<1> & !i2c/temp<2>
+
+MACROCELL | 6 | 16 | EXP59_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 6 | 17
+INPUTS | 16 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd21  | i2c/temp<0>  | i2c/temp<1>  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | SDA_OUT1.PIN  | i2c/i<3>  | i2c/state_FSM_FFd12  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd11.EXP
+INPUTMC | 13 | 13 | 6 | 8 | 9 | 2 | 7 | 6 | 13 | 6 | 17 | 4 | 17 | 6 | 12 | 1 | 16 | 5 | 9 | 0 | 12 | 1 | 4 | 1 | 12 | 6 | 15
+INPUTP | 3 | 20 | 89 | 39
+EXPORTS | 1 | 6 | 17
+IMPORTS | 1 | 6 | 15
+EQ | 15 | 
+       EXP59_.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & !i2c/state_FSM_FFd21 & 
+	!i2c/temp<0> & !i2c/temp<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd7 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd21 & SDA_OUT1.PIN
+	# !i2c/i<3> & i2c/state_FSM_FFd12 & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/temp<1>
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd21 & !i2c/temp<0> & !i2c/temp<1>
+;Imported pterms FB7_16
+	# sensor_n<2> & i2c/state_FSM_FFd12 & i2c/temp<1>
+	# sensor_n<2> & i2c/state_FSM_FFd21 & i2c/temp<1>
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd12 & 
+	i2c/temp<1> & SDA_OUT1.PIN
+
+MACROCELL | 7 | 1 | EXP60_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 0
+INPUTS | 3 | sensor_n<0>  | sensor_data_w<7>  | i2c/state_FSM_FFd22
+INPUTMC | 3 | 8 | 11 | 8 | 12 | 2 | 0
+EXPORTS | 1 | 7 | 0
+EQ | 2 | 
+       EXP60_.EXP  =  sensor_n<0> & sensor_data_w<7> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 7 | 6 | EXP61_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 7
+INPUTS | 4 | sensor_n<0>  | sensor_data_w<5>  | i2c/state_FSM_FFd22  | i2c/temp_output<5>
+INPUTMC | 4 | 8 | 11 | 13 | 13 | 2 | 0 | 7 | 7
+EXPORTS | 1 | 7 | 7
+EQ | 4 | 
+       EXP61_.EXP  =  sensor_n<0> & sensor_data_w<5> & 
+	i2c/state_FSM_FFd22
+	# !sensor_n<0> & i2c/temp_output<5> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 7 | 9 | EXP62_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 10
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<3>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<4>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 7 | 12 | 13 | 6 | 8 | 9 | 0 | 5 | 7 | 10
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 7 | 10
+EQ | 9 | 
+       EXP62_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<3>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<4> & SDA_OUT1.PIN
+
+MACROCELL | 7 | 11 | EXP63_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 12
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<2>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<3>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 7 | 14 | 13 | 6 | 8 | 9 | 0 | 5 | 7 | 12
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 7 | 12
+EQ | 9 | 
+       EXP63_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<2>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<3> & SDA_OUT1.PIN
+
+MACROCELL | 7 | 13 | EXP64_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 14
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<1>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<2>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 9 | 17 | 13 | 6 | 8 | 9 | 0 | 5 | 7 | 14
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 7 | 14
+EQ | 9 | 
+       EXP64_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<1>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<2> & SDA_OUT1.PIN
+
+MACROCELL | 7 | 16 | EXP65_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 7 | 15
+INPUTS | 3 | sensor_n<0>  | sensor_data_w<6>  | i2c/state_FSM_FFd22
+INPUTMC | 3 | 8 | 11 | 8 | 13 | 2 | 0
+EXPORTS | 1 | 7 | 15
+EQ | 2 | 
+       EXP65_.EXP  =  sensor_n<0> & sensor_data_w<6> & 
+	i2c/state_FSM_FFd22
+
+MACROCELL | 8 | 0 | EXP66_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 8 | 17
+INPUTS | 11 | sensor_reg<4>  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 13 | 0
+INPUTP | 10 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 8 | 17
+EQ | 3 | 
+       EXP66_.EXP  =  sensor_reg<4> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+MACROCELL | 9 | 1 | EXP67_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 9 | 0
+INPUTS | 8 | sensor_n<5>  | sensor_n<6>  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd17  | SDA_OUT2.PIN
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 9 | 0
+INPUTP | 1 | 20
+EXPORTS | 1 | 9 | 0
+EQ | 2 | 
+       EXP67_.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/i<3> & !i2c/i<0> & 
+	!i2c/i<1> & !i2c/i<2> & i2c/state_FSM_FFd17 & !SDA_OUT2.PIN
+
+MACROCELL | 9 | 12 | EXP68_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 9 | 13
+INPUTS | 8 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd11  | SDA_OUT2.PIN  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>
+INPUTMC | 7 | 13 | 6 | 8 | 9 | 6 | 15 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12
+INPUTP | 1 | 20
+EXPORTS | 1 | 9 | 13
+EQ | 4 | 
+       EXP68_.EXP  =  sensor_n<5> & !sensor_n<6> & !i2c/state_FSM_FFd11 & 
+	SDA_OUT2.PIN
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!i2c/state_FSM_FFd11
+
+MACROCELL | 9 | 14 | EXP69_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 9 | 15
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<4>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<5>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 7 | 10 | 13 | 6 | 8 | 9 | 0 | 5 | 9 | 15
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 9 | 15
+EQ | 9 | 
+       EXP69_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<4>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<5> & SDA_OUT1.PIN
+
+MACROCELL | 9 | 16 | EXP70_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 9 | 17
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<0>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<1>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 0 | 3 | 13 | 6 | 8 | 9 | 0 | 5 | 9 | 17
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 9 | 17
+EQ | 9 | 
+       EXP70_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<0>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<1> & SDA_OUT1.PIN
+
+MACROCELL | 10 | 13 | EXP71_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 10 | 14
+INPUTS | 8 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | SDA_OUT2.PIN  | $OpTx$$OpTx$FX_DC$18_INV$797  | SDA_OUT3.PIN  | SDA_OUT1.PIN  | $OpTx$$OpTx$FX_DC$47_INV$800
+INPUTMC | 5 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 6 | 1 | 0
+INPUTP | 3 | 20 | 89 | 39
+EXPORTS | 1 | 10 | 14
+EQ | 10 | 
+       EXP71_.EXP  =  sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<6> & SDA_OUT1.PIN & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+
+MACROCELL | 10 | 14 | EXP72_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 10 | 15
+INPUTS | 8 | i2c/state_FSM_FFd2  | i2c/state_FSM_FFd18  | sensor_n<0>  | i2c/state_FSM_FFd22  | SCL  | i2c/i<3>  | $OpTx$$OpTx$FX_DC$46_INV$799  | EXP71_.EXP
+INPUTMC | 8 | 2 | 5 | 2 | 4 | 8 | 11 | 2 | 0 | 10 | 15 | 1 | 16 | 2 | 10 | 10 | 13
+EXPORTS | 1 | 10 | 15
+IMPORTS | 1 | 10 | 13
+EQ | 16 | 
+       EXP72_.EXP  =  i2c/state_FSM_FFd2
+	# i2c/state_FSM_FFd18
+	# sensor_n<0> & i2c/state_FSM_FFd22
+	# i2c/state_FSM_FFd22 & SCL
+	# i2c/i<3> & SCL & !$OpTx$$OpTx$FX_DC$46_INV$799
+;Imported pterms FB11_14
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT2.PIN
+	# sensor_n<5> & !sensor_n<6> & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT3.PIN
+	# !sensor_n<5> & sensor_n<6> & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !sensor_n<6> & SDA_OUT1.PIN & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+
+MACROCELL | 10 | 16 | EXP73_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 10 | 15
+INPUTS | 10 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | SDA_OUT4.PIN  | $OpTx$$OpTx$FX_DC$18_INV$797  | SDA_OUT2.PIN  | $OpTx$$OpTx$FX_DC$47_INV$800  | SDA_OUT1.PIN  | SDA_OUT3.PIN  | EXP74_.EXP
+INPUTMC | 6 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 6 | 1 | 0 | 10 | 17
+INPUTP | 4 | 61 | 20 | 39 | 89
+EXPORTS | 1 | 10 | 15
+IMPORTS | 1 | 10 | 17
+EQ | 23 | 
+       EXP73_.EXP  =  sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT4.PIN
+	# sensor_n<5> & sensor_n<6> & SDA_OUT4.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# sensor_n<5> & SDA_OUT4.PIN & SDA_OUT2.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# !sensor_n<5> & SDA_OUT1.PIN & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# sensor_n<6> & SDA_OUT4.PIN & SDA_OUT3.PIN & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+;Imported pterms FB11_18
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & SDA_OUT1.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	i2c/state_FSM_FFd4
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & 
+	!i2c/state_FSM_FFd4 & !i2c/state_FSM_FFd15 & SCL & !i2c/state_FSM_FFd20 & 
+	$OpTx$$OpTx$FX_DC$18_INV$797 & $OpTx$$OpTx$FX_DC$46_INV$799
+
+MACROCELL | 10 | 17 | EXP74_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 10 | 16
+INPUTS | 19 | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | SDA_OUT1.PIN  | $OpTx$$OpTx$FX_DC$18_INV$797  | i2c/i<3>  | i2c/i<0>  | i2c/i<1>  | i2c/i<2>  | i2c/state_FSM_FFd4  | $OpTx$$OpTx$FX_DC$47_INV$800  | i2c/state_FSM_FFd7  | i2c/state_FSM_FFd16  | i2c/state_FSM_FFd11  | i2c/state_FSM_FFd3  | i2c/state_FSM_FFd15  | SCL  | i2c/state_FSM_FFd20  | $OpTx$$OpTx$FX_DC$46_INV$799
+INPUTMC | 18 | 13 | 6 | 8 | 9 | 0 | 5 | 1 | 6 | 1 | 16 | 0 | 12 | 1 | 4 | 1 | 12 | 0 | 8 | 1 | 0 | 4 | 17 | 6 | 12 | 6 | 15 | 4 | 0 | 1 | 10 | 10 | 15 | 2 | 6 | 2 | 10
+INPUTP | 1 | 39
+EXPORTS | 1 | 10 | 16
+EQ | 12 | 
+       EXP74_.EXP  =  !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	SDA_OUT1.PIN
+	# !sensor_n<5> & !sensor_n<6> & SDA_OUT1.PIN & 
+	!$OpTx$$OpTx$FX_DC$18_INV$797
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	i2c/state_FSM_FFd4
+	# !i2c/i<3> & !i2c/i<0> & !i2c/i<1> & !i2c/i<2> & 
+	!$OpTx$$OpTx$FX_DC$47_INV$800
+	# !i2c/state_FSM_FFd7 & !i2c/state_FSM_FFd8 & 
+	!i2c/state_FSM_FFd16 & !i2c/state_FSM_FFd11 & !i2c/state_FSM_FFd3 & 
+	!i2c/state_FSM_FFd4 & !i2c/state_FSM_FFd15 & SCL & !i2c/state_FSM_FFd20 & 
+	$OpTx$$OpTx$FX_DC$18_INV$797 & $OpTx$$OpTx$FX_DC$46_INV$799
+
+MACROCELL | 11 | 1 | EXP75_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 11 | 0
+INPUTS | 11 | sensor_reg<6>  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 8 | 4
+INPUTP | 10 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 11 | 0
+EQ | 3 | 
+       EXP75_.EXP  =  !sensor_reg<6> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+MACROCELL | 11 | 14 | EXP76_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 11 | 15
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<6>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<7>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 11 | 17 | 13 | 6 | 8 | 9 | 0 | 5 | 11 | 15
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 11 | 15
+EQ | 9 | 
+       EXP76_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<6>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<7> & SDA_OUT1.PIN
+
+MACROCELL | 11 | 16 | EXP77_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 11 | 17
+INPUTS | 11 | i2c/i<3>  | i2c/state_FSM_FFd6  | sensor_data_r<5>  | sensor_n<5>  | sensor_n<6>  | i2c/state_FSM_FFd8  | sensor_data_r<6>  | SDA_OUT4.PIN  | SDA_OUT2.PIN  | SDA_OUT3.PIN  | SDA_OUT1.PIN
+INPUTMC | 7 | 1 | 16 | 5 | 0 | 9 | 15 | 13 | 6 | 8 | 9 | 0 | 5 | 11 | 17
+INPUTP | 4 | 61 | 20 | 89 | 39
+EXPORTS | 1 | 11 | 17
+EQ | 9 | 
+       EXP77_.EXP  =  !i2c/i<3> & i2c/state_FSM_FFd6 & sensor_data_r<5>
+	# sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT4.PIN
+	# sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT2.PIN
+	# !sensor_n<5> & sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT3.PIN
+	# !sensor_n<5> & !sensor_n<6> & i2c/state_FSM_FFd8 & 
+	sensor_data_r<6> & SDA_OUT1.PIN
+
+MACROCELL | 12 | 16 | EXP78_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 12 | 17
+INPUTS | 11 | sensor_reg<7>  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 8 | 3
+INPUTP | 10 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 12 | 17
+EQ | 3 | 
+       EXP78_.EXP  =  sensor_reg<7> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+MACROCELL | 15 | 1 | EXP79_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 15 | 0
+INPUTS | 12 | sensor_n<0>  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>  | sensor_reg<0>
+INPUTMC | 2 | 8 | 11 | 8 | 7
+INPUTP | 10 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 15 | 0
+EQ | 6 | 
+       EXP79_.EXP  =  !sensor_n<0> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	!ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+	# !sensor_reg<0> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+MACROCELL | 15 | 13 | EXP80_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 15 | 14
+INPUTS | 11 | sensor_reg<3>  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 13 | 1
+INPUTP | 10 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 15 | 14
+EQ | 3 | 
+       EXP80_.EXP  =  !sensor_reg<3> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+MACROCELL | 15 | 15 | EXP81_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 15 | 16
+INPUTS | 11 | sensor_reg<2>  | ADR<1>  | ADR<3>  | ADR<2>  | ADR<0>  | ADR<7>  | ADR<5>  | ADR<6>  | ADR<4>  | ADR<8>  | ADR<9>
+INPUTMC | 1 | 13 | 3
+INPUTP | 10 | 201 | 204 | 202 | 199 | 231 | 225 | 227 | 207 | 234 | 235
+EXPORTS | 1 | 15 | 16
+EQ | 3 | 
+       EXP81_.EXP  =  !sensor_reg<2> & !ADR<1> & !ADR<3> & !ADR<2> & 
+	ADR<0> & !ADR<7> & !ADR<5> & ADR<6> & ADR<4> & !ADR<8> & 
+	!ADR<9>
+
+PIN | CLK | 16384 | 0 | N/A | 69 | 62 | 2 | 14 | 5 | 15 | 5 | 7 | 5 | 6 | 5 | 14 | 7 | 8 | 7 | 7 | 7 | 15 | 7 | 0 | 3 | 3 | 3 | 9 | 3 | 8 | 3 | 7 | 3 | 6 | 3 | 0 | 3 | 2 | 3 | 17 | 1 | 16 | 2 | 0 | 5 | 0 | 4 | 17 | 0 | 5 | 5 | 9 | 6 | 12 | 0 | 12 | 1 | 4 | 1 | 12 | 6 | 15 | 2 | 7 | 4 | 0 | 0 | 8 | 5 | 10 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10 | 10 | 15 | 9 | 0 | 0 | 16 | 5 | 12 | 0 | 3 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 2 | 2 | 2 | 3 | 2 | 4 | 2 | 8 | 2 | 9 | 6 | 13 | 4 | 16 | 11 | 15 | 2 | 6 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 14 | 4 | 12 | 2 | 1
+PIN | RES | 64 | 0 | N/A | 263 | 86 | 2 | 14 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 5 | 15 | 5 | 7 | 5 | 6 | 5 | 14 | 7 | 8 | 7 | 7 | 7 | 15 | 7 | 0 | 3 | 3 | 3 | 9 | 3 | 8 | 3 | 7 | 3 | 6 | 3 | 0 | 3 | 2 | 3 | 17 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 1 | 16 | 2 | 0 | 5 | 0 | 4 | 17 | 0 | 5 | 5 | 9 | 6 | 12 | 0 | 12 | 1 | 4 | 1 | 12 | 6 | 15 | 2 | 7 | 4 | 0 | 0 | 8 | 5 | 10 | 9 | 13 | 1 | 7 | 2 | 5 | 1 | 10 | 10 | 15 | 9 | 0 | 0 | 16 | 5 | 12 | 0 | 3 | 9 | 17 | 7 | 14 | 7 | 12 | 7 | 10 | 9 | 15 | 11 | 17 | 2 | 2 | 2 | 3 | 2 | 4 | 2 | 8 | 2 | 9 | 6 | 13 | 4 | 16 | 11 | 15 | 2 | 6 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 14 | 4 | 12 | 2 | 1 | 2 | 11
+PIN | BWR | 4096 | 0 | N/A | 57 | 24 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8
+PIN | ADR<1> | 64 | 0 | N/A | 201 | 38 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<0> | 64 | 0 | N/A | 199 | 38 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<2> | 64 | 0 | N/A | 202 | 38 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<3> | 64 | 0 | N/A | 204 | 38 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<4> | 64 | 0 | N/A | 207 | 46 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<5> | 64 | 0 | N/A | 225 | 46 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<6> | 64 | 0 | N/A | 227 | 46 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<7> | 64 | 0 | N/A | 231 | 46 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<8> | 64 | 0 | N/A | 234 | 46 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | ADR<9> | 64 | 0 | N/A | 235 | 46 | 8 | 11 | 8 | 10 | 13 | 6 | 8 | 9 | 8 | 15 | 8 | 14 | 13 | 17 | 13 | 16 | 13 | 15 | 13 | 13 | 8 | 13 | 8 | 12 | 8 | 7 | 8 | 6 | 13 | 3 | 13 | 1 | 13 | 0 | 8 | 5 | 8 | 4 | 8 | 3 | 13 | 12 | 13 | 11 | 13 | 8 | 8 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14 | 15 | 0 | 15 | 17 | 15 | 16 | 15 | 14 | 8 | 17 | 8 | 16 | 11 | 0 | 12 | 17 | 8 | 0 | 11 | 1 | 12 | 16 | 15 | 1 | 15 | 13 | 15 | 15
+PIN | BRD | 2048 | 0 | N/A | 6 | 8 | 15 | 11 | 13 | 2 | 13 | 4 | 13 | 5 | 13 | 7 | 13 | 9 | 13 | 10 | 13 | 14
+PIN | SCL_OUT1 | 128 | 0 | N/A | 41
+PIN | SCL_OUT2 | 128 | 0 | N/A | 21
+PIN | SCL_OUT3 | 128 | 0 | N/A | 91
+PIN | SCL_OUT4 | 128 | 0 | N/A | 63
+PIN | SDA_OUT4 | 536870976 | 0 | N/A | 61 | 42 | 1 | 15 | 5 | 0 | 0 | 5 | 5 | 8 | 0 | 4 | 1 | 2 | 1 | 10 | 5 | 10 | 9 | 13 | 1 | 9 | 6 | 10 | 9 | 0 | 0 | 14 | 5 | 11 | 0 | 3 | 9 | 16 | 7 | 13 | 7 | 11 | 7 | 9 | 9 | 14 | 11 | 16 | 6 | 13 | 4 | 15 | 11 | 14 | 6 | 17 | 6 | 9 | 6 | 0 | 4 | 13 | 4 | 11 | 0 | 6 | 0 | 17 | 1 | 0 | 1 | 5 | 1 | 8 | 1 | 13 | 1 | 14 | 1 | 17 | 5 | 13 | 6 | 3 | 6 | 4 | 6 | 5 | 10 | 16
+PIN | Data<0> | 536870976 | 0 | N/A | 176 | 3 | 8 | 11 | 8 | 15 | 8 | 7
+PIN | Data<1> | 536870976 | 0 | N/A | 185 | 3 | 8 | 10 | 8 | 14 | 8 | 6
+PIN | Data<2> | 536870976 | 0 | N/A | 186 | 3 | 13 | 17 | 13 | 3 | 13 | 12
+PIN | Data<3> | 536870976 | 0 | N/A | 187 | 3 | 13 | 16 | 13 | 1 | 13 | 11
+PIN | Data<4> | 536870976 | 0 | N/A | 188 | 3 | 13 | 15 | 13 | 0 | 13 | 8
+PIN | Data<5> | 536870976 | 0 | N/A | 190 | 3 | 13 | 6 | 13 | 13 | 8 | 5
+PIN | Data<6> | 536870976 | 0 | N/A | 191 | 3 | 8 | 9 | 8 | 13 | 8 | 4
+PIN | Data<7> | 536870976 | 0 | N/A | 195 | 3 | 8 | 12 | 8 | 3 | 8 | 8
+PIN | SDA_OUT3 | 536870976 | 0 | N/A | 89 | 44 | 1 | 15 | 4 | 17 | 0 | 5 | 5 | 8 | 0 | 4 | 1 | 2 | 1 | 10 | 5 | 10 | 9 | 13 | 1 | 9 | 10 | 13 | 9 | 0 | 0 | 14 | 5 | 11 | 0 | 3 | 9 | 16 | 7 | 13 | 7 | 11 | 7 | 9 | 9 | 14 | 11 | 16 | 6 | 10 | 4 | 15 | 11 | 14 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 4 | 11 | 0 | 6 | 0 | 17 | 1 | 0 | 1 | 8 | 1 | 13 | 1 | 14 | 1 | 17 | 5 | 1 | 5 | 13 | 6 | 0 | 6 | 4 | 6 | 8 | 6 | 14 | 6 | 16 | 10 | 16
+PIN | SDA_OUT2 | 536870976 | 0 | N/A | 20 | 45 | 1 | 15 | 4 | 17 | 0 | 4 | 5 | 8 | 0 | 11 | 1 | 0 | 1 | 7 | 5 | 9 | 9 | 12 | 1 | 8 | 10 | 13 | 6 | 16 | 0 | 13 | 5 | 11 | 0 | 2 | 9 | 16 | 7 | 13 | 7 | 11 | 7 | 9 | 9 | 14 | 11 | 16 | 6 | 10 | 4 | 15 | 11 | 14 | 6 | 17 | 6 | 9 | 6 | 2 | 4 | 13 | 4 | 11 | 0 | 0 | 0 | 6 | 0 | 10 | 1 | 6 | 1 | 13 | 1 | 14 | 1 | 17 | 5 | 1 | 5 | 13 | 6 | 0 | 6 | 3 | 6 | 4 | 6 | 8 | 6 | 14 | 9 | 1 | 10 | 16
+PIN | SDA_OUT1 | 536870976 | 0 | N/A | 39 | 47 | 1 | 15 | 5 | 0 | 0 | 5 | 5 | 9 | 0 | 11 | 0 | 17 | 1 | 11 | 5 | 10 | 9 | 13 | 1 | 10 | 10 | 13 | 9 | 0 | 0 | 13 | 5 | 12 | 0 | 3 | 9 | 16 | 7 | 13 | 7 | 11 | 7 | 9 | 9 | 14 | 11 | 16 | 6 | 13 | 4 | 16 | 11 | 14 | 6 | 16 | 6 | 8 | 6 | 0 | 4 | 13 | 4 | 12 | 0 | 4 | 0 | 10 | 1 | 5 | 1 | 8 | 1 | 9 | 1 | 13 | 1 | 14 | 1 | 17 | 4 | 15 | 5 | 11 | 6 | 3 | 6 | 4 | 6 | 5 | 6 | 7 | 6 | 10 | 6 | 15 | 10 | 16 | 10 | 17

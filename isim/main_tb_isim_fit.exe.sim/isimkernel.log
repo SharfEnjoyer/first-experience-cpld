@@ -1,0 +1,28 @@
+Command line:
+   main_tb_isim_fit.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  61993
+
+Fri Jun 23 16:05:20 2023
+
+
+ Elaboration Time: 0.21875 sec
+
+ Current Memory Usage: 5254.11 Meg
+
+ Total Signals          : 30623
+ Total Nets             : 10266
+ Total Signal Drivers   : 10348
+ Total Blocks           : 8204
+ Total Primitive Blocks : 8108
+ Total Processes        : 11480
+ Total Traceable Variables  : 8793
+ Total Scalar Nets and Variables : 535706
+
+ Total Simulation Time: 0.96875 sec
+
+ Current Memory Usage: 5585.26 Meg
+
+Fri Jun 23 16:06:02 2023
+

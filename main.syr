@@ -1,0 +1,420 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : XC9500XL CPLDs
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "i2c_master.v" in library work
+Compiling verilog file "main.v" in library work
+Module <i2c_master> compiled
+Module <main> compiled
+No errors in compilation
+Analysis of file <"main.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <main> in library <work>.
+
+Analyzing hierarchy for module <i2c_master> in library <work> with parameters.
+	I2C_ACK1 = "00000000000000000000000000000011"
+	I2C_ACK2 = "00000000000000000000000000000101"
+	I2C_ACK3 = "00000000000000000000000000000111"
+	I2C_ADDRESS = "00000000000000000000000000000010"
+	I2C_ADDRESS_2 = "00000000000000000000000000001100"
+	I2C_ADDRESS_3 = "00000000000000000000000000001101"
+	I2C_FIRST_M = "00000000000000000000000000000100"
+	I2C_FIRST_M_2 = "00000000000000000000000000001111"
+	I2C_FIRST_M_3 = "00000000000000000000000000010000"
+	I2C_IDLE = "00000000000000000000000000000000"
+	I2C_NACK = "00000000000000000000000000001001"
+	I2C_PAUSE = "00000000000000000000000000001110"
+	I2C_SECONDE_M = "00000000000000000000000000000110"
+	I2C_SECONDE_M_2 = "00000000000000000000000000010001"
+	I2C_SECONDE_M_3 = "00000000000000000000000000010010"
+	I2C_START = "00000000000000000000000000000001"
+	I2C_STOP = "00000000000000000000000000001010"
+	I2C_STOP2 = "00000000000000000000000000001011"
+	I2C_THIRD_S = "00000000000000000000000000001000"
+	I2C_THIRD_S_2 = "00000000000000000000000000010011"
+	I2C_THIRD_S_3 = "00000000000000000000000000010100"
+	I2C_WORD = "00000000000000000000000000001000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <main>.
+WARNING:Xst:2323 - "main.v" line 226: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "main.v" line 226: Parameter 3 is not constant in call of system task $display.
+"main.v" line 226: $display : 
+ address %b, data %b
+Module <main> is correct for synthesis.
+ 
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <OBUF_inst1> in unit <main>.
+    Set user-defined property "DRIVE =  12" for instance <OBUF_inst1> in unit <main>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <OBUF_inst1> in unit <main>.
+    Set user-defined property "SLEW =  SLOW" for instance <OBUF_inst1> in unit <main>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <OBUF_inst11> in unit <main>.
+    Set user-defined property "DRIVE =  12" for instance <OBUF_inst11> in unit <main>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <OBUF_inst11> in unit <main>.
+    Set user-defined property "SLEW =  SLOW" for instance <OBUF_inst11> in unit <main>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <OBUF_inst22> in unit <main>.
+    Set user-defined property "DRIVE =  12" for instance <OBUF_inst22> in unit <main>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <OBUF_inst22> in unit <main>.
+    Set user-defined property "SLEW =  SLOW" for instance <OBUF_inst22> in unit <main>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <OBUF_inst33> in unit <main>.
+    Set user-defined property "DRIVE =  12" for instance <OBUF_inst33> in unit <main>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <OBUF_inst33> in unit <main>.
+    Set user-defined property "SLEW =  SLOW" for instance <OBUF_inst33> in unit <main>.
+Analyzing module <i2c_master> in library <work>.
+	I2C_ACK1 = 32'sb00000000000000000000000000000011
+	I2C_ACK2 = 32'sb00000000000000000000000000000101
+	I2C_ACK3 = 32'sb00000000000000000000000000000111
+	I2C_ADDRESS = 32'sb00000000000000000000000000000010
+	I2C_ADDRESS_2 = 32'sb00000000000000000000000000001100
+	I2C_ADDRESS_3 = 32'sb00000000000000000000000000001101
+	I2C_FIRST_M = 32'sb00000000000000000000000000000100
+	I2C_FIRST_M_2 = 32'sb00000000000000000000000000001111
+	I2C_FIRST_M_3 = 32'sb00000000000000000000000000010000
+	I2C_IDLE = 32'sb00000000000000000000000000000000
+	I2C_NACK = 32'sb00000000000000000000000000001001
+	I2C_PAUSE = 32'sb00000000000000000000000000001110
+	I2C_SECONDE_M = 32'sb00000000000000000000000000000110
+	I2C_SECONDE_M_2 = 32'sb00000000000000000000000000010001
+	I2C_SECONDE_M_3 = 32'sb00000000000000000000000000010010
+	I2C_START = 32'sb00000000000000000000000000000001
+	I2C_STOP = 32'sb00000000000000000000000000001010
+	I2C_STOP2 = 32'sb00000000000000000000000000001011
+	I2C_THIRD_S = 32'sb00000000000000000000000000001000
+	I2C_THIRD_S_2 = 32'sb00000000000000000000000000010011
+	I2C_THIRD_S_3 = 32'sb00000000000000000000000000010100
+	I2C_WORD = 32'sb00000000000000000000000000001000
+WARNING:Xst:2323 - "i2c_master.v" line 188: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 188: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 188: $display : %b, %b
+WARNING:Xst:2323 - "i2c_master.v" line 218: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 218: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 218: $display : status, %b, %b
+"i2c_master.v" line 232: $display : 
+
+WARNING:Xst:2323 - "i2c_master.v" line 243: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 243: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 243: $display : %b, %b
+WARNING:Xst:2323 - "i2c_master.v" line 272: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 272: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 272: $display : status, %b, %b
+"i2c_master.v" line 288: $display : 
+
+WARNING:Xst:2323 - "i2c_master.v" line 301: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 301: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 301: $display : %b, %b
+WARNING:Xst:2323 - "i2c_master.v" line 319: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 319: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 319: $display : %b, %b
+WARNING:Xst:2323 - "i2c_master.v" line 350: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 350: Parameter 3 is not constant in call of system task $display.
+"i2c_master.v" line 350: $display : status, %b, %b
+"i2c_master.v" line 369: $display : 
+
+WARNING:Xst:2323 - "i2c_master.v" line 382: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 382: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "i2c_master.v" line 382: Parameter 4 is not constant in call of system task $display.
+"i2c_master.v" line 382: $display : %b, %b, %b
+WARNING:Xst:2323 - "i2c_master.v" line 420: Parameter 2 is not constant in call of system task $display.
+"i2c_master.v" line 420: $display : success %b
+WARNING:Xst:2321 - "i2c_master.v" line 441: Parameter 2 ($time) is not supported in call of system task $display.
+"i2c_master.v" line 441: $display : stop 
+WARNING:Xst:2321 - "i2c_master.v" line 467: Parameter 2 ($time) is not supported in call of system task $display.
+"i2c_master.v" line 467: $display : error 
+Module <i2c_master> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <i2c_master>.
+    Related source file is "i2c_master.v".
+WARNING:Xst:2563 - Inout <SDA> is never assigned. Tied to value Z.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 22                                             |
+    | Transitions        | 35                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 22                                             |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RES                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <temp_input>.
+    Found 1-bit register for signal <i2c_end>.
+    Found 1-bit register for signal <SDA_OUT>.
+    Found 1-bit register for signal <SDA_EN>.
+    Found 1-bit tristate buffer for signal <SDA>.
+    Found 4-bit register for signal <temp_error>.
+    Found 1-bit register for signal <SCL>.
+    Found 4-bit register for signal <i>.
+    Found 4-bit adder for signal <i$addsub0000>.
+    Found 5-bit comparator less for signal <state$cmp_lt0000> created at line 183.
+    Found 8-bit register for signal <temp>.
+    Found 4-bit adder for signal <temp_error$addsub0000>.
+    Found 8-bit register for signal <temp_output>.
+    Found 8-bit register for signal <temp_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred   1 Tristate(s).
+Unit <i2c_master> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "main.v".
+WARNING:Xst:1780 - Signal <SDA> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 8-bit latch for signal <outDATA>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit tristate buffer for signal <Data>.
+    Found 1-bit tristate buffer for signal <SDA_SLAVE>.
+    Found 8-bit register for signal <sensor_data_w>.
+    Found 8-bit register for signal <sensor_n>.
+    Found 8-bit register for signal <sensor_reg>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred  12 Tristate(s).
+Unit <main> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 2
+# Registers                                            : 34
+ 1-bit register                                        : 28
+ 4-bit register                                        : 2
+ 8-bit register                                        : 4
+# Latches                                              : 1
+ 8-bit latch                                           : 1
+# Comparators                                          : 1
+ 5-bit comparator less                                 : 1
+# Tristates                                            : 6
+ 1-bit tristate buffer                                 : 5
+ 8-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <i2c/state/FSM> on signal <state[1:22]> with one-hot encoding.
+------------------------------------
+ State    | Encoding
+------------------------------------
+ 00000000 | 0000000000000000000001
+ 00000001 | 0000000000000000000010
+ 00001110 | 0000000000000000000100
+ 00000010 | 0000000000000000001000
+ 00001100 | 0000000000000000010000
+ 00000011 | 0000000000000000100000
+ 00001101 | 0000000000000001000000
+ 00001010 | 0000000000000010000000
+ 00000100 | 0000000000000100000000
+ 00001111 | 0000000000001000000000
+ 00000101 | 0000000000010000000000
+ 00010000 | 0000000000100000000000
+ 00000110 | 0000000001000000000000
+ 00010001 | 0000000010000000000000
+ 00000111 | 0000000100000000000000
+ 00010010 | 0000001000000000000000
+ 00001000 | 0000010000000000000000
+ 00010011 | 0000100000000000000000
+ 00001001 | 0001000000000000000000
+ 00010100 | 0010000000000000000000
+ 00001011 | 0100000000000000000000
+ 00010101 | 1000000000000000000000
+------------------------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 2
+# Registers                                            : 28
+ Flip-Flops                                            : 28
+# Latches                                              : 1
+ 8-bit latch                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2183 - Unit main: the following tristate(s) are NOT replaced by logic (Please refer to Answer Record 20048 for more information): SDA_SLAVE.
+
+Optimizing unit <main> ...
+
+Optimizing unit <i2c_master> ...
+  implementation constraint: INIT=r	 : i_0
+  implementation constraint: INIT=r	 : i_2
+  implementation constraint: INIT=r	 : i_3
+  implementation constraint: INIT=r	 : i_1
+WARNING:Xst:2677 - Node <temp_error_3> of sequential type is unconnected in block <i2c>.
+WARNING:Xst:2677 - Node <temp_error_2> of sequential type is unconnected in block <i2c>.
+WARNING:Xst:2677 - Node <temp_error_1> of sequential type is unconnected in block <i2c>.
+WARNING:Xst:2677 - Node <temp_error_0> of sequential type is unconnected in block <i2c>.
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : main.ngr
+Top Level Output File Name         : main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : XC9500XL CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 30
+
+Cell Usage :
+# BELS                             : 941
+#      AND2                        : 324
+#      AND3                        : 36
+#      AND4                        : 23
+#      AND5                        : 2
+#      AND6                        : 3
+#      AND8                        : 3
+#      GND                         : 1
+#      INV                         : 350
+#      OR2                         : 170
+#      OR3                         : 24
+#      OR4                         : 2
+#      XOR2                        : 3
+# FlipFlops/Latches                : 94
+#      FDC                         : 22
+#      FDCE                        : 44
+#      FDCP                        : 16
+#      FDP                         : 4
+#      LD                          : 8
+# Tri-States                       : 4
+#      BUFE                        : 4
+# IO Buffers                       : 30
+#      IBUF                        : 14
+#      IOBUFE                      : 12
+#      OBUF                        : 4
+# Others                           : 4
+#      PULLUP                      : 4
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.06 secs
+ 
+--> 
+
+Total memory usage is 4514320 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   30 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

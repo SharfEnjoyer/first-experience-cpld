@@ -1,0 +1,1295 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+</td></tr><tr><td>
+$OpTx$$OpTx$FX_DC$18_INV$797 <= (NOT i2c/state_FSM_FFd12 AND NOT i2c/state_FSM_FFd17);
+</td></tr><tr><td>
+</td></tr><tr><td>
+$OpTx$$OpTx$FX_DC$45_INV$798 <= (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11 AND NOT i2c/state_FSM_FFd3);
+</td></tr><tr><td>
+</td></tr><tr><td>
+$OpTx$$OpTx$FX_DC$46_INV$799 <= (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd10 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd14 AND NOT i2c/state_FSM_FFd19);
+</td></tr><tr><td>
+</td></tr><tr><td>
+$OpTx$$OpTx$FX_DC$47_INV$800 <= (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd17);
+</td></tr><tr><td>
+</td></tr><tr><td>
+$OpTx$FX_DC$21 <= ((sensor_n(5) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND SDA_OUT3.PIN));
+</td></tr><tr><td>
+FDCPE_Data0: FDCPE port map (Data_I(0),'0','0',outDATA(0)/outDATA(0)_RSTF,Data_PRE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_PRE(0) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(0)/outDATA(0)_RSTF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(0) <= Data_I(0) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data1: FDCPE port map (Data_I(1),'0','0',Data_CLR(1),outDATA(1)/outDATA(1)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_CLR(1) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(1)/outDATA(1)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(1) <= Data_I(1) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data2: FDCPE port map (Data_I(2),'0','0',outDATA(2)/outDATA(2)_RSTF,Data_PRE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_PRE(2) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(2)/outDATA(2)_RSTF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(2) <= Data_I(2) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data3: FDCPE port map (Data_I(3),'0','0',outDATA(3)/outDATA(3)_RSTF,Data_PRE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_PRE(3) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(3)/outDATA(3)_RSTF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(3) <= Data_I(3) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data4: FDCPE port map (Data_I(4),'0','0',Data_CLR(4),outDATA(4)/outDATA(4)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_CLR(4) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(4)/outDATA(4)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(4) <= Data_I(4) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data5: FDCPE port map (Data_I(5),'0','0',Data_CLR(5),outDATA(5)/outDATA(5)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_CLR(5) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(5)/outDATA(5)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(5) <= Data_I(5) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data6: FDCPE port map (Data_I(6),'0','0',outDATA(6)/outDATA(6)_RSTF,Data_PRE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_PRE(6) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(6)/outDATA(6)_RSTF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(6) <= Data_I(6) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+FDCPE_Data7: FDCPE port map (Data_I(7),'0','0',Data_CLR(7),outDATA(7)/outDATA(7)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data_CLR(7) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9) AND NOT outDATA(7)/outDATA(7)_SETF);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data(7) <= Data_I(7) when BRD = '1' else 'Z';
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+</td></tr><tr><td>
+FDCPE_SCL: FDCPE port map (SCL,SCL_D,CLK,'0',RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCL_D <= ((i2c/state_FSM_FFd21)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd13)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd9)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd18)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP71_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(0) AND i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd22 AND SCL)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND SCL AND NOT $OpTx$$OpTx$FX_DC$46_INV$799)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP74_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND SDA_OUT4.PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$18_INV$797)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND SDA_OUT4.PIN AND SDA_OUT2.PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$47_INV$800)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND SDA_OUT1.PIN AND SDA_OUT3.PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$47_INV$800)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(6) AND SDA_OUT4.PIN AND SDA_OUT3.PIN AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$47_INV$800));
+</td></tr><tr><td>
+</td></tr><tr><td>
+SCL_OUT1 <= (NOT sensor_n(5) AND NOT sensor_n(6) AND SCL);
+</td></tr><tr><td>
+</td></tr><tr><td>
+SCL_OUT2 <= (sensor_n(5) AND NOT sensor_n(6) AND SCL);
+</td></tr><tr><td>
+</td></tr><tr><td>
+SCL_OUT3 <= (NOT sensor_n(5) AND sensor_n(6) AND SCL);
+</td></tr><tr><td>
+</td></tr><tr><td>
+SCL_OUT4 <= (sensor_n(5) AND sensor_n(6) AND SCL);
+</td></tr><tr><td>
+FDCPE_SDA_EN: FDCPE port map (SDA_EN,SDA_EN_D,CLK,'0',RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_EN_D <= ((i2c/state_FSM_FFd2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd15)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(0) AND i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd22 AND SDA_EN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd19 AND SDA_EN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP18_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_EN AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_EN AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_EN AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_EN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd10 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd14 AND NOT i2c/state_FSM_FFd19 AND SDA_EN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd6 AND SDA_EN));
+</td></tr><tr><td>
+</td></tr><tr><td>
+SDA_OUT1_I <= SDA_OUT4;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT1 <= SDA_OUT1_I when SDA_OUT1_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT1_OE <= (NOT sensor_n(5) AND NOT sensor_n(6) AND SDA_EN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+SDA_OUT2_I <= SDA_OUT4;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT2 <= SDA_OUT2_I when SDA_OUT2_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT2_OE <= (sensor_n(5) AND NOT sensor_n(6) AND SDA_EN);
+</td></tr><tr><td>
+</td></tr><tr><td>
+SDA_OUT3_I <= SDA_OUT4;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT3 <= SDA_OUT3_I when SDA_OUT3_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT3_OE <= (NOT sensor_n(5) AND sensor_n(6) AND SDA_EN);
+</td></tr><tr><td>
+FDCPE_SDA_OUT4: FDCPE port map (SDA_OUT4_I,SDA_OUT4,CLK,'0',RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT4 <= ((i2c/state_FSM_FFd1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(0) AND i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SDA_OUT4 AND NOT i2c/i(3) AND i2c/state_FSM_FFd6)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(7) AND NOT i2c/i(3) AND i2c/state_FSM_FFd14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd19 AND i2c/temp(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(1) AND NOT i2c/i(3) AND i2c/state_FSM_FFd10 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(1) AND i2c/temp_output(7) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SDA_OUT4 AND NOT i2c/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/state_FSM_FFd4 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd10 AND NOT i2c/state_FSM_FFd14 AND NOT i2c/state_FSM_FFd19 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd2 AND NOT i2c/state_FSM_FFd15)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND NOT sensor_data_r(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sensor_data_r(1) AND NOT sensor_data_r(2) AND NOT sensor_data_r(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sensor_data_r(4) AND NOT sensor_data_r(5) AND NOT sensor_data_r(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sensor_data_r(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SDA_OUT4 AND i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd16 AND i2c/temp(7)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT4 <= SDA_OUT4_I when SDA_OUT4_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDA_OUT4_OE <= (sensor_n(5) AND sensor_n(6) AND SDA_EN);
+</td></tr><tr><td>
+FTCPE_i2c/i0: FTCPE port map (i2c/i(0),i2c/i_T(0),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/i_T(0) <= (($OpTx$$OpTx$FX_DC$45_INV$798.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/state_FSM_FFd14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(6) AND i2c/state_FSM_FFd8 AND i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	$OpTx$FX_DC$21)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(6) AND i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$18_INV$797 AND $OpTx$FX_DC$21)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT2.PIN AND NOT $OpTx$$OpTx$FX_DC$18_INV$797)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT1.PIN AND NOT $OpTx$$OpTx$FX_DC$18_INV$797)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP23_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(0) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(0) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(0) AND i2c/i(1) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(0) AND i2c/i(2) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(0) AND i2c/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND i2c/i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/state_FSM_FFd10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/state_FSM_FFd19));
+</td></tr><tr><td>
+FTCPE_i2c/i1: FTCPE port map (i2c/i(1),i2c/i_T(1),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/i_T(1) <= ((_and0001.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(0) AND i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND i2c/i(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(1) AND i2c/state_FSM_FFd10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(1) AND i2c/state_FSM_FFd14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(1) AND i2c/state_FSM_FFd19)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR ($OpTx$$OpTx$FX_DC$18_INV$797.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(1) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(1) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(1) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd17 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/state_FSM_FFd11 AND NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd7 AND NOT i2c/i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd16 AND NOT i2c/i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(0) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(1) AND i2c/state_FSM_FFd4));
+</td></tr><tr><td>
+FDCPE_i2c/i2: FDCPE port map (i2c/i(2),i2c/i_D(2),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/i_D(2) <= ((i2c/state_FSM_FFd15.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND i2c/i(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(2) AND i2c/state_FSM_FFd10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(2) AND i2c/state_FSM_FFd14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(0) AND i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(2) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (EXP32_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(2) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(2) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(2) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(2) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/i(2) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(2) AND i2c/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(2) AND i2c/state_FSM_FFd19)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(0) AND i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(1) AND i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798));
+</td></tr><tr><td>
+FDCPE_i2c/i3: FDCPE port map (i2c/i(3),i2c/i_D(3),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/i_D(3) <= ((sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/i(1) AND i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR ($OpTx$$OpTx$FX_DC$47_INV$800.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd17 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND NOT i2c/i(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT $OpTx$$OpTx$FX_DC$45_INV$798));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd1: FDCPE port map (i2c/state_FSM_FFd1,i2c/state_FSM_FFd2,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd10: FDCPE port map (i2c/state_FSM_FFd10,i2c/state_FSM_FFd10_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd10_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd11: FDCPE port map (i2c/state_FSM_FFd11,i2c/state_FSM_FFd13,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd12: FDCPE port map (i2c/state_FSM_FFd12,i2c/state_FSM_FFd12_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd12_D <= ((sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd13: FDCPE port map (i2c/state_FSM_FFd13,i2c/state_FSM_FFd13_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd13_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd14);
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd14: FDCPE port map (i2c/state_FSM_FFd14,i2c/state_FSM_FFd14_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd14_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd11 AND NOT i2c/state_FSM_FFd17)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd15: FDCPE port map (i2c/state_FSM_FFd15,i2c/state_FSM_FFd15_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd15_D <= ((EXP28_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(1) AND sensor_n(5) AND sensor_n(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(1) AND NOT sensor_n(5) AND sensor_n(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT i2c/state_FSM_FFd17)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(1) AND NOT sensor_n(5) AND NOT sensor_n(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd16: FDCPE port map (i2c/state_FSM_FFd16,i2c/state_FSM_FFd18,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd17: FDCPE port map (i2c/state_FSM_FFd17,i2c/state_FSM_FFd17_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd17_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd19)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd18: FDCPE port map (i2c/state_FSM_FFd18,i2c/state_FSM_FFd18_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd18_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd19);
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd19: FDCPE port map (i2c/state_FSM_FFd19,i2c/state_FSM_FFd19_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd19_D <= (NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd20);
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd2: FDCPE port map (i2c/state_FSM_FFd2,i2c/state_FSM_FFd15,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd20: FDCPE port map (i2c/state_FSM_FFd20,i2c/state_FSM_FFd21,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd21: FDCPE port map (i2c/state_FSM_FFd21,i2c/state_FSM_FFd21_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd21_D <= (sensor_n(0) AND i2c/state_FSM_FFd22);
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd22: FDCPE port map (i2c/state_FSM_FFd22,i2c/state_FSM_FFd22_D,CLK,'0',RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd22_D <= ((i2c/state_FSM_FFd1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/state_FSM_FFd22));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd3: FDCPE port map (i2c/state_FSM_FFd3,i2c/state_FSM_FFd5,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd4: FDCPE port map (i2c/state_FSM_FFd4,i2c/state_FSM_FFd4_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd4_D <= ((i2c/i(3) AND i2c/state_FSM_FFd6)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd4));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd5: FDCPE port map (i2c/state_FSM_FFd5,i2c/state_FSM_FFd5_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd5_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd6);
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd6: FDCPE port map (i2c/state_FSM_FFd6,i2c/state_FSM_FFd6_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd6_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(1) AND NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd7: FDCPE port map (i2c/state_FSM_FFd7,i2c/state_FSM_FFd9,CLK,RES,'0');
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd8: FDCPE port map (i2c/state_FSM_FFd8,i2c/state_FSM_FFd8_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd8_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/state_FSM_FFd9: FDCPE port map (i2c/state_FSM_FFd9,i2c/state_FSM_FFd9_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/state_FSM_FFd9_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd10);
+</td></tr><tr><td>
+FTCPE_i2c/temp0: FTCPE port map (i2c/temp(0),i2c/temp_T(0),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_T(0) <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/temp(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/temp(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND i2c/temp(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd12 AND i2c/temp(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd12 AND NOT i2c/temp(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/temp(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/temp(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT1.PIN));
+</td></tr><tr><td>
+FTCPE_i2c/temp1: FTCPE port map (i2c/temp(1),i2c/temp_T(1),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_T(1) <= ((EXP51_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(1) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(1) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(1) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd11.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(0) AND NOT i2c/temp(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21));
+</td></tr><tr><td>
+FTCPE_i2c/temp2: FTCPE port map (i2c/temp(2),i2c/temp_T(2),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_T(2) <= ((EXP56_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(1) AND NOT i2c/temp(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SDA_MASTER$BUF0.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(2) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(2) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(2) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21));
+</td></tr><tr><td>
+FTCPE_i2c/temp3: FTCPE port map (i2c/temp(3),i2c/temp_T(3),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_T(3) <= ((EXP53_.EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(2) AND NOT i2c/temp(3) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(2) AND NOT i2c/temp(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21));
+</td></tr><tr><td>
+FDCPE_i2c/temp4: FDCPE port map (i2c/temp(4),i2c/temp_D(4),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_D(4) <= ((i2c/temp(5).EXP)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND NOT i2c/temp(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd12 AND i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/temp5: FDCPE port map (i2c/temp(5),i2c/temp_D(5),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_D(5) <= ((sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(5) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(5) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(5) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(5) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd7 AND i2c/temp(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd16 AND i2c/temp(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND i2c/temp(5)));
+</td></tr><tr><td>
+FDCPE_i2c/temp6: FDCPE port map (i2c/temp(6),i2c/temp_D(6),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_D(6) <= ((sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(6) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(6) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(6) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd7 AND i2c/temp(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd16 AND i2c/temp(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/temp(6) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND i2c/temp(6)));
+</td></tr><tr><td>
+FDCPE_i2c/temp7: FDCPE port map (i2c/temp(7),i2c/temp_D(7),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_D(7) <= ((sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND NOT i2c/temp(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd12 AND i2c/state_FSM_FFd16 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output0: FDCPE port map (i2c/temp_output(0),i2c/temp_output_D(0),CLK,i2c/temp_output_CLR(0),i2c/temp_output_PRE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(0) <= ((i2c/temp_output(0) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(0) AND sensor_data_w(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(0) <= (RES AND NOT sensor_data_w(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(0) <= (RES AND sensor_data_w(0));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output1: FDCPE port map (i2c/temp_output(1),i2c/temp_output_D(1),CLK,i2c/temp_output_CLR(1),i2c/temp_output_PRE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(1) <= ((sensor_n(0) AND sensor_data_w(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(0) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(1) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(1) <= (RES AND NOT sensor_data_w(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(1) <= (RES AND sensor_data_w(1));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output2: FDCPE port map (i2c/temp_output(2),i2c/temp_output_D(2),CLK,i2c/temp_output_CLR(2),i2c/temp_output_PRE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(2) <= ((sensor_n(0) AND sensor_data_w(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(1) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(2) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(2) <= (RES AND NOT sensor_data_w(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(2) <= (RES AND sensor_data_w(2));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output3: FDCPE port map (i2c/temp_output(3),i2c/temp_output_D(3),CLK,i2c/temp_output_CLR(3),i2c/temp_output_PRE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(3) <= ((sensor_n(0) AND sensor_data_w(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(2) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(3) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(3) <= (RES AND NOT sensor_data_w(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(3) <= (RES AND sensor_data_w(3));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output4: FDCPE port map (i2c/temp_output(4),i2c/temp_output_D(4),CLK,i2c/temp_output_CLR(4),i2c/temp_output_PRE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(4) <= ((sensor_n(0) AND sensor_data_w(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(3) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(4) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(4) <= (RES AND NOT sensor_data_w(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(4) <= (RES AND sensor_data_w(4));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output5: FDCPE port map (i2c/temp_output(5),i2c/temp_output_D(5),CLK,i2c/temp_output_CLR(5),i2c/temp_output_PRE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(5) <= ((sensor_n(0) AND sensor_data_w(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(4) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(5) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(5) <= (RES AND NOT sensor_data_w(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(5) <= (RES AND sensor_data_w(5));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output6: FDCPE port map (i2c/temp_output(6),i2c/temp_output_D(6),CLK,i2c/temp_output_CLR(6),i2c/temp_output_PRE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(6) <= ((sensor_n(0) AND sensor_data_w(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(5) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(6) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(6) <= (RES AND NOT sensor_data_w(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(6) <= (RES AND sensor_data_w(6));
+</td></tr><tr><td>
+FDCPE_i2c/temp_output7: FDCPE port map (i2c/temp_output(7),i2c/temp_output_D(7),CLK,i2c/temp_output_CLR(7),i2c/temp_output_PRE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_D(7) <= ((sensor_n(0) AND sensor_data_w(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(6) AND i2c/state_FSM_FFd7)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_output(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_output(7) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_CLR(7) <= (RES AND NOT sensor_data_w(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_output_PRE(7) <= (RES AND sensor_data_w(7));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg0: FDCPE port map (i2c/temp_reg(0),i2c/temp_reg_D(0),CLK,i2c/temp_reg_CLR(0),i2c/temp_reg_PRE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(0) <= ((sensor_n(0) AND sensor_reg(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(0) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(0) <= (RES AND NOT sensor_reg(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(0) <= (RES AND sensor_reg(0));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg1: FDCPE port map (i2c/temp_reg(1),i2c/temp_reg_D(1),CLK,i2c/temp_reg_CLR(1),i2c/temp_reg_PRE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(1) <= ((sensor_n(0) AND sensor_reg(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(0) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(1) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(1) <= (RES AND NOT sensor_reg(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(1) <= (RES AND sensor_reg(1));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg2: FDCPE port map (i2c/temp_reg(2),i2c/temp_reg_D(2),CLK,i2c/temp_reg_CLR(2),i2c/temp_reg_PRE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(2) <= ((sensor_n(0) AND sensor_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(1) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(2) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(2) <= (RES AND NOT sensor_reg(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(2) <= (RES AND sensor_reg(2));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg3: FDCPE port map (i2c/temp_reg(3),i2c/temp_reg_D(3),CLK,i2c/temp_reg_CLR(3),i2c/temp_reg_PRE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(3) <= ((sensor_n(0) AND sensor_reg(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(2) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(3) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(3) <= (RES AND NOT sensor_reg(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(3) <= (RES AND sensor_reg(3));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg4: FDCPE port map (i2c/temp_reg(4),i2c/temp_reg_D(4),CLK,i2c/temp_reg_CLR(4),i2c/temp_reg_PRE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(4) <= ((sensor_n(0) AND sensor_reg(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(3) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(4) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(4) <= (RES AND NOT sensor_reg(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(4) <= (RES AND sensor_reg(4));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg5: FDCPE port map (i2c/temp_reg(5),i2c/temp_reg_D(5),CLK,i2c/temp_reg_CLR(5),i2c/temp_reg_PRE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(5) <= ((sensor_n(0) AND sensor_reg(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(4) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(5) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(5) <= (RES AND NOT sensor_reg(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(5) <= (RES AND sensor_reg(5));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg6: FDCPE port map (i2c/temp_reg(6),i2c/temp_reg_D(6),CLK,i2c/temp_reg_CLR(6),i2c/temp_reg_PRE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(6) <= ((sensor_n(0) AND sensor_reg(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(5) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(6) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(6) <= (RES AND NOT sensor_reg(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(6) <= (RES AND sensor_reg(6));
+</td></tr><tr><td>
+FDCPE_i2c/temp_reg7: FDCPE port map (i2c/temp_reg(7),i2c/temp_reg_D(7),CLK,i2c/temp_reg_CLR(7),i2c/temp_reg_PRE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_D(7) <= ((sensor_n(0) AND sensor_reg(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(0) AND i2c/temp_reg(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	i2c/state_FSM_FFd22)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(6) AND i2c/state_FSM_FFd11)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/temp_reg(7) AND NOT i2c/state_FSM_FFd22 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd11));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_CLR(7) <= (RES AND NOT sensor_reg(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c/temp_reg_PRE(7) <= (RES AND sensor_reg(7));
+</td></tr><tr><td>
+FDCPE_i2c_end: FDCPE port map (i2c_end,i2c_end_D,CLK,RES,'0');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i2c_end_D <= ((i2c/state_FSM_FFd1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd22 AND i2c_end));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(0)/outDATA(0)_RSTF <= ((NOT sensor_n(0) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_reg(0) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(0) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(0) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_data_w(0) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND NOT sensor_data_r(0) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(1)/outDATA(1)_SETF <= ((sensor_reg(1) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(1) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(1) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(1) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_data_w(1) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND sensor_data_r(1) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(2)/outDATA(2)_RSTF <= ((NOT sensor_reg(2) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(2) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(2) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_data_w(2) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(2) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND NOT sensor_data_r(2) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(3)/outDATA(3)_RSTF <= ((NOT sensor_reg(3) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(3) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(3) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_data_w(3) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(3) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND NOT sensor_data_r(3) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(4)/outDATA(4)_SETF <= ((sensor_reg(4) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(4) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(4) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_data_w(4) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(4) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND sensor_data_r(4) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(5)/outDATA(5)_SETF <= ((sensor_reg(5) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(5) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(5) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_data_w(5) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND sensor_data_r(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(6)/outDATA(6)_RSTF <= ((NOT sensor_reg(6) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(6) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(6) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(6) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_data_w(6) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND NOT sensor_data_r(6) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+outDATA(7)/outDATA(7)_SETF <= ((sensor_reg(7) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(7) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(7) AND ADR(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_data_w(7) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(7) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND sensor_data_r(7) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(9)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r0: FDCPE port map (sensor_data_r(0),sensor_data_r_D(0),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(0) <= ((sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/state_FSM_FFd3 AND sensor_data_r(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(0) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(0) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(0) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(0) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SDA_OUT1.PIN));
+</td></tr><tr><td>
+FDCPE_sensor_data_r1: FDCPE port map (sensor_data_r(1),sensor_data_r_D(1),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(1) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(1) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(1) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(1) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(1) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(1)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r2: FDCPE port map (sensor_data_r(2),sensor_data_r_D(2),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(2) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(2) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(2) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(2) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(2) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(2)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r3: FDCPE port map (sensor_data_r(3),sensor_data_r_D(3),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(3) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(3) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(3) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(3) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(3) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(3)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r4: FDCPE port map (sensor_data_r(4),sensor_data_r_D(4),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(4) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(4) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(4) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(4) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(4) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(4)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r5: FDCPE port map (sensor_data_r(5),sensor_data_r_D(5),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(5) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(5) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(5) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(5) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(5) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(5)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r6: FDCPE port map (sensor_data_r(6),sensor_data_r_D(6),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(6) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(6) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(6) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(6) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(6) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(6)));
+</td></tr><tr><td>
+FDCPE_sensor_data_r7: FDCPE port map (sensor_data_r(7),sensor_data_r_D(7),CLK,'0','0',NOT RES);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_r_D(7) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(7) AND SDA_OUT4.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(7) AND SDA_OUT2.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(7) AND SDA_OUT3.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(7) AND SDA_OUT1.PIN)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/state_FSM_FFd3 AND sensor_data_r(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sensor_data_r(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(7)));
+</td></tr><tr><td>
+FDCPE_sensor_data_w0: FDCPE port map (sensor_data_w(0),Data(0).PIN,BWR,RES,'0',sensor_data_w_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(0) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w1: FDCPE port map (sensor_data_w(1),Data(1).PIN,BWR,RES,'0',sensor_data_w_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(1) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w2: FDCPE port map (sensor_data_w(2),Data(2).PIN,BWR,RES,'0',sensor_data_w_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(2) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w3: FDCPE port map (sensor_data_w(3),Data(3).PIN,BWR,RES,'0',sensor_data_w_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(3) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w4: FDCPE port map (sensor_data_w(4),Data(4).PIN,BWR,RES,'0',sensor_data_w_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(4) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w5: FDCPE port map (sensor_data_w(5),Data(5).PIN,BWR,RES,'0',sensor_data_w_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(5) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w6: FDCPE port map (sensor_data_w(6),Data(6).PIN,BWR,RES,'0',sensor_data_w_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(6) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_data_w7: FDCPE port map (sensor_data_w(7),Data(7).PIN,BWR,RES,'0',sensor_data_w_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_data_w_CE(7) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n0: FDCPE port map (sensor_n(0),Data(0).PIN,BWR,NOT sensor_n(0)/sensor_n(0)_RSTF__$INT,'0',sensor_n_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(0) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+</td></tr><tr><td>
+sensor_n(0)/sensor_n(0)_RSTF__$INT <= (NOT RES AND NOT i2c_end);
+</td></tr><tr><td>
+FDCPE_sensor_n1: FDCPE port map (sensor_n(1),Data(1).PIN,BWR,RES,'0',sensor_n_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(1) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n2: FDCPE port map (sensor_n(2),Data(2).PIN,BWR,RES,'0',sensor_n_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(2) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n3: FDCPE port map (sensor_n(3),Data(3).PIN,BWR,RES,'0',sensor_n_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(3) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n4: FDCPE port map (sensor_n(4),Data(4).PIN,BWR,RES,'0',sensor_n_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(4) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n5: FDCPE port map (sensor_n(5),Data(5).PIN,BWR,RES,'0',sensor_n_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(5) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n6: FDCPE port map (sensor_n(6),Data(6).PIN,BWR,RES,'0',sensor_n_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(6) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_n7: FDCPE port map (sensor_n(7),Data(7).PIN,BWR,RES,'0',sensor_n_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_n_CE(7) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg0: FDCPE port map (sensor_reg(0),Data(0).PIN,BWR,RES,'0',sensor_reg_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(0) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg1: FDCPE port map (sensor_reg(1),Data(1).PIN,BWR,RES,'0',sensor_reg_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(1) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg2: FDCPE port map (sensor_reg(2),Data(2).PIN,BWR,RES,'0',sensor_reg_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(2) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg3: FDCPE port map (sensor_reg(3),Data(3).PIN,BWR,RES,'0',sensor_reg_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(3) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg4: FDCPE port map (sensor_reg(4),Data(4).PIN,BWR,RES,'0',sensor_reg_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(4) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg5: FDCPE port map (sensor_reg(5),Data(5).PIN,BWR,RES,'0',sensor_reg_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(5) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg6: FDCPE port map (sensor_reg(6),Data(6).PIN,BWR,RES,'0',sensor_reg_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(6) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+FDCPE_sensor_reg7: FDCPE port map (sensor_reg(7),Data(7).PIN,BWR,RES,'0',sensor_reg_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensor_reg_CE(7) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

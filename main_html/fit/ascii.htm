@@ -1,0 +1,2402 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: main                                Date:  6-27-2023,  8:45AM
+Device Used: XC95288XL-6-TQ144
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+115/288 ( 40%) 689 /1440 ( 48%) 400/864 ( 46%)   94 /288 ( 33%) 30 /117 ( 26%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1           9/18       31/54       67/90       2/ 8
+FB2           9/18       31/54       87/90       2/10
+FB3          13/18       31/54       37/90       2/ 5
+FB4           8/18       20/54       47/90       1/ 6
+FB5           6/18       22/54       37/90       2/ 8
+FB6           8/18       31/54       58/90       1/ 8
+FB7           8/18       27/54       88/90       2/ 4
+FB8           7/18       30/54       54/90       1/ 5
+FB9          15/18       27/54       51/90       0/ 9
+FB10          4/18       21/54       33/90       4/10
+FB11          1/18       31/54       25/90       0/ 7
+FB12          3/18       30/54       26/90       5/ 6
+FB13          1/18       15/54        6/90       0/ 6
+FB14         18/18*      22/54       47/90       7/ 8
+FB15          0/18        0/54        0/90       0/ 9
+FB16          5/18       31/54       26/90       1/ 8
+             -----       -----       -----      -----    
+            115/288     400/864     689/1440    30/117
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Signal 'BWR' mapped onto global clock net GCK1.
+Signal 'CLK' mapped onto global clock net GCK3.
+Signal 'BRD' mapped onto global output enable net GTS4.
+Global set/reset net(s) unused.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   11          11    |  I/O              :    26     109
+Output        :    4           4    |  GCK/IO           :     2       3
+Bidirectional :   12          12    |  GTS/IO           :     1       4
+GCK           :    2           2    |  GSR/IO           :     1       1
+GTS           :    1           1    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     30          30
+
+** Power Data **
+
+There are 115 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'main.ise'.
+WARNING:Cpld:1258 - Invalid constraint 'PULLUP' found in netlist.  The
+   constraint is not supported for targeted device and is ignored.
+WARNING:Cpld:1258 - Invalid constraint 'PULLUP' found in netlist.  The
+   constraint is not supported for targeted device and is ignored.
+WARNING:Cpld:1258 - Invalid constraint 'PULLUP' found in netlist.  The
+   constraint is not supported for targeted device and is ignored.
+WARNING:Cpld:1258 - Invalid constraint 'PULLUP' found in netlist.  The
+   constraint is not supported for targeted device and is ignored.
+*************************  Summary of Mapped Logic  ************************
+
+** 16 Outputs **
+
+Signal                              Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                Pts   Inps          No.  Type    Use     Mode Rate State
+SDA_OUT1                            2     4     FB1_8   22   I/O     I/O     STD  FAST 
+SCL_OUT1                            1     3     FB1_10  23   I/O     O       STD  SLOW 
+SDA_OUT2                            2     4     FB2_2   9    I/O     I/O     STD  FAST 
+SCL_OUT2                            1     3     FB2_3   10   I/O     O       STD  SLOW 
+SDA_OUT4                            13    30    FB3_15  33   I/O     I/O     STD  FAST RESET
+SCL_OUT4                            1     3     FB5_2   34   I/O     O       STD  SLOW 
+SDA_OUT3                            2     4     FB7_12  48   I/O     I/O     STD  FAST 
+SCL_OUT3                            1     3     FB7_15  49   I/O     O       STD  SLOW 
+Data<1>                             2     7     FB14_3  100  I/O     I/O     STD  FAST RESET
+Data<2>                             2     7     FB14_5  101  I/O     I/O     STD  FAST RESET
+Data<3>                             2     7     FB14_6  102  I/O     I/O     STD  FAST RESET
+Data<4>                             2     7     FB14_8  103  I/O     I/O     STD  FAST RESET
+Data<5>                             2     7     FB14_10 104  I/O     I/O     STD  FAST RESET
+Data<6>                             2     7     FB14_11 105  I/O     I/O     STD  FAST RESET
+Data<7>                             2     7     FB14_15 107  I/O     I/O     STD  FAST RESET
+Data<0>                             2     7     FB16_12 98   I/O     I/O     STD  FAST RESET
+
+** 99 Buried Nodes **
+
+Signal                              Total Total Loc     Pwr  Reg Init
+Name                                Pts   Inps          Mode State
+sensor_data_r<0>                    12    15    FB1_4   STD  RESET
+i2c/state_FSM_FFd8                  6     13    FB1_6   STD  RESET
+$OpTx$FX_DC$21                      2     3     FB1_7   STD  
+i2c/state_FSM_FFd4                  3     7     FB1_9   STD  RESET
+$OpTx$$OpTx$FX_DC$45_INV$798        1     4     FB1_11  STD  
+i2c/i<0>                            24    25    FB1_13  STD  RESET
+SDA_EN                              16    21    FB1_17  STD  RESET
+$OpTx$$OpTx$FX_DC$47_INV$800        1     3     FB2_1   STD  
+i2c/i<1>                            24    24    FB2_5   STD  RESET
+$OpTx$$OpTx$FX_DC$18_INV$797        1     2     FB2_7   STD  
+i2c/state_FSM_FFd19                 2     3     FB2_8   STD  RESET
+i2c/state_FSM_FFd15                 15    16    FB2_11  STD  RESET
+i2c/i<2>                            22    22    FB2_13  STD  RESET
+i2c/i<3>                            19    22    FB2_17  STD  RESET
+i2c/state_FSM_FFd22                 3     4     FB3_1   STD  RESET
+i2c_end                             3     4     FB3_2   STD  RESET
+i2c/state_FSM_FFd1                  2     2     FB3_3   STD  RESET
+i2c/state_FSM_FFd13                 2     3     FB3_4   STD  RESET
+i2c/state_FSM_FFd18                 2     3     FB3_5   STD  RESET
+i2c/state_FSM_FFd2                  2     2     FB3_6   STD  RESET
+i2c/state_FSM_FFd20                 2     2     FB3_7   STD  RESET
+i2c/state_FSM_FFd21                 2     3     FB3_8   STD  RESET
+i2c/state_FSM_FFd5                  2     3     FB3_9   STD  RESET
+i2c/state_FSM_FFd9                  2     3     FB3_10  STD  RESET
+$OpTx$$OpTx$FX_DC$46_INV$799        1     4     FB3_11  STD  
+sensor_n<0>/sensor_n<0>_RSTF__$INT  1     2     FB3_12  STD  
+i2c/temp_reg<5>                     6     7     FB4_1   STD  RESET
+i2c/temp_reg<6>                     6     7     FB4_3   STD  RESET
+i2c/temp_reg<0>                     5     6     FB4_4   STD  RESET
+i2c/temp_reg<4>                     6     7     FB4_7   STD  RESET
+i2c/temp_reg<3>                     6     7     FB4_8   STD  RESET
+i2c/temp_reg<2>                     6     7     FB4_9   STD  RESET
+i2c/temp_reg<1>                     6     7     FB4_10  STD  RESET
+i2c/temp_reg<7>                     6     7     FB4_18  STD  RESET
+i2c/state_FSM_FFd3                  2     2     FB5_1   STD  RESET
+i2c/temp<6>                         9     17    FB5_13  STD  RESET
+i2c/temp<5>                         9     17    FB5_15  STD  RESET
+i2c/temp<4>                         14    17    FB5_17  STD  RESET
+i2c/state_FSM_FFd7                  2     2     FB5_18  STD  RESET
+i2c/state_FSM_FFd6                  8     14    FB6_1   STD  RESET
+
+Signal                              Total Total Loc     Pwr  Reg Init
+Name                                Pts   Inps          Mode State
+i2c/temp_output<2>                  6     7     FB6_7   STD  RESET
+i2c/temp_output<1>                  6     7     FB6_8   STD  RESET
+i2c/state_FSM_FFd12                 6     13    FB6_10  STD  RESET
+i2c/state_FSM_FFd10                 7     13    FB6_11  STD  RESET
+i2c/temp<7>                         14    17    FB6_13  STD  RESET
+i2c/temp_output<3>                  6     7     FB6_15  STD  RESET
+i2c/temp_output<0>                  5     6     FB6_16  STD  RESET
+i2c/temp<3>                         24    18    FB7_3   STD  RESET
+i2c/temp<2>                         24    18    FB7_10  STD  RESET
+i2c/state_FSM_FFd16                 2     2     FB7_13  STD  RESET
+i2c/temp<0>                         9     16    FB7_14  STD  RESET
+i2c/state_FSM_FFd11                 2     2     FB7_16  STD  RESET
+i2c/temp<1>                         24    18    FB7_18  STD  RESET
+i2c/temp_output<7>                  6     7     FB8_1   STD  RESET
+i2c/temp_output<5>                  6     7     FB8_8   STD  RESET
+i2c/temp_output<4>                  6     7     FB8_9   STD  RESET
+sensor_data_r<4>                    10    16    FB8_11  STD  RESET
+sensor_data_r<3>                    10    16    FB8_13  STD  RESET
+sensor_data_r<2>                    10    16    FB8_15  STD  RESET
+i2c/temp_output<6>                  6     7     FB8_16  STD  RESET
+sensor_reg<7>                       3     12    FB9_4   STD  RESET
+sensor_reg<6>                       3     12    FB9_5   STD  RESET
+sensor_reg<5>                       3     12    FB9_6   STD  RESET
+sensor_reg<1>                       3     12    FB9_7   STD  RESET
+sensor_reg<0>                       3     12    FB9_8   STD  RESET
+sensor_n<7>                         3     12    FB9_9   STD  RESET
+sensor_n<6>                         3     12    FB9_10  STD  RESET
+sensor_n<1>                         3     12    FB9_11  STD  RESET
+sensor_n<0>                         3     12    FB9_12  STD  RESET
+sensor_data_w<7>                    3     12    FB9_13  STD  RESET
+sensor_data_w<6>                    3     12    FB9_14  STD  RESET
+sensor_data_w<1>                    3     12    FB9_15  STD  RESET
+sensor_data_w<0>                    3     12    FB9_16  STD  RESET
+outDATA<5>/outDATA<5>_SETF          6     15    FB9_17  STD  
+outDATA<4>/outDATA<4>_SETF          6     15    FB9_18  STD  
+i2c/state_FSM_FFd17                 6     13    FB10_1  STD  RESET
+i2c/state_FSM_FFd14                 7     13    FB10_14 STD  RESET
+sensor_data_r<5>                    10    16    FB10_16 STD  RESET
+sensor_data_r<1>                    10    16    FB10_18 STD  RESET
+SCL                                 25    31    FB11_16 STD  RESET
+
+Signal                              Total Total Loc     Pwr  Reg Init
+Name                                Pts   Inps          Mode State
+outDATA<6>/outDATA<6>_RSTF          6     15    FB12_1  STD  
+sensor_data_r<7>                    10    16    FB12_16 STD  RESET
+sensor_data_r<6>                    10    16    FB12_18 STD  RESET
+outDATA<7>/outDATA<7>_SETF          6     15    FB13_18 STD  
+sensor_reg<4>                       3     12    FB14_1  STD  RESET
+sensor_reg<3>                       3     12    FB14_2  STD  RESET
+sensor_reg<2>                       3     12    FB14_4  STD  RESET
+sensor_n<5>                         3     12    FB14_7  STD  RESET
+sensor_n<4>                         3     12    FB14_9  STD  RESET
+sensor_n<3>                         3     12    FB14_12 STD  RESET
+sensor_n<2>                         3     12    FB14_13 STD  RESET
+sensor_data_w<5>                    3     12    FB14_14 STD  RESET
+sensor_data_w<4>                    3     12    FB14_16 STD  RESET
+sensor_data_w<3>                    3     12    FB14_17 STD  RESET
+sensor_data_w<2>                    3     12    FB14_18 STD  RESET
+outDATA<0>/outDATA<0>_RSTF          6     15    FB16_1  STD  
+outDATA<3>/outDATA<3>_RSTF          6     15    FB16_15 STD  
+outDATA<2>/outDATA<2>_RSTF          6     15    FB16_17 STD  
+outDATA<1>/outDATA<1>_SETF          6     15    FB16_18 STD  
+
+** 14 Inputs **
+
+Signal                              Loc     Pin  Pin     Pin     
+Name                                        No.  Type    Use     
+BWR                                 FB3_10  30   GCK/I/O GCK
+BRD                                 FB4_5   3    GTS/I/O GTS
+CLK                                 FB5_8   38   GCK/I/O GCK
+RES                                 FB6_15  143  GSR/I/O I
+ADR<9>                              FB8_2   130  I/O     I
+ADR<5>                              FB10_10 124  I/O     I
+ADR<6>                              FB10_12 126  I/O     I
+ADR<7>                              FB10_14 128  I/O     I
+ADR<8>                              FB10_17 129  I/O     I
+ADR<0>                              FB12_2  110  I/O     I
+ADR<1>                              FB12_3  111  I/O     I
+ADR<2>                              FB12_5  112  I/O     I
+ADR<3>                              FB12_8  113  I/O     I
+ADR<4>                              FB12_10 115  I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0   /\1   4     FB1_1         (b)     (b)
+(unused)              0       0     0   5     FB1_2         (b)     
+(unused)              0       0   \/2   3     FB1_3         (b)     (b)
+sensor_data_r<0>     12       7<-   0   0     FB1_4         (b)     (b)
+(unused)              0       0   /\5   0     FB1_5   20    I/O     (b)
+i2c/state_FSM_FFd8    6       1<-   0   0     FB1_6   21    I/O     (b)
+$OpTx$FX_DC$21        2       0   /\1   2     FB1_7         (b)     (b)
+SDA_OUT1              2       0     0   3     FB1_8   22    I/O     I/O
+i2c/state_FSM_FFd4    3       0     0   2     FB1_9         (b)     (b)
+SCL_OUT1              1       0     0   4     FB1_10  23    I/O     O
+$OpTx$$OpTx$FX_DC$45_INV$798
+                      1       0   \/4   0     FB1_11        (b)     (b)
+(unused)              0       0   \/5   0     FB1_12  24    I/O     (b)
+i2c/i<0>             24      19<-   0   0     FB1_13        (b)     (b)
+(unused)              0       0   /\5   0     FB1_14  25    I/O     (b)
+(unused)              0       0   /\5   0     FB1_15  26    I/O     (b)
+(unused)              0       0   \/5   0     FB1_16        (b)     (b)
+SDA_EN               16      11<-   0   0     FB1_17  27    I/O     (b)
+(unused)              0       0   /\5   0     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$18_INV$797  12: i2c/i<1>             22: i2c/state_FSM_FFd22 
+  2: $OpTx$FX_DC$21                13: i2c/i<2>             23: i2c/state_FSM_FFd3 
+  3: RES                           14: i2c/i<3>             24: i2c/state_FSM_FFd4 
+  4: SCL                           15: i2c/state_FSM_FFd10  25: i2c/state_FSM_FFd6 
+  5: SDA_EN                        16: i2c/state_FSM_FFd11  26: i2c/state_FSM_FFd7 
+  6: SDA_OUT4                      17: i2c/state_FSM_FFd14  27: i2c/state_FSM_FFd8 
+  7: SDA_OUT1.PIN                  18: i2c/state_FSM_FFd15  28: sensor_data_r<0> 
+  8: SDA_OUT2.PIN                  19: i2c/state_FSM_FFd16  29: sensor_n<0> 
+  9: SDA_OUT3.PIN                  20: i2c/state_FSM_FFd19  30: sensor_n<5> 
+ 10: SDA_OUT4.PIN                  21: i2c/state_FSM_FFd2   31: sensor_n<6> 
+ 11: i2c/i<0>                     
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+sensor_data_r<0>     ..X...XXXXXXXX........X.X.XX.XX......... 15
+i2c/state_FSM_FFd8   ..X...XXXXXXXXX...........X..XX......... 13
+$OpTx$FX_DC$21       ........XX...................X.......... 3
+SDA_OUT1             ....XX.......................XX......... 4
+i2c/state_FSM_FFd4   ..X.......XXXX.........XX............... 7
+SCL_OUT1             ...X.........................XX......... 3
+$OpTx$$OpTx$FX_DC$45_INV$798 
+                     ...............X..X...X..X.............. 4
+i2c/i<0>             XXX...XXXXXXXXXXXXXXX.XXXXX..XX......... 25
+SDA_EN               ..X.X.XXXXXXXXX.XX.XXX..X.X.XXX......... 21
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+$OpTx$$OpTx$FX_DC$47_INV$800
+                      1       0   /\4   0     FB2_1         (b)     (b)
+SDA_OUT2              2       0   \/1   2     FB2_2   9     I/O     I/O
+SCL_OUT2              1       1<- \/5   0     FB2_3   10    I/O     O
+(unused)              0       0   \/5   0     FB2_4         (b)     (b)
+i2c/i<1>             24      19<-   0   0     FB2_5   11    I/O     (b)
+(unused)              0       0   /\5   0     FB2_6   12    I/O     (b)
+$OpTx$$OpTx$FX_DC$18_INV$797
+                      1       0   /\4   0     FB2_7         (b)     (b)
+i2c/state_FSM_FFd19   2       0   \/2   1     FB2_8   13    I/O     (b)
+(unused)              0       0   \/5   0     FB2_9         (b)     (b)
+(unused)              0       0   \/5   0     FB2_10  14    I/O     (b)
+i2c/state_FSM_FFd15  15      12<- \/2   0     FB2_11        (b)     (b)
+(unused)              0       0   \/5   0     FB2_12  15    I/O     (b)
+i2c/i<2>             22      17<-   0   0     FB2_13        (b)     (b)
+(unused)              0       0   /\5   0     FB2_14  16    I/O     (b)
+(unused)              0       0   /\5   0     FB2_15  17    I/O     (b)
+(unused)              0       0   \/5   0     FB2_16        (b)     (b)
+i2c/i<3>             19      14<-   0   0     FB2_17  19    I/O     (b)
+(unused)              0       0   /\5   0     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$45_INV$798  12: i2c/i<2>             22: i2c/state_FSM_FFd2 
+  2: RES                           13: i2c/i<3>             23: i2c/state_FSM_FFd20 
+  3: SCL                           14: i2c/state_FSM_FFd10  24: i2c/state_FSM_FFd3 
+  4: SDA_EN                        15: i2c/state_FSM_FFd11  25: i2c/state_FSM_FFd4 
+  5: SDA_OUT4                      16: i2c/state_FSM_FFd12  26: i2c/state_FSM_FFd6 
+  6: SDA_OUT1.PIN                  17: i2c/state_FSM_FFd14  27: i2c/state_FSM_FFd7 
+  7: SDA_OUT2.PIN                  18: i2c/state_FSM_FFd15  28: i2c/state_FSM_FFd8 
+  8: SDA_OUT3.PIN                  19: i2c/state_FSM_FFd16  29: sensor_n<1> 
+  9: SDA_OUT4.PIN                  20: i2c/state_FSM_FFd17  30: sensor_n<5> 
+ 10: i2c/i<0>                      21: i2c/state_FSM_FFd19  31: sensor_n<6> 
+ 11: i2c/i<1>                     
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+$OpTx$$OpTx$FX_DC$47_INV$800 
+                     ...............X...X.......X............ 3
+SDA_OUT2             ...XX........................XX......... 4
+SCL_OUT2             ..X..........................XX......... 3
+i2c/i<1>             .X...XXXXXX.XXXXXXXXXX.XXXXX.XX......... 24
+$OpTx$$OpTx$FX_DC$18_INV$797 
+                     ...............X...X.................... 2
+i2c/state_FSM_FFd19  .X................X...X................. 3
+i2c/state_FSM_FFd15  .X...XXXXXXXX..X...X....X..XXXX......... 16
+i2c/i<2>             XX...XXXXXXXXX.XXX.XXX..XX.X.XX......... 22
+i2c/i<3>             XX...XXXXXXXXX.XXX.XXX..XX.X.XX......... 22
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+i2c/state_FSM_FFd22   3       0     0   2     FB3_1         (b)     (b)
+i2c_end               3       0     0   2     FB3_2   28    I/O     (b)
+i2c/state_FSM_FFd1    2       0     0   3     FB3_3         (b)     (b)
+i2c/state_FSM_FFd13   2       0     0   3     FB3_4         (b)     (b)
+i2c/state_FSM_FFd18   2       0     0   3     FB3_5         (b)     (b)
+i2c/state_FSM_FFd2    2       0     0   3     FB3_6         (b)     (b)
+i2c/state_FSM_FFd20   2       0     0   3     FB3_7         (b)     (b)
+i2c/state_FSM_FFd21   2       0     0   3     FB3_8         (b)     (b)
+i2c/state_FSM_FFd5    2       0     0   3     FB3_9         (b)     (b)
+i2c/state_FSM_FFd9    2       0     0   3     FB3_10  30    GCK/I/O GCK
+$OpTx$$OpTx$FX_DC$46_INV$799
+                      1       0     0   4     FB3_11        (b)     (b)
+sensor_n<0>/sensor_n<0>_RSTF__$INT
+                      1       0     0   4     FB3_12  31    I/O     (b)
+(unused)              0       0     0   5     FB3_13        (b)     
+(unused)              0       0   \/4   1     FB3_14  32    GCK/I/O (b)
+SDA_OUT4             13       8<-   0   0     FB3_15  33    I/O     I/O
+(unused)              0       0   /\4   1     FB3_16        (b)     (b)
+(unused)              0       0     0   5     FB3_17        (b)     
+(unused)              0       0     0   5     FB3_18        (b)     
+
+Signals Used by Logic in Function Block
+  1: RES                  12: i2c/state_FSM_FFd21  22: sensor_data_r<2> 
+  2: SDA_EN               13: i2c/state_FSM_FFd22  23: sensor_data_r<3> 
+  3: SDA_OUT4             14: i2c/state_FSM_FFd4   24: sensor_data_r<4> 
+  4: i2c/i<3>             15: i2c/state_FSM_FFd6   25: sensor_data_r<5> 
+  5: i2c/state_FSM_FFd1   16: i2c/temp<7>          26: sensor_data_r<6> 
+  6: i2c/state_FSM_FFd10  17: i2c/temp_output<7>   27: sensor_data_r<7> 
+  7: i2c/state_FSM_FFd14  18: i2c/temp_reg<7>      28: sensor_n<0> 
+  8: i2c/state_FSM_FFd15  19: i2c_end              29: sensor_n<1> 
+  9: i2c/state_FSM_FFd16  20: sensor_data_r<0>     30: sensor_n<5> 
+ 10: i2c/state_FSM_FFd19  21: sensor_data_r<1>     31: sensor_n<6> 
+ 11: i2c/state_FSM_FFd2  
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/state_FSM_FFd22  X...X.......X..............X............ 4
+i2c_end              X...X.......X.....X..................... 4
+i2c/state_FSM_FFd1   X.........X............................. 2
+i2c/state_FSM_FFd13  X..X..X................................. 3
+i2c/state_FSM_FFd18  X..X.....X.............................. 3
+i2c/state_FSM_FFd2   X......X................................ 2
+i2c/state_FSM_FFd20  X..........X............................ 2
+i2c/state_FSM_FFd21  X...........X..............X............ 3
+i2c/state_FSM_FFd5   X..X..........X......................... 3
+i2c/state_FSM_FFd9   X..X.X.................................. 3
+$OpTx$$OpTx$FX_DC$46_INV$799 
+                     .....XX..X....X......................... 4
+sensor_n<0>/sensor_n<0>_RSTF__$INT 
+                     X.................X..................... 2
+SDA_OUT4             XXXXXXXXXXXXXXXXXX.XXXXXXXXXXXX......... 30
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               20/34
+Number of signals used by logic mapping into function block:  20
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+i2c/temp_reg<5>       6       1<-   0   0     FB4_1         (b)     (b)
+(unused)              0       0   \/1   4     FB4_2   2     GTS/I/O (b)
+i2c/temp_reg<6>       6       1<-   0   0     FB4_3         (b)     (b)
+i2c/temp_reg<0>       5       0     0   0     FB4_4         (b)     (b)
+(unused)              0       0     0   5     FB4_5   3     GTS/I/O GTS
+(unused)              0       0   \/2   3     FB4_6   4     I/O     (b)
+i2c/temp_reg<4>       6       2<- \/1   0     FB4_7         (b)     (b)
+i2c/temp_reg<3>       6       1<-   0   0     FB4_8   5     GTS/I/O (b)
+i2c/temp_reg<2>       6       1<-   0   0     FB4_9         (b)     (b)
+i2c/temp_reg<1>       6       2<- /\1   0     FB4_10        (b)     (b)
+(unused)              0       0   /\2   3     FB4_11        (b)     (b)
+(unused)              0       0     0   5     FB4_12  6     GTS/I/O 
+(unused)              0       0     0   5     FB4_13        (b)     
+(unused)              0       0     0   5     FB4_14  7     I/O     
+(unused)              0       0     0   5     FB4_15        (b)     
+(unused)              0       0     0   5     FB4_16        (b)     
+(unused)              0       0   \/2   3     FB4_17        (b)     (b)
+i2c/temp_reg<7>       6       2<- \/1   0     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: RES                   8: i2c/temp_reg<4>   15: sensor_reg<2> 
+  2: i2c/state_FSM_FFd11   9: i2c/temp_reg<5>   16: sensor_reg<3> 
+  3: i2c/state_FSM_FFd22  10: i2c/temp_reg<6>   17: sensor_reg<4> 
+  4: i2c/temp_reg<0>      11: i2c/temp_reg<7>   18: sensor_reg<5> 
+  5: i2c/temp_reg<1>      12: sensor_n<0>       19: sensor_reg<6> 
+  6: i2c/temp_reg<2>      13: sensor_reg<0>     20: sensor_reg<7> 
+  7: i2c/temp_reg<3>      14: sensor_reg<1>    
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/temp_reg<5>      XXX....XX..X.....X...................... 7
+i2c/temp_reg<6>      XXX.....XX.X......X..................... 7
+i2c/temp_reg<0>      XXXX.......XX........................... 6
+i2c/temp_reg<4>      XXX...XX...X....X....................... 7
+i2c/temp_reg<3>      XXX..XX....X...X........................ 7
+i2c/temp_reg<2>      XXX.XX.....X..X......................... 7
+i2c/temp_reg<1>      XXXXX......X.X.......................... 7
+i2c/temp_reg<7>      XXX......XXX.......X.................... 7
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               22/32
+Number of signals used by logic mapping into function block:  22
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+i2c/state_FSM_FFd3    2       0     0   3     FB5_1         (b)     (b)
+SCL_OUT4              1       0     0   4     FB5_2   34    I/O     O
+(unused)              0       0     0   5     FB5_3         (b)     
+(unused)              0       0     0   5     FB5_4         (b)     
+(unused)              0       0     0   5     FB5_5   35    I/O     
+(unused)              0       0     0   5     FB5_6         (b)     
+(unused)              0       0     0   5     FB5_7         (b)     
+(unused)              0       0     0   5     FB5_8   38    GCK/I/O GCK
+(unused)              0       0     0   5     FB5_9         (b)     
+(unused)              0       0     0   5     FB5_10  39    I/O     
+(unused)              0       0     0   5     FB5_11        (b)     
+(unused)              0       0   \/4   1     FB5_12  40    I/O     (b)
+i2c/temp<6>           9       4<-   0   0     FB5_13        (b)     (b)
+(unused)              0       0   \/5   0     FB5_14  41    I/O     (b)
+i2c/temp<5>           9       5<- \/1   0     FB5_15  43    I/O     (b)
+(unused)              0       0   \/5   0     FB5_16        (b)     (b)
+i2c/temp<4>          14       9<-   0   0     FB5_17  44    I/O     (b)
+i2c/state_FSM_FFd7    2       0   /\3   0     FB5_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: RES                9: i2c/i<2>             16: i2c/state_FSM_FFd9 
+  2: SCL               10: i2c/i<3>             17: i2c/temp<3> 
+  3: SDA_OUT1.PIN      11: i2c/state_FSM_FFd12  18: i2c/temp<4> 
+  4: SDA_OUT2.PIN      12: i2c/state_FSM_FFd16  19: i2c/temp<5> 
+  5: SDA_OUT3.PIN      13: i2c/state_FSM_FFd21  20: i2c/temp<6> 
+  6: SDA_OUT4.PIN      14: i2c/state_FSM_FFd5   21: sensor_n<5> 
+  7: i2c/i<0>          15: i2c/state_FSM_FFd7   22: sensor_n<6> 
+  8: i2c/i<1>         
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/state_FSM_FFd3   X............X.......................... 2
+SCL_OUT4             .X..................XX.................. 3
+i2c/temp<6>          X.XXXXXXXXXXX.X...XXXX.................. 17
+i2c/temp<5>          X.XXXXXXXXXXX.X..XX.XX.................. 17
+i2c/temp<4>          X.XXXXXXXXXXX.X.XX..XX.................. 17
+i2c/state_FSM_FFd7   X..............X........................ 2
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+i2c/state_FSM_FFd6    8       3<-   0   0     FB6_1         (b)     (b)
+(unused)              0       0   /\3   2     FB6_2   135   I/O     (b)
+(unused)              0       0     0   5     FB6_3   136   I/O     
+(unused)              0       0     0   5     FB6_4         (b)     
+(unused)              0       0     0   5     FB6_5   137   I/O     
+(unused)              0       0   \/2   3     FB6_6   138   I/O     (b)
+i2c/temp_output<2>    6       2<- \/1   0     FB6_7         (b)     (b)
+i2c/temp_output<1>    6       1<-   0   0     FB6_8   139   I/O     (b)
+(unused)              0       0   \/3   2     FB6_9         (b)     (b)
+i2c/state_FSM_FFd12   6       3<- \/2   0     FB6_10  140   I/O     (b)
+i2c/state_FSM_FFd10   7       2<-   0   0     FB6_11        (b)     (b)
+(unused)              0       0   \/4   1     FB6_12        (b)     (b)
+i2c/temp<7>          14       9<-   0   0     FB6_13        (b)     (b)
+(unused)              0       0   /\5   0     FB6_14  142   I/O     (b)
+i2c/temp_output<3>    6       1<-   0   0     FB6_15  143   GSR/I/O I
+i2c/temp_output<0>    5       1<- /\1   0     FB6_16        (b)     (b)
+(unused)              0       0   /\1   4     FB6_17        (b)     (b)
+(unused)              0       0     0   5     FB6_18        (b)     
+
+Signals Used by Logic in Function Block
+  1: RES                  12: i2c/state_FSM_FFd16  22: i2c/temp_output<2> 
+  2: SDA_OUT1.PIN         13: i2c/state_FSM_FFd21  23: i2c/temp_output<3> 
+  3: SDA_OUT2.PIN         14: i2c/state_FSM_FFd22  24: sensor_data_w<0> 
+  4: SDA_OUT3.PIN         15: i2c/state_FSM_FFd3   25: sensor_data_w<1> 
+  5: SDA_OUT4.PIN         16: i2c/state_FSM_FFd7   26: sensor_data_w<2> 
+  6: i2c/i<0>             17: i2c/state_FSM_FFd8   27: sensor_data_w<3> 
+  7: i2c/i<1>             18: i2c/temp<6>          28: sensor_n<0> 
+  8: i2c/i<2>             19: i2c/temp<7>          29: sensor_n<1> 
+  9: i2c/i<3>             20: i2c/temp_output<0>   30: sensor_n<5> 
+ 10: i2c/state_FSM_FFd12  21: i2c/temp_output<1>   31: sensor_n<6> 
+ 11: i2c/state_FSM_FFd14 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/state_FSM_FFd6   XXXXXXXXX.....X.X...........XXX......... 14
+i2c/temp_output<2>   X............X.X....XX...X.X............ 7
+i2c/temp_output<1>   X............X.X...XX...X..X............ 7
+i2c/state_FSM_FFd12  XXXXXXXXXXX..................XX......... 13
+i2c/state_FSM_FFd10  XXXXXXXXXX.....X.............XX......... 13
+i2c/temp<7>          XXXXXXXXXX.XX..X.XX..........XX......... 17
+i2c/temp_output<3>   X............X.X.....XX...XX............ 7
+i2c/temp_output<0>   X............X.X...X...X...X............ 6
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB7  ***********************************
+Number of function block inputs used/remaining:               27/27
+Number of signals used by logic mapping into function block:  27
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0   /\5   0     FB7_1         (b)     (b)
+(unused)              0       0   /\5   0     FB7_2         (b)     (b)
+i2c/temp<3>          24      20<- /\1   0     FB7_3   45    I/O     (b)
+(unused)              0       0   /\5   0     FB7_4         (b)     (b)
+(unused)              0       0   /\5   0     FB7_5   46    I/O     (b)
+(unused)              0       0   /\5   0     FB7_6         (b)     (b)
+(unused)              0       0   /\5   0     FB7_7         (b)     (b)
+(unused)              0       0   \/5   0     FB7_8         (b)     (b)
+(unused)              0       0   \/5   0     FB7_9         (b)     (b)
+i2c/temp<2>          24      19<-   0   0     FB7_10        (b)     (b)
+(unused)              0       0   /\5   0     FB7_11        (b)     (b)
+SDA_OUT3              2       1<- /\4   0     FB7_12  48    I/O     I/O
+i2c/state_FSM_FFd16   2       0   /\1   2     FB7_13        (b)     (b)
+i2c/temp<0>           9       4<-   0   0     FB7_14        (b)     (b)
+SCL_OUT3              1       0   /\4   0     FB7_15  49    I/O     O
+i2c/state_FSM_FFd11   2       0   \/3   0     FB7_16        (b)     (b)
+(unused)              0       0   \/5   0     FB7_17        (b)     (b)
+i2c/temp<1>          24      19<-   0   0     FB7_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: RES               10: i2c/i<1>             19: i2c/temp<0> 
+  2: SCL               11: i2c/i<2>             20: i2c/temp<1> 
+  3: SDA_EN            12: i2c/i<3>             21: i2c/temp<2> 
+  4: SDA_OUT4          13: i2c/state_FSM_FFd12  22: i2c/temp<3> 
+  5: SDA_OUT1.PIN      14: i2c/state_FSM_FFd13  23: sensor_n<2> 
+  6: SDA_OUT2.PIN      15: i2c/state_FSM_FFd16  24: sensor_n<3> 
+  7: SDA_OUT3.PIN      16: i2c/state_FSM_FFd18  25: sensor_n<4> 
+  8: SDA_OUT4.PIN      17: i2c/state_FSM_FFd21  26: sensor_n<5> 
+  9: i2c/i<0>          18: i2c/state_FSM_FFd7   27: sensor_n<6> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/temp<3>          X...XXXXXXXXX.X.XX..XX..XXX............. 18
+i2c/temp<2>          X...XXXXXXXXX.X.XX.XX..X.XX............. 18
+SDA_OUT3             ..XX.....................XX............. 4
+i2c/state_FSM_FFd16  X..............X........................ 2
+i2c/temp<0>          X...XXXXXXXXX.X.XXX......XX............. 16
+SCL_OUT3             .X.......................XX............. 3
+i2c/state_FSM_FFd11  X............X.......................... 2
+i2c/temp<1>          X...XXXXXXXXX.X.XXXX..X..XX............. 18
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB8  ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+i2c/temp_output<7>    6       1<-   0   0     FB8_1         (b)     (b)
+(unused)              0       0   /\1   4     FB8_2   130   I/O     I
+(unused)              0       0     0   5     FB8_3   131   I/O     
+(unused)              0       0     0   5     FB8_4         (b)     
+(unused)              0       0     0   5     FB8_5   132   I/O     
+(unused)              0       0     0   5     FB8_6         (b)     
+(unused)              0       0   \/2   3     FB8_7         (b)     (b)
+i2c/temp_output<5>    6       2<- \/1   0     FB8_8   133   I/O     (b)
+i2c/temp_output<4>    6       1<-   0   0     FB8_9         (b)     (b)
+(unused)              0       0   \/5   0     FB8_10  134   I/O     (b)
+sensor_data_r<4>     10       5<-   0   0     FB8_11        (b)     (b)
+(unused)              0       0   \/5   0     FB8_12        (b)     (b)
+sensor_data_r<3>     10       5<-   0   0     FB8_13        (b)     (b)
+(unused)              0       0   \/5   0     FB8_14        (b)     (b)
+sensor_data_r<2>     10       5<-   0   0     FB8_15        (b)     (b)
+i2c/temp_output<6>    6       1<-   0   0     FB8_16        (b)     (b)
+(unused)              0       0   /\1   4     FB8_17        (b)     (b)
+(unused)              0       0     0   5     FB8_18        (b)     
+
+Signals Used by Logic in Function Block
+  1: RES                  11: i2c/state_FSM_FFd3  21: sensor_data_r<2> 
+  2: SDA_OUT1.PIN         12: i2c/state_FSM_FFd6  22: sensor_data_r<3> 
+  3: SDA_OUT2.PIN         13: i2c/state_FSM_FFd7  23: sensor_data_r<4> 
+  4: SDA_OUT3.PIN         14: i2c/state_FSM_FFd8  24: sensor_data_w<4> 
+  5: SDA_OUT4.PIN         15: i2c/temp_output<3>  25: sensor_data_w<5> 
+  6: i2c/i<0>             16: i2c/temp_output<4>  26: sensor_data_w<6> 
+  7: i2c/i<1>             17: i2c/temp_output<5>  27: sensor_data_w<7> 
+  8: i2c/i<2>             18: i2c/temp_output<6>  28: sensor_n<0> 
+  9: i2c/i<3>             19: i2c/temp_output<7>  29: sensor_n<5> 
+ 10: i2c/state_FSM_FFd22  20: sensor_data_r<1>    30: sensor_n<6> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/temp_output<7>   X........X..X....XX.......XX............ 7
+i2c/temp_output<5>   X........X..X..XX.......X..X............ 7
+i2c/temp_output<4>   X........X..X.XX.......X...X............ 7
+sensor_data_r<4>     XXXXXXXXX.XX.X.......XX.....XX.......... 16
+sensor_data_r<3>     XXXXXXXXX.XX.X......XX......XX.......... 16
+sensor_data_r<2>     XXXXXXXXX.XX.X.....XX.......XX.......... 16
+i2c/temp_output<6>   X........X..X...XX.......X.X............ 7
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB9  ***********************************
+Number of function block inputs used/remaining:               27/27
+Number of signals used by logic mapping into function block:  27
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0   /\1   4     FB9_1         (b)     (b)
+(unused)              0       0     0   5     FB9_2   50    I/O     
+(unused)              0       0     0   5     FB9_3   51    I/O     
+sensor_reg<7>         3       0     0   2     FB9_4         (b)     (b)
+sensor_reg<6>         3       0     0   2     FB9_5   52    I/O     (b)
+sensor_reg<5>         3       0     0   2     FB9_6   53    I/O     (b)
+sensor_reg<1>         3       0     0   2     FB9_7         (b)     (b)
+sensor_reg<0>         3       0     0   2     FB9_8   54    I/O     (b)
+sensor_n<7>           3       0     0   2     FB9_9         (b)     (b)
+sensor_n<6>           3       0     0   2     FB9_10        (b)     (b)
+sensor_n<1>           3       0     0   2     FB9_11  56    I/O     (b)
+sensor_n<0>           3       0     0   2     FB9_12  57    I/O     (b)
+sensor_data_w<7>      3       0     0   2     FB9_13        (b)     (b)
+sensor_data_w<6>      3       0     0   2     FB9_14  58    I/O     (b)
+sensor_data_w<1>      3       0     0   2     FB9_15        (b)     (b)
+sensor_data_w<0>      3       0   \/1   1     FB9_16        (b)     (b)
+outDATA<5>/outDATA<5>_SETF
+                      6       1<-   0   0     FB9_17  59    I/O     (b)
+outDATA<4>/outDATA<4>_SETF
+                      6       1<-   0   0     FB9_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: ADR<0>            10: ADR<9>            19: sensor_data_r<4> 
+  2: ADR<1>            11: Data<4>           20: sensor_data_r<5> 
+  3: ADR<2>            12: Data<5>           21: sensor_data_w<4> 
+  4: ADR<3>            13: Data<7>.PIN       22: sensor_data_w<5> 
+  5: ADR<4>            14: Data<6>.PIN       23: sensor_n<0>/sensor_n<0>_RSTF__$INT 
+  6: ADR<5>            15: Data<5>.PIN       24: sensor_n<4> 
+  7: ADR<6>            16: Data<1>.PIN       25: sensor_n<5> 
+  8: ADR<7>            17: Data<0>.PIN       26: sensor_reg<4> 
+  9: ADR<8>            18: RES               27: sensor_reg<5> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+sensor_reg<7>        XXXXXXXXXX..X....X...................... 12
+sensor_reg<6>        XXXXXXXXXX...X...X...................... 12
+sensor_reg<5>        XXXXXXXXXX....X..X...................... 12
+sensor_reg<1>        XXXXXXXXXX.....X.X...................... 12
+sensor_reg<0>        XXXXXXXXXX......XX...................... 12
+sensor_n<7>          XXXXXXXXXX..X....X...................... 12
+sensor_n<6>          XXXXXXXXXX...X...X...................... 12
+sensor_n<1>          XXXXXXXXXX.....X.X...................... 12
+sensor_n<0>          XXXXXXXXXX......X.....X................. 12
+sensor_data_w<7>     XXXXXXXXXX..X....X...................... 12
+sensor_data_w<6>     XXXXXXXXXX...X...X...................... 12
+sensor_data_w<1>     XXXXXXXXXX.....X.X...................... 12
+sensor_data_w<0>     XXXXXXXXXX......XX...................... 12
+outDATA<5>/outDATA<5>_SETF 
+                     XXXXXXXXXX.X.......X.X..X.X............. 15
+outDATA<4>/outDATA<4>_SETF 
+                     XXXXXXXXXXX.......X.X..X.X.............. 15
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB10 ***********************************
+Number of function block inputs used/remaining:               21/33
+Number of signals used by logic mapping into function block:  21
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+i2c/state_FSM_FFd17   6       1<-   0   0     FB10_1        (b)     (b)
+(unused)              0       0   /\1   4     FB10_2  117   I/O     (b)
+(unused)              0       0     0   5     FB10_3  118   I/O     
+(unused)              0       0     0   5     FB10_4        (b)     
+(unused)              0       0     0   5     FB10_5  119   I/O     
+(unused)              0       0     0   5     FB10_6  120   I/O     
+(unused)              0       0     0   5     FB10_7        (b)     
+(unused)              0       0     0   5     FB10_8  121   I/O     
+(unused)              0       0     0   5     FB10_9        (b)     
+(unused)              0       0     0   5     FB10_10 124   I/O     I
+(unused)              0       0     0   5     FB10_11 125   I/O     
+(unused)              0       0     0   5     FB10_12 126   I/O     I
+(unused)              0       0   \/2   3     FB10_13       (b)     (b)
+i2c/state_FSM_FFd14   7       2<-   0   0     FB10_14 128   I/O     I
+(unused)              0       0   \/5   0     FB10_15       (b)     (b)
+sensor_data_r<5>     10       5<-   0   0     FB10_16       (b)     (b)
+(unused)              0       0   \/5   0     FB10_17 129   I/O     I
+sensor_data_r<1>     10       5<-   0   0     FB10_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: RES                8: i2c/i<2>             15: i2c/state_FSM_FFd8 
+  2: SDA_OUT1.PIN       9: i2c/i<3>             16: sensor_data_r<0> 
+  3: SDA_OUT2.PIN      10: i2c/state_FSM_FFd11  17: sensor_data_r<1> 
+  4: SDA_OUT3.PIN      11: i2c/state_FSM_FFd17  18: sensor_data_r<4> 
+  5: SDA_OUT4.PIN      12: i2c/state_FSM_FFd19  19: sensor_data_r<5> 
+  6: i2c/i<0>          13: i2c/state_FSM_FFd3   20: sensor_n<5> 
+  7: i2c/i<1>          14: i2c/state_FSM_FFd6   21: sensor_n<6> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+i2c/state_FSM_FFd17  XXXXXXXXX.XX.......XX................... 13
+i2c/state_FSM_FFd14  XXXXXXXXXXX........XX................... 13
+sensor_data_r<5>     XXXXXXXXX...XXX..XXXX................... 16
+sensor_data_r<1>     XXXXXXXXX...XXXXX..XX................... 16
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB11 ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB11_1        (b)     
+(unused)              0       0     0   5     FB11_2        (b)     
+(unused)              0       0     0   5     FB11_3  60    I/O     
+(unused)              0       0     0   5     FB11_4        (b)     
+(unused)              0       0     0   5     FB11_5  61    I/O     
+(unused)              0       0     0   5     FB11_6        (b)     
+(unused)              0       0     0   5     FB11_7        (b)     
+(unused)              0       0     0   5     FB11_8        (b)     
+(unused)              0       0     0   5     FB11_9        (b)     
+(unused)              0       0     0   5     FB11_10 64    I/O     
+(unused)              0       0     0   5     FB11_11 66    I/O     
+(unused)              0       0     0   5     FB11_12 68    I/O     
+(unused)              0       0     0   5     FB11_13       (b)     
+(unused)              0       0   \/5   0     FB11_14 69    I/O     (b)
+(unused)              0       0   \/5   0     FB11_15       (b)     (b)
+SCL                  25      20<-   0   0     FB11_16       (b)     (b)
+(unused)              0       0   /\5   0     FB11_17 70    I/O     (b)
+(unused)              0       0   /\5   0     FB11_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$18_INV$797  12: i2c/i<2>             22: i2c/state_FSM_FFd22 
+  2: $OpTx$$OpTx$FX_DC$46_INV$799  13: i2c/i<3>             23: i2c/state_FSM_FFd3 
+  3: $OpTx$$OpTx$FX_DC$47_INV$800  14: i2c/state_FSM_FFd11  24: i2c/state_FSM_FFd4 
+  4: RES                           15: i2c/state_FSM_FFd13  25: i2c/state_FSM_FFd5 
+  5: SCL                           16: i2c/state_FSM_FFd15  26: i2c/state_FSM_FFd7 
+  6: SDA_OUT1.PIN                  17: i2c/state_FSM_FFd16  27: i2c/state_FSM_FFd8 
+  7: SDA_OUT2.PIN                  18: i2c/state_FSM_FFd18  28: i2c/state_FSM_FFd9 
+  8: SDA_OUT3.PIN                  19: i2c/state_FSM_FFd2   29: sensor_n<0> 
+  9: SDA_OUT4.PIN                  20: i2c/state_FSM_FFd20  30: sensor_n<5> 
+ 10: i2c/i<0>                      21: i2c/state_FSM_FFd21  31: sensor_n<6> 
+ 11: i2c/i<1>                     
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+SCL                  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX......... 31
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB12 ***********************************
+Number of function block inputs used/remaining:               30/24
+Number of signals used by logic mapping into function block:  30
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+outDATA<6>/outDATA<6>_RSTF
+                      6       1<-   0   0     FB12_1        (b)     (b)
+(unused)              0       0   /\1   4     FB12_2  110   I/O     I
+(unused)              0       0     0   5     FB12_3  111   I/O     I
+(unused)              0       0     0   5     FB12_4        (b)     
+(unused)              0       0     0   5     FB12_5  112   I/O     I
+(unused)              0       0     0   5     FB12_6        (b)     
+(unused)              0       0     0   5     FB12_7        (b)     
+(unused)              0       0     0   5     FB12_8  113   I/O     I
+(unused)              0       0     0   5     FB12_9        (b)     
+(unused)              0       0     0   5     FB12_10 115   I/O     I
+(unused)              0       0     0   5     FB12_11       (b)     
+(unused)              0       0     0   5     FB12_12 116   I/O     
+(unused)              0       0     0   5     FB12_13       (b)     
+(unused)              0       0     0   5     FB12_14       (b)     
+(unused)              0       0   \/5   0     FB12_15       (b)     (b)
+sensor_data_r<7>     10       5<-   0   0     FB12_16       (b)     (b)
+(unused)              0       0   \/5   0     FB12_17       (b)     (b)
+sensor_data_r<6>     10       5<-   0   0     FB12_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: ADR<0>            11: Data<6>           21: i2c/state_FSM_FFd3 
+  2: ADR<1>            12: RES               22: i2c/state_FSM_FFd6 
+  3: ADR<2>            13: SDA_OUT1.PIN      23: i2c/state_FSM_FFd8 
+  4: ADR<3>            14: SDA_OUT2.PIN      24: sensor_data_r<5> 
+  5: ADR<4>            15: SDA_OUT3.PIN      25: sensor_data_r<6> 
+  6: ADR<5>            16: SDA_OUT4.PIN      26: sensor_data_r<7> 
+  7: ADR<6>            17: i2c/i<0>          27: sensor_data_w<6> 
+  8: ADR<7>            18: i2c/i<1>          28: sensor_n<5> 
+  9: ADR<8>            19: i2c/i<2>          29: sensor_n<6> 
+ 10: ADR<9>            20: i2c/i<3>          30: sensor_reg<6> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+outDATA<6>/outDATA<6>_RSTF 
+                     XXXXXXXXXXX.............X.X.XX.......... 15
+sensor_data_r<7>     ...........XXXXXXXXXXXX.XX.XX........... 16
+sensor_data_r<6>     ...........XXXXXXXXXXXXXX..XX........... 16
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB13 ***********************************
+Number of function block inputs used/remaining:               15/39
+Number of signals used by logic mapping into function block:  15
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB13_1        (b)     
+(unused)              0       0     0   5     FB13_2  71    I/O     
+(unused)              0       0     0   5     FB13_3        (b)     
+(unused)              0       0     0   5     FB13_4        (b)     
+(unused)              0       0     0   5     FB13_5        (b)     
+(unused)              0       0     0   5     FB13_6        (b)     
+(unused)              0       0     0   5     FB13_7        (b)     
+(unused)              0       0     0   5     FB13_8  74    I/O     
+(unused)              0       0     0   5     FB13_9        (b)     
+(unused)              0       0     0   5     FB13_10       (b)     
+(unused)              0       0     0   5     FB13_11 75    I/O     
+(unused)              0       0     0   5     FB13_12       (b)     
+(unused)              0       0     0   5     FB13_13       (b)     
+(unused)              0       0     0   5     FB13_14 76    I/O     
+(unused)              0       0     0   5     FB13_15 77    I/O     
+(unused)              0       0     0   5     FB13_16       (b)     
+(unused)              0       0   \/1   4     FB13_17 78    I/O     (b)
+outDATA<7>/outDATA<7>_SETF
+                      6       1<-   0   0     FB13_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: ADR<0>             6: ADR<5>            11: Data<7> 
+  2: ADR<1>             7: ADR<6>            12: sensor_data_r<7> 
+  3: ADR<2>             8: ADR<7>            13: sensor_data_w<7> 
+  4: ADR<3>             9: ADR<8>            14: sensor_n<7> 
+  5: ADR<4>            10: ADR<9>            15: sensor_reg<7> 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+outDATA<7>/outDATA<7>_SETF 
+                     XXXXXXXXXXXXXXX......................... 15
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB14 ***********************************
+Number of function block inputs used/remaining:               22/32
+Number of signals used by logic mapping into function block:  22
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+sensor_reg<4>         3       0     0   2     FB14_1        (b)     (b)
+sensor_reg<3>         3       0     0   2     FB14_2        (b)     (b)
+Data<1>               2       0     0   3     FB14_3  100   I/O     I/O
+sensor_reg<2>         3       0     0   2     FB14_4        (b)     (b)
+Data<2>               2       0     0   3     FB14_5  101   I/O     I/O
+Data<3>               2       0     0   3     FB14_6  102   I/O     I/O
+sensor_n<5>           3       0     0   2     FB14_7        (b)     (b)
+Data<4>               2       0     0   3     FB14_8  103   I/O     I/O
+sensor_n<4>           3       0     0   2     FB14_9        (b)     (b)
+Data<5>               2       0     0   3     FB14_10 104   I/O     I/O
+Data<6>               2       0     0   3     FB14_11 105   I/O     I/O
+sensor_n<3>           3       0     0   2     FB14_12       (b)     (b)
+sensor_n<2>           3       0     0   2     FB14_13       (b)     (b)
+sensor_data_w<5>      3       0     0   2     FB14_14 106   I/O     (b)
+Data<7>               2       0     0   3     FB14_15 107   I/O     I/O
+sensor_data_w<4>      3       0     0   2     FB14_16       (b)     (b)
+sensor_data_w<3>      3       0     0   2     FB14_17       (b)     (b)
+sensor_data_w<2>      3       0     0   2     FB14_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: ADR<0>             9: ADR<8>            16: outDATA<1>/outDATA<1>_SETF 
+  2: ADR<1>            10: ADR<9>            17: outDATA<2>/outDATA<2>_RSTF 
+  3: ADR<2>            11: Data<5>.PIN       18: outDATA<3>/outDATA<3>_RSTF 
+  4: ADR<3>            12: Data<4>.PIN       19: outDATA<4>/outDATA<4>_SETF 
+  5: ADR<4>            13: Data<3>.PIN       20: outDATA<5>/outDATA<5>_SETF 
+  6: ADR<5>            14: Data<2>.PIN       21: outDATA<6>/outDATA<6>_RSTF 
+  7: ADR<6>            15: RES               22: outDATA<7>/outDATA<7>_SETF 
+  8: ADR<7>           
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+sensor_reg<4>        XXXXXXXXXX.X..X......................... 12
+sensor_reg<3>        XXXXXXXXXX..X.X......................... 12
+Data<1>              ....XXXXXX.....X........................ 7
+sensor_reg<2>        XXXXXXXXXX...XX......................... 12
+Data<2>              ....XXXXXX......X....................... 7
+Data<3>              ....XXXXXX.......X...................... 7
+sensor_n<5>          XXXXXXXXXXX...X......................... 12
+Data<4>              ....XXXXXX........X..................... 7
+sensor_n<4>          XXXXXXXXXX.X..X......................... 12
+Data<5>              ....XXXXXX.........X.................... 7
+Data<6>              ....XXXXXX..........X................... 7
+sensor_n<3>          XXXXXXXXXX..X.X......................... 12
+sensor_n<2>          XXXXXXXXXX...XX......................... 12
+sensor_data_w<5>     XXXXXXXXXXX...X......................... 12
+Data<7>              ....XXXXXX...........X.................. 7
+sensor_data_w<4>     XXXXXXXXXX.X..X......................... 12
+sensor_data_w<3>     XXXXXXXXXX..X.X......................... 12
+sensor_data_w<2>     XXXXXXXXXX...XX......................... 12
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB15 ***********************************
+Number of function block inputs used/remaining:               0/54
+Number of signals used by logic mapping into function block:  0
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB15_1        (b)     
+(unused)              0       0     0   5     FB15_2  79    I/O     
+(unused)              0       0     0   5     FB15_3  80    I/O     
+(unused)              0       0     0   5     FB15_4        (b)     
+(unused)              0       0     0   5     FB15_5        (b)     
+(unused)              0       0     0   5     FB15_6        (b)     
+(unused)              0       0     0   5     FB15_7        (b)     
+(unused)              0       0     0   5     FB15_8  81    I/O     
+(unused)              0       0     0   5     FB15_9        (b)     
+(unused)              0       0     0   5     FB15_10 82    I/O     
+(unused)              0       0     0   5     FB15_11 83    I/O     
+(unused)              0       0     0   5     FB15_12 85    I/O     
+(unused)              0       0     0   5     FB15_13       (b)     
+(unused)              0       0     0   5     FB15_14 86    I/O     
+(unused)              0       0     0   5     FB15_15 87    I/O     
+(unused)              0       0     0   5     FB15_16       (b)     
+(unused)              0       0     0   5     FB15_17 88    I/O     
+(unused)              0       0     0   5     FB15_18       (b)     
+*********************************** FB16 ***********************************
+Number of function block inputs used/remaining:               31/23
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+outDATA<0>/outDATA<0>_RSTF
+                      6       2<- /\1   0     FB16_1        (b)     (b)
+(unused)              0       0   /\2   3     FB16_2  91    I/O     (b)
+(unused)              0       0     0   5     FB16_3  92    I/O     
+(unused)              0       0     0   5     FB16_4        (b)     
+(unused)              0       0     0   5     FB16_5  93    I/O     
+(unused)              0       0     0   5     FB16_6  94    I/O     
+(unused)              0       0     0   5     FB16_7        (b)     
+(unused)              0       0     0   5     FB16_8  95    I/O     
+(unused)              0       0     0   5     FB16_9        (b)     
+(unused)              0       0     0   5     FB16_10 96    I/O     
+(unused)              0       0     0   5     FB16_11 97    I/O     
+Data<0>               2       0     0   3     FB16_12 98    I/O     I/O
+(unused)              0       0     0   5     FB16_13       (b)     
+(unused)              0       0   \/1   4     FB16_14       (b)     (b)
+outDATA<3>/outDATA<3>_RSTF
+                      6       1<-   0   0     FB16_15       (b)     (b)
+(unused)              0       0   \/1   4     FB16_16       (b)     (b)
+outDATA<2>/outDATA<2>_RSTF
+                      6       1<-   0   0     FB16_17       (b)     (b)
+outDATA<1>/outDATA<1>_SETF
+                      6       1<-   0   0     FB16_18       (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: ADR<0>            12: Data<1>                     22: sensor_data_w<2> 
+  2: ADR<1>            13: Data<2>                     23: sensor_data_w<3> 
+  3: ADR<2>            14: Data<3>                     24: sensor_n<0> 
+  4: ADR<3>            15: outDATA<0>/outDATA<0>_RSTF  25: sensor_n<1> 
+  5: ADR<4>            16: sensor_data_r<0>            26: sensor_n<2> 
+  6: ADR<5>            17: sensor_data_r<1>            27: sensor_n<3> 
+  7: ADR<6>            18: sensor_data_r<2>            28: sensor_reg<0> 
+  8: ADR<7>            19: sensor_data_r<3>            29: sensor_reg<1> 
+  9: ADR<8>            20: sensor_data_w<0>            30: sensor_reg<2> 
+ 10: ADR<9>            21: sensor_data_w<1>            31: sensor_reg<3> 
+ 11: Data<0>          
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+outDATA<0>/outDATA<0>_RSTF 
+                     XXXXXXXXXXX....X...X...X...X............ 15
+Data<0>              ....XXXXXX....X......................... 7
+outDATA<3>/outDATA<3>_RSTF 
+                     XXXXXXXXXX...X....X...X...X...X......... 15
+outDATA<2>/outDATA<2>_RSTF 
+                     XXXXXXXXXX..X....X...X...X...X.......... 15
+outDATA<1>/outDATA<1>_SETF 
+                     XXXXXXXXXX.X....X...X...X...X........... 15
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+$OpTx$$OpTx$FX_DC$18_INV$797 <= (NOT i2c/state_FSM_FFd12 AND NOT i2c/state_FSM_FFd17);
+
+
+$OpTx$$OpTx$FX_DC$45_INV$798 <= (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+	NOT i2c/state_FSM_FFd11 AND NOT i2c/state_FSM_FFd3);
+
+
+$OpTx$$OpTx$FX_DC$46_INV$799 <= (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd10 AND 
+	NOT i2c/state_FSM_FFd14 AND NOT i2c/state_FSM_FFd19);
+
+
+$OpTx$$OpTx$FX_DC$47_INV$800 <= (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd17);
+
+
+$OpTx$FX_DC$21 <= ((sensor_n(5) AND SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND SDA_OUT3.PIN));
+
+FDCPE_Data0: FDCPE port map (Data_I(0),'0','0',outDATA(0)/outDATA(0)_RSTF,Data_PRE(0));
+Data_PRE(0) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(0)/outDATA(0)_RSTF);
+Data(0) <= Data_I(0) when BRD = '1' else 'Z';
+
+FDCPE_Data1: FDCPE port map (Data_I(1),'0','0',Data_CLR(1),outDATA(1)/outDATA(1)_SETF);
+Data_CLR(1) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(1)/outDATA(1)_SETF);
+Data(1) <= Data_I(1) when BRD = '1' else 'Z';
+
+FDCPE_Data2: FDCPE port map (Data_I(2),'0','0',outDATA(2)/outDATA(2)_RSTF,Data_PRE(2));
+Data_PRE(2) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(2)/outDATA(2)_RSTF);
+Data(2) <= Data_I(2) when BRD = '1' else 'Z';
+
+FDCPE_Data3: FDCPE port map (Data_I(3),'0','0',outDATA(3)/outDATA(3)_RSTF,Data_PRE(3));
+Data_PRE(3) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(3)/outDATA(3)_RSTF);
+Data(3) <= Data_I(3) when BRD = '1' else 'Z';
+
+FDCPE_Data4: FDCPE port map (Data_I(4),'0','0',Data_CLR(4),outDATA(4)/outDATA(4)_SETF);
+Data_CLR(4) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(4)/outDATA(4)_SETF);
+Data(4) <= Data_I(4) when BRD = '1' else 'Z';
+
+FDCPE_Data5: FDCPE port map (Data_I(5),'0','0',Data_CLR(5),outDATA(5)/outDATA(5)_SETF);
+Data_CLR(5) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(5)/outDATA(5)_SETF);
+Data(5) <= Data_I(5) when BRD = '1' else 'Z';
+
+FDCPE_Data6: FDCPE port map (Data_I(6),'0','0',outDATA(6)/outDATA(6)_RSTF,Data_PRE(6));
+Data_PRE(6) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(6)/outDATA(6)_RSTF);
+Data(6) <= Data_I(6) when BRD = '1' else 'Z';
+
+FDCPE_Data7: FDCPE port map (Data_I(7),'0','0',Data_CLR(7),outDATA(7)/outDATA(7)_SETF);
+Data_CLR(7) <= (NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9) AND NOT outDATA(7)/outDATA(7)_SETF);
+Data(7) <= Data_I(7) when BRD = '1' else 'Z';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FDCPE_SCL: FDCPE port map (SCL,SCL_D,CLK,'0',RES);
+SCL_D <= ((i2c/state_FSM_FFd21)
+	OR (i2c/state_FSM_FFd13)
+	OR (i2c/state_FSM_FFd5)
+	OR (i2c/state_FSM_FFd9)
+	OR (i2c/state_FSM_FFd2)
+	OR (i2c/state_FSM_FFd18)
+	OR (EXP71_.EXP)
+	OR (sensor_n(0) AND i2c/state_FSM_FFd22)
+	OR (i2c/state_FSM_FFd22 AND SCL)
+	OR (i2c/i(3) AND SCL AND NOT $OpTx$$OpTx$FX_DC$46_INV$799)
+	OR (EXP74_.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	SDA_OUT4.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND SDA_OUT4.PIN AND 
+	NOT $OpTx$$OpTx$FX_DC$18_INV$797)
+	OR (sensor_n(5) AND SDA_OUT4.PIN AND SDA_OUT2.PIN AND 
+	NOT $OpTx$$OpTx$FX_DC$47_INV$800)
+	OR (NOT sensor_n(5) AND SDA_OUT1.PIN AND SDA_OUT3.PIN AND 
+	NOT $OpTx$$OpTx$FX_DC$47_INV$800)
+	OR (sensor_n(6) AND SDA_OUT4.PIN AND SDA_OUT3.PIN AND 
+	NOT $OpTx$$OpTx$FX_DC$47_INV$800));
+
+
+SCL_OUT1 <= (NOT sensor_n(5) AND NOT sensor_n(6) AND SCL);
+
+
+SCL_OUT2 <= (sensor_n(5) AND NOT sensor_n(6) AND SCL);
+
+
+SCL_OUT3 <= (NOT sensor_n(5) AND sensor_n(6) AND SCL);
+
+
+SCL_OUT4 <= (sensor_n(5) AND sensor_n(6) AND SCL);
+
+FDCPE_SDA_EN: FDCPE port map (SDA_EN,SDA_EN_D,CLK,'0',RES);
+SDA_EN_D <= ((i2c/state_FSM_FFd2)
+	OR (i2c/state_FSM_FFd15)
+	OR (sensor_n(0) AND i2c/state_FSM_FFd22)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd10)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd14)
+	OR (i2c/state_FSM_FFd22 AND SDA_EN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd19 AND SDA_EN)
+	OR (EXP18_.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	SDA_EN AND SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	SDA_EN AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	SDA_EN AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	SDA_EN)
+	OR (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd10 AND 
+	NOT i2c/state_FSM_FFd14 AND NOT i2c/state_FSM_FFd19 AND SDA_EN)
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6)
+	OR (i2c/state_FSM_FFd6 AND SDA_EN));
+
+
+SDA_OUT1_I <= SDA_OUT4;
+SDA_OUT1 <= SDA_OUT1_I when SDA_OUT1_OE = '1' else 'Z';
+SDA_OUT1_OE <= (NOT sensor_n(5) AND NOT sensor_n(6) AND SDA_EN);
+
+
+SDA_OUT2_I <= SDA_OUT4;
+SDA_OUT2 <= SDA_OUT2_I when SDA_OUT2_OE = '1' else 'Z';
+SDA_OUT2_OE <= (sensor_n(5) AND NOT sensor_n(6) AND SDA_EN);
+
+
+SDA_OUT3_I <= SDA_OUT4;
+SDA_OUT3 <= SDA_OUT3_I when SDA_OUT3_OE = '1' else 'Z';
+SDA_OUT3_OE <= (NOT sensor_n(5) AND sensor_n(6) AND SDA_EN);
+
+FDCPE_SDA_OUT4: FDCPE port map (SDA_OUT4_I,SDA_OUT4,CLK,'0',RES);
+SDA_OUT4 <= ((i2c/state_FSM_FFd1)
+	OR (sensor_n(0) AND i2c/state_FSM_FFd22)
+	OR (SDA_OUT4 AND NOT i2c/i(3) AND i2c/state_FSM_FFd6)
+	OR (i2c/temp_reg(7) AND NOT i2c/i(3) AND i2c/state_FSM_FFd14)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd19 AND i2c/temp(7))
+	OR (sensor_n(1) AND NOT i2c/i(3) AND i2c/state_FSM_FFd10 AND 
+	i2c/temp(7))
+	OR (NOT sensor_n(1) AND i2c/temp_output(7) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd10)
+	OR (SDA_OUT4 AND NOT i2c/state_FSM_FFd6 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/state_FSM_FFd4 AND 
+	NOT i2c/state_FSM_FFd10 AND NOT i2c/state_FSM_FFd14 AND NOT i2c/state_FSM_FFd19 AND 
+	NOT i2c/state_FSM_FFd2 AND NOT i2c/state_FSM_FFd15)
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND NOT sensor_data_r(0) AND 
+	NOT sensor_data_r(1) AND NOT sensor_data_r(2) AND NOT sensor_data_r(3) AND 
+	NOT sensor_data_r(4) AND NOT sensor_data_r(5) AND NOT sensor_data_r(6) AND 
+	NOT sensor_data_r(7))
+	OR (SDA_OUT4 AND i2c/state_FSM_FFd22)
+	OR (i2c/state_FSM_FFd16 AND i2c/temp(7)));
+SDA_OUT4 <= SDA_OUT4_I when SDA_OUT4_OE = '1' else 'Z';
+SDA_OUT4_OE <= (sensor_n(5) AND sensor_n(6) AND SDA_EN);
+
+FTCPE_i2c/i0: FTCPE port map (i2c/i(0),i2c/i_T(0),CLK,'0','0',NOT RES);
+i2c/i_T(0) <= (($OpTx$$OpTx$FX_DC$45_INV$798.EXP)
+	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/state_FSM_FFd14)
+	OR (sensor_n(6) AND i2c/state_FSM_FFd8 AND i2c/i(0) AND 
+	$OpTx$FX_DC$21)
+	OR (sensor_n(6) AND i2c/i(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$18_INV$797 AND $OpTx$FX_DC$21)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/i(0) AND 
+	SDA_OUT2.PIN AND NOT $OpTx$$OpTx$FX_DC$18_INV$797)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(0) AND 
+	SDA_OUT1.PIN AND NOT $OpTx$$OpTx$FX_DC$18_INV$797)
+	OR (EXP23_.EXP)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(0) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(0) AND SDA_OUT1.PIN)
+	OR (i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/state_FSM_FFd11 AND 
+	NOT i2c/state_FSM_FFd3)
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+	NOT i2c/i(0) AND i2c/i(1) AND NOT i2c/state_FSM_FFd11 AND 
+	NOT i2c/state_FSM_FFd3)
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+	NOT i2c/i(0) AND i2c/i(2) AND NOT i2c/state_FSM_FFd11 AND 
+	NOT i2c/state_FSM_FFd3)
+	OR (i2c/i(0) AND i2c/state_FSM_FFd4)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND i2c/i(0))
+	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/state_FSM_FFd10)
+	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/state_FSM_FFd19));
+
+FTCPE_i2c/i1: FTCPE port map (i2c/i(1),i2c/i_T(1),CLK,'0','0',NOT RES);
+i2c/i_T(1) <= ((_and0001.EXP)
+	OR (NOT i2c/i(0) AND i2c/state_FSM_FFd3)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND i2c/i(1))
+	OR (NOT i2c/i(3) AND i2c/i(1) AND i2c/state_FSM_FFd10)
+	OR (NOT i2c/i(3) AND i2c/i(1) AND i2c/state_FSM_FFd14)
+	OR (NOT i2c/i(3) AND i2c/i(1) AND i2c/state_FSM_FFd19)
+	OR ($OpTx$$OpTx$FX_DC$18_INV$797.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(1) AND SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(1) AND SDA_OUT1.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/i(1) AND SDA_OUT1.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(1) AND 
+	i2c/state_FSM_FFd17 AND SDA_OUT1.PIN)
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+	NOT i2c/i(1) AND NOT i2c/state_FSM_FFd11 AND NOT i2c/state_FSM_FFd3)
+	OR (i2c/state_FSM_FFd7 AND NOT i2c/i(0))
+	OR (i2c/state_FSM_FFd16 AND NOT i2c/i(0))
+	OR (NOT i2c/i(0) AND i2c/state_FSM_FFd11)
+	OR (i2c/i(1) AND i2c/state_FSM_FFd4));
+
+FDCPE_i2c/i2: FDCPE port map (i2c/i(2),i2c/i_D(2),CLK,'0','0',NOT RES);
+i2c/i_D(2) <= ((i2c/state_FSM_FFd15.EXP)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND i2c/i(2))
+	OR (NOT i2c/i(3) AND i2c/i(2) AND i2c/state_FSM_FFd10)
+	OR (NOT i2c/i(3) AND i2c/i(2) AND i2c/state_FSM_FFd14)
+	OR (i2c/i(0) AND i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(2) AND SDA_OUT1.PIN)
+	OR (EXP32_.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(2) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(2) AND SDA_OUT2.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/i(2) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	i2c/i(2) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/i(2) AND SDA_OUT1.PIN)
+	OR (i2c/i(2) AND i2c/state_FSM_FFd4)
+	OR (NOT i2c/i(3) AND i2c/i(2) AND i2c/state_FSM_FFd19)
+	OR (NOT i2c/i(0) AND i2c/i(2) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+	OR (NOT i2c/i(1) AND i2c/i(2) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798));
+
+FDCPE_i2c/i3: FDCPE port map (i2c/i(3),i2c/i_D(3),CLK,'0','0',NOT RES);
+i2c/i_D(3) <= ((sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND i2c/i(0) AND i2c/i(1) AND i2c/i(2) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+	OR ($OpTx$$OpTx$FX_DC$47_INV$800.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND SDA_OUT1.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/i(3) AND 
+	i2c/state_FSM_FFd17 AND SDA_OUT1.PIN)
+	OR (i2c/i(3) AND i2c/state_FSM_FFd4)
+	OR (i2c/i(3) AND NOT i2c/i(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+	OR (i2c/i(3) AND NOT i2c/i(1) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798)
+	OR (i2c/i(3) AND NOT i2c/i(2) AND 
+	NOT $OpTx$$OpTx$FX_DC$45_INV$798));
+
+FDCPE_i2c/state_FSM_FFd1: FDCPE port map (i2c/state_FSM_FFd1,i2c/state_FSM_FFd2,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd10: FDCPE port map (i2c/state_FSM_FFd10,i2c/state_FSM_FFd10_D,CLK,RES,'0');
+i2c/state_FSM_FFd10_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	SDA_OUT2.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2))
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd11: FDCPE port map (i2c/state_FSM_FFd11,i2c/state_FSM_FFd13,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd12: FDCPE port map (i2c/state_FSM_FFd12,i2c/state_FSM_FFd12_D,CLK,RES,'0');
+i2c/state_FSM_FFd12_D <= ((sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT3.PIN)
+	OR (i2c/i(3) AND i2c/state_FSM_FFd14)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd13: FDCPE port map (i2c/state_FSM_FFd13,i2c/state_FSM_FFd13_D,CLK,RES,'0');
+i2c/state_FSM_FFd13_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd14);
+
+FDCPE_i2c/state_FSM_FFd14: FDCPE port map (i2c/state_FSM_FFd14,i2c/state_FSM_FFd14_D,CLK,RES,'0');
+i2c/state_FSM_FFd14_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+	SDA_OUT2.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd11)
+	OR (NOT i2c/state_FSM_FFd11 AND NOT i2c/state_FSM_FFd17)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+	SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+	SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd11 AND 
+	SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd15: FDCPE port map (i2c/state_FSM_FFd15,i2c/state_FSM_FFd15_D,CLK,RES,'0');
+i2c/state_FSM_FFd15_D <= ((EXP28_.EXP)
+	OR (sensor_n(1) AND sensor_n(5) AND sensor_n(6) AND 
+	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT4.PIN)
+	OR (sensor_n(1) AND NOT sensor_n(5) AND sensor_n(6) AND 
+	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT3.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd8 AND 
+	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd8 AND 
+	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd8 AND 
+	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT1.PIN)
+	OR (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd4 AND NOT i2c/state_FSM_FFd17)
+	OR (sensor_n(1) AND NOT sensor_n(5) AND NOT sensor_n(6) AND 
+	NOT i2c/state_FSM_FFd4 AND NOT SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd16: FDCPE port map (i2c/state_FSM_FFd16,i2c/state_FSM_FFd18,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd17: FDCPE port map (i2c/state_FSM_FFd17,i2c/state_FSM_FFd17_D,CLK,RES,'0');
+i2c/state_FSM_FFd17_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT2.PIN)
+	OR (i2c/i(3) AND i2c/state_FSM_FFd19)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/state_FSM_FFd17 AND NOT SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd18: FDCPE port map (i2c/state_FSM_FFd18,i2c/state_FSM_FFd18_D,CLK,RES,'0');
+i2c/state_FSM_FFd18_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd19);
+
+FDCPE_i2c/state_FSM_FFd19: FDCPE port map (i2c/state_FSM_FFd19,i2c/state_FSM_FFd19_D,CLK,RES,'0');
+i2c/state_FSM_FFd19_D <= (NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd20);
+
+FDCPE_i2c/state_FSM_FFd2: FDCPE port map (i2c/state_FSM_FFd2,i2c/state_FSM_FFd15,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd20: FDCPE port map (i2c/state_FSM_FFd20,i2c/state_FSM_FFd21,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd21: FDCPE port map (i2c/state_FSM_FFd21,i2c/state_FSM_FFd21_D,CLK,RES,'0');
+i2c/state_FSM_FFd21_D <= (sensor_n(0) AND i2c/state_FSM_FFd22);
+
+FDCPE_i2c/state_FSM_FFd22: FDCPE port map (i2c/state_FSM_FFd22,i2c/state_FSM_FFd22_D,CLK,'0',RES);
+i2c/state_FSM_FFd22_D <= ((i2c/state_FSM_FFd1)
+	OR (NOT sensor_n(0) AND i2c/state_FSM_FFd22));
+
+FDCPE_i2c/state_FSM_FFd3: FDCPE port map (i2c/state_FSM_FFd3,i2c/state_FSM_FFd5,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd4: FDCPE port map (i2c/state_FSM_FFd4,i2c/state_FSM_FFd4_D,CLK,RES,'0');
+i2c/state_FSM_FFd4_D <= ((i2c/i(3) AND i2c/state_FSM_FFd6)
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	i2c/state_FSM_FFd4));
+
+FDCPE_i2c/state_FSM_FFd5: FDCPE port map (i2c/state_FSM_FFd5,i2c/state_FSM_FFd5_D,CLK,RES,'0');
+i2c/state_FSM_FFd5_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd6);
+
+FDCPE_i2c/state_FSM_FFd6: FDCPE port map (i2c/state_FSM_FFd6,i2c/state_FSM_FFd6_D,CLK,RES,'0');
+i2c/state_FSM_FFd6_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+	SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+	SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd3)
+	OR (NOT sensor_n(1) AND NOT i2c/state_FSM_FFd3)
+	OR (NOT i2c/state_FSM_FFd8 AND NOT i2c/state_FSM_FFd3)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+	SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd3 AND 
+	SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd7: FDCPE port map (i2c/state_FSM_FFd7,i2c/state_FSM_FFd9,CLK,RES,'0');
+
+FDCPE_i2c/state_FSM_FFd8: FDCPE port map (i2c/state_FSM_FFd8,i2c/state_FSM_FFd8_D,CLK,RES,'0');
+i2c/state_FSM_FFd8_D <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT2.PIN)
+	OR (i2c/i(3) AND i2c/state_FSM_FFd10)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/i(3) AND 
+	i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND NOT SDA_OUT1.PIN));
+
+FDCPE_i2c/state_FSM_FFd9: FDCPE port map (i2c/state_FSM_FFd9,i2c/state_FSM_FFd9_D,CLK,RES,'0');
+i2c/state_FSM_FFd9_D <= (NOT i2c/i(3) AND i2c/state_FSM_FFd10);
+
+FTCPE_i2c/temp0: FTCPE port map (i2c/temp(0),i2c/temp_T(0),CLK,'0','0',NOT RES);
+i2c/temp_T(0) <= ((sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/temp(0) AND 
+	SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/temp(0) AND 
+	SDA_OUT3.PIN)
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd16 AND 
+	NOT i2c/state_FSM_FFd21 AND i2c/temp(0))
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/temp(0))
+	OR (i2c/state_FSM_FFd12 AND i2c/temp(0))
+	OR (NOT i2c/state_FSM_FFd12 AND NOT i2c/temp(0))
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/temp(0) AND 
+	SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/temp(0) AND 
+	SDA_OUT1.PIN));
+
+FTCPE_i2c/temp1: FTCPE port map (i2c/temp(1),i2c/temp_T(1),CLK,'0','0',NOT RES);
+i2c/temp_T(1) <= ((EXP51_.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(1) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(1) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(1) AND SDA_OUT3.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd11.EXP)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(0) AND NOT i2c/temp(1) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(1))
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(0) AND NOT i2c/temp(1))
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21));
+
+FTCPE_i2c/temp2: FTCPE port map (i2c/temp(2),i2c/temp_T(2),CLK,'0','0',NOT RES);
+i2c/temp_T(2) <= ((EXP56_.EXP)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(2))
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(1) AND NOT i2c/temp(2))
+	OR (SDA_MASTER$BUF0.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(2) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(2) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(2) AND SDA_OUT3.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(1) AND NOT i2c/temp(2) AND SDA_OUT1.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21));
+
+FTCPE_i2c/temp3: FTCPE port map (i2c/temp(3),i2c/temp_T(3),CLK,'0','0',NOT RES);
+i2c/temp_T(3) <= ((EXP53_.EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(2) AND NOT i2c/temp(3) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(3))
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(2) AND NOT i2c/temp(3))
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21));
+
+FDCPE_i2c/temp4: FDCPE port map (i2c/temp(4),i2c/temp_D(4),CLK,'0','0',NOT RES);
+i2c/temp_D(4) <= ((i2c/temp(5).EXP)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT3.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT1.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4) AND NOT i2c/temp(3))
+	OR (i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(3))
+	OR (NOT i2c/state_FSM_FFd12 AND i2c/state_FSM_FFd16 AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(3))
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(4))
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(4) AND NOT i2c/temp(3) AND SDA_OUT1.PIN));
+
+FDCPE_i2c/temp5: FDCPE port map (i2c/temp(5),i2c/temp_D(5),CLK,'0','0',NOT RES);
+i2c/temp_D(5) <= ((sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(5) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(5) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(5) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(5) AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(5))
+	OR (i2c/state_FSM_FFd7 AND i2c/temp(4))
+	OR (i2c/state_FSM_FFd16 AND i2c/temp(4))
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND i2c/temp(5)));
+
+FDCPE_i2c/temp6: FDCPE port map (i2c/temp(6),i2c/temp_D(6),CLK,'0','0',NOT RES);
+i2c/temp_D(6) <= ((sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(6) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(6) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(6) AND SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd12 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND i2c/temp(6))
+	OR (i2c/state_FSM_FFd7 AND i2c/temp(5))
+	OR (i2c/state_FSM_FFd16 AND i2c/temp(5))
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd12 AND 
+	i2c/temp(6) AND SDA_OUT1.PIN)
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND i2c/temp(6)));
+
+FDCPE_i2c/temp7: FDCPE port map (i2c/temp(7),i2c/temp_D(7),CLK,'0','0',NOT RES);
+i2c/temp_D(7) <= ((sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT1.PIN)
+	OR (sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND SDA_OUT3.PIN)
+	OR (NOT i2c/i(3) AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7) AND NOT i2c/temp(6))
+	OR (NOT i2c/i(3) AND NOT i2c/state_FSM_FFd7 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/i(0) AND NOT i2c/i(1) AND NOT i2c/i(2) AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7))
+	OR (i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(6))
+	OR (NOT i2c/state_FSM_FFd12 AND i2c/state_FSM_FFd16 AND 
+	NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(6))
+	OR (NOT i2c/state_FSM_FFd7 AND NOT i2c/state_FSM_FFd12 AND 
+	NOT i2c/state_FSM_FFd16 AND NOT i2c/state_FSM_FFd21 AND NOT i2c/temp(7))
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND NOT i2c/state_FSM_FFd21 AND 
+	NOT i2c/temp(7) AND NOT i2c/temp(6) AND SDA_OUT1.PIN));
+
+FDCPE_i2c/temp_output0: FDCPE port map (i2c/temp_output(0),i2c/temp_output_D(0),CLK,i2c/temp_output_CLR(0),i2c/temp_output_PRE(0));
+i2c/temp_output_D(0) <= ((i2c/temp_output(0) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7)
+	OR (sensor_n(0) AND sensor_data_w(0) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_output(0) AND 
+	i2c/state_FSM_FFd22));
+i2c/temp_output_CLR(0) <= (RES AND NOT sensor_data_w(0));
+i2c/temp_output_PRE(0) <= (RES AND sensor_data_w(0));
+
+FDCPE_i2c/temp_output1: FDCPE port map (i2c/temp_output(1),i2c/temp_output_D(1),CLK,i2c/temp_output_CLR(1),i2c/temp_output_PRE(1));
+i2c/temp_output_D(1) <= ((sensor_n(0) AND sensor_data_w(1) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(0) AND i2c/state_FSM_FFd7)
+	OR (NOT sensor_n(0) AND i2c/temp_output(1) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(1) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(1) <= (RES AND NOT sensor_data_w(1));
+i2c/temp_output_PRE(1) <= (RES AND sensor_data_w(1));
+
+FDCPE_i2c/temp_output2: FDCPE port map (i2c/temp_output(2),i2c/temp_output_D(2),CLK,i2c/temp_output_CLR(2),i2c/temp_output_PRE(2));
+i2c/temp_output_D(2) <= ((sensor_n(0) AND sensor_data_w(2) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_output(2) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(1) AND i2c/state_FSM_FFd7)
+	OR (i2c/temp_output(2) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(2) <= (RES AND NOT sensor_data_w(2));
+i2c/temp_output_PRE(2) <= (RES AND sensor_data_w(2));
+
+FDCPE_i2c/temp_output3: FDCPE port map (i2c/temp_output(3),i2c/temp_output_D(3),CLK,i2c/temp_output_CLR(3),i2c/temp_output_PRE(3));
+i2c/temp_output_D(3) <= ((sensor_n(0) AND sensor_data_w(3) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(2) AND i2c/state_FSM_FFd7)
+	OR (NOT sensor_n(0) AND i2c/temp_output(3) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(3) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(3) <= (RES AND NOT sensor_data_w(3));
+i2c/temp_output_PRE(3) <= (RES AND sensor_data_w(3));
+
+FDCPE_i2c/temp_output4: FDCPE port map (i2c/temp_output(4),i2c/temp_output_D(4),CLK,i2c/temp_output_CLR(4),i2c/temp_output_PRE(4));
+i2c/temp_output_D(4) <= ((sensor_n(0) AND sensor_data_w(4) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(3) AND i2c/state_FSM_FFd7)
+	OR (NOT sensor_n(0) AND i2c/temp_output(4) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(4) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(4) <= (RES AND NOT sensor_data_w(4));
+i2c/temp_output_PRE(4) <= (RES AND sensor_data_w(4));
+
+FDCPE_i2c/temp_output5: FDCPE port map (i2c/temp_output(5),i2c/temp_output_D(5),CLK,i2c/temp_output_CLR(5),i2c/temp_output_PRE(5));
+i2c/temp_output_D(5) <= ((sensor_n(0) AND sensor_data_w(5) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_output(5) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(4) AND i2c/state_FSM_FFd7)
+	OR (i2c/temp_output(5) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(5) <= (RES AND NOT sensor_data_w(5));
+i2c/temp_output_PRE(5) <= (RES AND sensor_data_w(5));
+
+FDCPE_i2c/temp_output6: FDCPE port map (i2c/temp_output(6),i2c/temp_output_D(6),CLK,i2c/temp_output_CLR(6),i2c/temp_output_PRE(6));
+i2c/temp_output_D(6) <= ((sensor_n(0) AND sensor_data_w(6) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(5) AND i2c/state_FSM_FFd7)
+	OR (NOT sensor_n(0) AND i2c/temp_output(6) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(6) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(6) <= (RES AND NOT sensor_data_w(6));
+i2c/temp_output_PRE(6) <= (RES AND sensor_data_w(6));
+
+FDCPE_i2c/temp_output7: FDCPE port map (i2c/temp_output(7),i2c/temp_output_D(7),CLK,i2c/temp_output_CLR(7),i2c/temp_output_PRE(7));
+i2c/temp_output_D(7) <= ((sensor_n(0) AND sensor_data_w(7) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(6) AND i2c/state_FSM_FFd7)
+	OR (NOT sensor_n(0) AND i2c/temp_output(7) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_output(7) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd7));
+i2c/temp_output_CLR(7) <= (RES AND NOT sensor_data_w(7));
+i2c/temp_output_PRE(7) <= (RES AND sensor_data_w(7));
+
+FDCPE_i2c/temp_reg0: FDCPE port map (i2c/temp_reg(0),i2c/temp_reg_D(0),CLK,i2c/temp_reg_CLR(0),i2c/temp_reg_PRE(0));
+i2c/temp_reg_D(0) <= ((sensor_n(0) AND sensor_reg(0) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(0) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(0) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(0) <= (RES AND NOT sensor_reg(0));
+i2c/temp_reg_PRE(0) <= (RES AND sensor_reg(0));
+
+FDCPE_i2c/temp_reg1: FDCPE port map (i2c/temp_reg(1),i2c/temp_reg_D(1),CLK,i2c/temp_reg_CLR(1),i2c/temp_reg_PRE(1));
+i2c/temp_reg_D(1) <= ((sensor_n(0) AND sensor_reg(1) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(1) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(0) AND i2c/state_FSM_FFd11)
+	OR (i2c/temp_reg(1) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(1) <= (RES AND NOT sensor_reg(1));
+i2c/temp_reg_PRE(1) <= (RES AND sensor_reg(1));
+
+FDCPE_i2c/temp_reg2: FDCPE port map (i2c/temp_reg(2),i2c/temp_reg_D(2),CLK,i2c/temp_reg_CLR(2),i2c/temp_reg_PRE(2));
+i2c/temp_reg_D(2) <= ((sensor_n(0) AND sensor_reg(2) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(1) AND i2c/state_FSM_FFd11)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(2) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(2) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(2) <= (RES AND NOT sensor_reg(2));
+i2c/temp_reg_PRE(2) <= (RES AND sensor_reg(2));
+
+FDCPE_i2c/temp_reg3: FDCPE port map (i2c/temp_reg(3),i2c/temp_reg_D(3),CLK,i2c/temp_reg_CLR(3),i2c/temp_reg_PRE(3));
+i2c/temp_reg_D(3) <= ((sensor_n(0) AND sensor_reg(3) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(2) AND i2c/state_FSM_FFd11)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(3) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(3) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(3) <= (RES AND NOT sensor_reg(3));
+i2c/temp_reg_PRE(3) <= (RES AND sensor_reg(3));
+
+FDCPE_i2c/temp_reg4: FDCPE port map (i2c/temp_reg(4),i2c/temp_reg_D(4),CLK,i2c/temp_reg_CLR(4),i2c/temp_reg_PRE(4));
+i2c/temp_reg_D(4) <= ((sensor_n(0) AND sensor_reg(4) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(4) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(3) AND i2c/state_FSM_FFd11)
+	OR (i2c/temp_reg(4) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(4) <= (RES AND NOT sensor_reg(4));
+i2c/temp_reg_PRE(4) <= (RES AND sensor_reg(4));
+
+FDCPE_i2c/temp_reg5: FDCPE port map (i2c/temp_reg(5),i2c/temp_reg_D(5),CLK,i2c/temp_reg_CLR(5),i2c/temp_reg_PRE(5));
+i2c/temp_reg_D(5) <= ((sensor_n(0) AND sensor_reg(5) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(4) AND i2c/state_FSM_FFd11)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(5) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(5) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(5) <= (RES AND NOT sensor_reg(5));
+i2c/temp_reg_PRE(5) <= (RES AND sensor_reg(5));
+
+FDCPE_i2c/temp_reg6: FDCPE port map (i2c/temp_reg(6),i2c/temp_reg_D(6),CLK,i2c/temp_reg_CLR(6),i2c/temp_reg_PRE(6));
+i2c/temp_reg_D(6) <= ((sensor_n(0) AND sensor_reg(6) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(5) AND i2c/state_FSM_FFd11)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(6) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(6) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(6) <= (RES AND NOT sensor_reg(6));
+i2c/temp_reg_PRE(6) <= (RES AND sensor_reg(6));
+
+FDCPE_i2c/temp_reg7: FDCPE port map (i2c/temp_reg(7),i2c/temp_reg_D(7),CLK,i2c/temp_reg_CLR(7),i2c/temp_reg_PRE(7));
+i2c/temp_reg_D(7) <= ((sensor_n(0) AND sensor_reg(7) AND 
+	i2c/state_FSM_FFd22)
+	OR (NOT sensor_n(0) AND i2c/temp_reg(7) AND 
+	i2c/state_FSM_FFd22)
+	OR (i2c/temp_reg(6) AND i2c/state_FSM_FFd11)
+	OR (i2c/temp_reg(7) AND NOT i2c/state_FSM_FFd22 AND 
+	NOT i2c/state_FSM_FFd11));
+i2c/temp_reg_CLR(7) <= (RES AND NOT sensor_reg(7));
+i2c/temp_reg_PRE(7) <= (RES AND sensor_reg(7));
+
+FDCPE_i2c_end: FDCPE port map (i2c_end,i2c_end_D,CLK,RES,'0');
+i2c_end_D <= ((i2c/state_FSM_FFd1)
+	OR (NOT i2c/state_FSM_FFd22 AND i2c_end));
+
+
+outDATA(0)/outDATA(0)_RSTF <= ((NOT sensor_n(0) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (NOT sensor_reg(0) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(0) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(0) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (NOT sensor_data_w(0) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND NOT sensor_data_r(0) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(1)/outDATA(1)_SETF <= ((sensor_reg(1) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(1) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(1) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (sensor_n(1) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (sensor_data_w(1) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND sensor_data_r(1) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(2)/outDATA(2)_RSTF <= ((NOT sensor_reg(2) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(2) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(2) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (NOT sensor_data_w(2) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (NOT sensor_n(2) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND NOT sensor_data_r(2) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(3)/outDATA(3)_RSTF <= ((NOT sensor_reg(3) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(3) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(3) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (NOT sensor_data_w(3) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (NOT sensor_n(3) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND NOT sensor_data_r(3) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(4)/outDATA(4)_SETF <= ((sensor_reg(4) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(4) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(4) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (sensor_data_w(4) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (sensor_n(4) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND sensor_data_r(4) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(5)/outDATA(5)_SETF <= ((sensor_reg(5) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(5) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(5) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (sensor_n(5) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (sensor_data_w(5) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND sensor_data_r(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(6)/outDATA(6)_RSTF <= ((NOT sensor_reg(6) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(6) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND NOT Data(6) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (NOT sensor_n(6) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (NOT sensor_data_w(6) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND NOT sensor_data_r(6) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+
+outDATA(7)/outDATA(7)_SETF <= ((sensor_reg(7) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(3) AND NOT ADR(7) AND NOT ADR(5) AND Data(7) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (ADR(2) AND NOT ADR(7) AND NOT ADR(5) AND Data(7) AND ADR(6) AND 
+	ADR(4) AND NOT ADR(8) AND NOT ADR(9))
+	OR (sensor_data_w(7) AND ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (sensor_n(7) AND NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND 
+	NOT ADR(0) AND NOT ADR(7) AND NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9))
+	OR (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND sensor_data_r(7) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND 
+	NOT ADR(9)));
+
+FDCPE_sensor_data_r0: FDCPE port map (sensor_data_r(0),sensor_data_r_D(0),CLK,'0','0',NOT RES);
+sensor_data_r_D(0) <= ((sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+	SDA_OUT2.PIN)
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	NOT i2c/state_FSM_FFd3 AND sensor_data_r(0))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(0) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(0) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(0) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(0) AND SDA_OUT1.PIN)
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(0))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(0))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+	SDA_OUT4.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+	SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd3 AND 
+	SDA_OUT1.PIN));
+
+FDCPE_sensor_data_r1: FDCPE port map (sensor_data_r(1),sensor_data_r_D(1),CLK,'0','0',NOT RES);
+sensor_data_r_D(1) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(0))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(1) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(1) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(1) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(1) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(1))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(1))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(1))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(1)));
+
+FDCPE_sensor_data_r2: FDCPE port map (sensor_data_r(2),sensor_data_r_D(2),CLK,'0','0',NOT RES);
+sensor_data_r_D(2) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(1))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(2) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(2) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(2) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(2) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(2))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(2))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(2))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(2)));
+
+FDCPE_sensor_data_r3: FDCPE port map (sensor_data_r(3),sensor_data_r_D(3),CLK,'0','0',NOT RES);
+sensor_data_r_D(3) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(2))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(3) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(3) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(3) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(3) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(3))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(3))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(3))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(3)));
+
+FDCPE_sensor_data_r4: FDCPE port map (sensor_data_r(4),sensor_data_r_D(4),CLK,'0','0',NOT RES);
+sensor_data_r_D(4) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(3))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(4) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(4) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(4) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(4) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(4))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(4))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(4))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(4)));
+
+FDCPE_sensor_data_r5: FDCPE port map (sensor_data_r(5),sensor_data_r_D(5),CLK,'0','0',NOT RES);
+sensor_data_r_D(5) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(4))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(5) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(5) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(5) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(5) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(5))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(5))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(5))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(5)));
+
+FDCPE_sensor_data_r6: FDCPE port map (sensor_data_r(6),sensor_data_r_D(6),CLK,'0','0',NOT RES);
+sensor_data_r_D(6) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(5))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(6) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(6) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(6) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(6) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(6))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(6))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(6))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(6)));
+
+FDCPE_sensor_data_r7: FDCPE port map (sensor_data_r(7),sensor_data_r_D(7),CLK,'0','0',NOT RES);
+sensor_data_r_D(7) <= ((NOT i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(6))
+	OR (sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(7) AND SDA_OUT4.PIN)
+	OR (sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(7) AND SDA_OUT2.PIN)
+	OR (NOT sensor_n(5) AND sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(7) AND SDA_OUT3.PIN)
+	OR (NOT sensor_n(5) AND NOT sensor_n(6) AND i2c/state_FSM_FFd8 AND 
+	sensor_data_r(7) AND SDA_OUT1.PIN)
+	OR (i2c/state_FSM_FFd3 AND sensor_data_r(7))
+	OR (i2c/i(3) AND i2c/state_FSM_FFd6 AND sensor_data_r(7))
+	OR (NOT i2c/state_FSM_FFd6 AND NOT i2c/state_FSM_FFd8 AND 
+	sensor_data_r(7))
+	OR (NOT i2c/i(3) AND i2c/state_FSM_FFd8 AND NOT i2c/i(0) AND 
+	NOT i2c/i(1) AND NOT i2c/i(2) AND sensor_data_r(7)));
+
+FDCPE_sensor_data_w0: FDCPE port map (sensor_data_w(0),Data(0).PIN,BWR,RES,'0',sensor_data_w_CE(0));
+sensor_data_w_CE(0) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w1: FDCPE port map (sensor_data_w(1),Data(1).PIN,BWR,RES,'0',sensor_data_w_CE(1));
+sensor_data_w_CE(1) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w2: FDCPE port map (sensor_data_w(2),Data(2).PIN,BWR,RES,'0',sensor_data_w_CE(2));
+sensor_data_w_CE(2) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w3: FDCPE port map (sensor_data_w(3),Data(3).PIN,BWR,RES,'0',sensor_data_w_CE(3));
+sensor_data_w_CE(3) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w4: FDCPE port map (sensor_data_w(4),Data(4).PIN,BWR,RES,'0',sensor_data_w_CE(4));
+sensor_data_w_CE(4) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w5: FDCPE port map (sensor_data_w(5),Data(5).PIN,BWR,RES,'0',sensor_data_w_CE(5));
+sensor_data_w_CE(5) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w6: FDCPE port map (sensor_data_w(6),Data(6).PIN,BWR,RES,'0',sensor_data_w_CE(6));
+sensor_data_w_CE(6) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_data_w7: FDCPE port map (sensor_data_w(7),Data(7).PIN,BWR,RES,'0',sensor_data_w_CE(7));
+sensor_data_w_CE(7) <= (ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n0: FDCPE port map (sensor_n(0),Data(0).PIN,BWR,NOT sensor_n(0)/sensor_n(0)_RSTF__$INT,'0',sensor_n_CE(0));
+sensor_n_CE(0) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+
+sensor_n(0)/sensor_n(0)_RSTF__$INT <= (NOT RES AND NOT i2c_end);
+
+FDCPE_sensor_n1: FDCPE port map (sensor_n(1),Data(1).PIN,BWR,RES,'0',sensor_n_CE(1));
+sensor_n_CE(1) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n2: FDCPE port map (sensor_n(2),Data(2).PIN,BWR,RES,'0',sensor_n_CE(2));
+sensor_n_CE(2) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n3: FDCPE port map (sensor_n(3),Data(3).PIN,BWR,RES,'0',sensor_n_CE(3));
+sensor_n_CE(3) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n4: FDCPE port map (sensor_n(4),Data(4).PIN,BWR,RES,'0',sensor_n_CE(4));
+sensor_n_CE(4) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n5: FDCPE port map (sensor_n(5),Data(5).PIN,BWR,RES,'0',sensor_n_CE(5));
+sensor_n_CE(5) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n6: FDCPE port map (sensor_n(6),Data(6).PIN,BWR,RES,'0',sensor_n_CE(6));
+sensor_n_CE(6) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_n7: FDCPE port map (sensor_n(7),Data(7).PIN,BWR,RES,'0',sensor_n_CE(7));
+sensor_n_CE(7) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND NOT ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg0: FDCPE port map (sensor_reg(0),Data(0).PIN,BWR,RES,'0',sensor_reg_CE(0));
+sensor_reg_CE(0) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg1: FDCPE port map (sensor_reg(1),Data(1).PIN,BWR,RES,'0',sensor_reg_CE(1));
+sensor_reg_CE(1) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg2: FDCPE port map (sensor_reg(2),Data(2).PIN,BWR,RES,'0',sensor_reg_CE(2));
+sensor_reg_CE(2) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg3: FDCPE port map (sensor_reg(3),Data(3).PIN,BWR,RES,'0',sensor_reg_CE(3));
+sensor_reg_CE(3) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg4: FDCPE port map (sensor_reg(4),Data(4).PIN,BWR,RES,'0',sensor_reg_CE(4));
+sensor_reg_CE(4) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg5: FDCPE port map (sensor_reg(5),Data(5).PIN,BWR,RES,'0',sensor_reg_CE(5));
+sensor_reg_CE(5) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg6: FDCPE port map (sensor_reg(6),Data(6).PIN,BWR,RES,'0',sensor_reg_CE(6));
+sensor_reg_CE(6) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+FDCPE_sensor_reg7: FDCPE port map (sensor_reg(7),Data(7).PIN,BWR,RES,'0',sensor_reg_CE(7));
+sensor_reg_CE(7) <= (NOT ADR(1) AND NOT ADR(3) AND NOT ADR(2) AND ADR(0) AND NOT ADR(7) AND 
+	NOT ADR(5) AND ADR(6) AND ADR(4) AND NOT ADR(8) AND NOT ADR(9));
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95288XL-6-TQ144
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 VCC                              73 VCC                           
+  2 KPR                              74 KPR                           
+  3 BRD                              75 KPR                           
+  4 KPR                              76 KPR                           
+  5 KPR                              77 KPR                           
+  6 KPR                              78 KPR                           
+  7 KPR                              79 KPR                           
+  8 VCC                              80 KPR                           
+  9 SDA_OUT2                         81 KPR                           
+ 10 SCL_OUT2                         82 KPR                           
+ 11 KPR                              83 KPR                           
+ 12 KPR                              84 VCC                           
+ 13 KPR                              85 KPR                           
+ 14 KPR                              86 KPR                           
+ 15 KPR                              87 KPR                           
+ 16 KPR                              88 KPR                           
+ 17 KPR                              89 GND                           
+ 18 GND                              90 GND                           
+ 19 KPR                              91 KPR                           
+ 20 KPR                              92 KPR                           
+ 21 KPR                              93 KPR                           
+ 22 SDA_OUT1                         94 KPR                           
+ 23 SCL_OUT1                         95 KPR                           
+ 24 KPR                              96 KPR                           
+ 25 KPR                              97 KPR                           
+ 26 KPR                              98 Data<0>                       
+ 27 KPR                              99 GND                           
+ 28 KPR                             100 Data<1>                       
+ 29 GND                             101 Data<2>                       
+ 30 BWR                             102 Data<3>                       
+ 31 KPR                             103 Data<4>                       
+ 32 KPR                             104 Data<5>                       
+ 33 SDA_OUT4                        105 Data<6>                       
+ 34 SCL_OUT4                        106 KPR                           
+ 35 KPR                             107 Data<7>                       
+ 36 GND                             108 GND                           
+ 37 VCC                             109 VCC                           
+ 38 CLK                             110 ADR<0>                        
+ 39 KPR                             111 ADR<1>                        
+ 40 KPR                             112 ADR<2>                        
+ 41 KPR                             113 ADR<3>                        
+ 42 VCC                             114 GND                           
+ 43 KPR                             115 ADR<4>                        
+ 44 KPR                             116 KPR                           
+ 45 KPR                             117 KPR                           
+ 46 KPR                             118 KPR                           
+ 47 GND                             119 KPR                           
+ 48 SDA_OUT3                        120 KPR                           
+ 49 SCL_OUT3                        121 KPR                           
+ 50 KPR                             122 TDO                           
+ 51 KPR                             123 GND                           
+ 52 KPR                             124 ADR<5>                        
+ 53 KPR                             125 KPR                           
+ 54 KPR                             126 ADR<6>                        
+ 55 VCC                             127 VCC                           
+ 56 KPR                             128 ADR<7>                        
+ 57 KPR                             129 ADR<8>                        
+ 58 KPR                             130 ADR<9>                        
+ 59 KPR                             131 KPR                           
+ 60 KPR                             132 KPR                           
+ 61 KPR                             133 KPR                           
+ 62 GND                             134 KPR                           
+ 63 TDI                             135 KPR                           
+ 64 KPR                             136 KPR                           
+ 65 TMS                             137 KPR                           
+ 66 KPR                             138 KPR                           
+ 67 TCK                             139 KPR                           
+ 68 KPR                             140 KPR                           
+ 69 KPR                             141 VCC                           
+ 70 KPR                             142 KPR                           
+ 71 KPR                             143 RES                           
+ 72 GND                             144 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95288xl-6-TQ144
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 54
+Pterm Limit                                 : 25
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

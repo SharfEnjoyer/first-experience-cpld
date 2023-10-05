@@ -1,0 +1,4 @@
+verilog work "i2c_master.v"
+verilog work "main.v"
+verilog work "main_tb.v"
+verilog work "C:/Program Files/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE ibis [
+<!ELEMENT ibis (part, pin+)>
+<!ELEMENT part EMPTY>
+<!ELEMENT pin EMPTY>
+<!ATTLIST part
+  arch   CDATA #REQUIRED
+  device CDATA #REQUIRED
+  spg    CDATA #REQUIRED
+  pkg    CDATA #REQUIRED>
+<!ATTLIST pin
+  nm     CDATA #REQUIRED
+  no     CDATA #REQUIRED
+  iostd  (TTL|LVTTL|LVCMOS2|NA) "NA"
+  sr     (SLOW|FAST|slow|fast) "SLOW"
+  dir    (BIDIR|bidir|INPUT|input|OUTPUT|output) "BIDIR">
+]>
+<ibis><part arch="xc9500xl" device="XC95288XL" pkg="TQ144" spg="-6"/><pin dir="input" nm="CLK" no="38"/><pin dir="input" nm="RES" no="143"/><pin dir="input" nm="BWR" no="30"/><pin dir="input" nm="ADR&lt;1&gt;" no="111"/><pin dir="input" nm="ADR&lt;0&gt;" no="110"/><pin dir="input" nm="ADR&lt;2&gt;" no="112"/><pin dir="input" nm="ADR&lt;3&gt;" no="113"/><pin dir="input" nm="ADR&lt;4&gt;" no="115"/><pin dir="input" nm="ADR&lt;5&gt;" no="124"/><pin dir="input" nm="ADR&lt;6&gt;" no="126"/><pin dir="input" nm="ADR&lt;7&gt;" no="128"/><pin dir="input" nm="ADR&lt;8&gt;" no="129"/><pin dir="input" nm="ADR&lt;9&gt;" no="130"/><pin dir="input" nm="BRD" no="3"/><pin dir="output" nm="SCL_OUT1" no="23" sr="slow"/><pin dir="output" nm="SCL_OUT2" no="10" sr="slow"/><pin dir="output" nm="SCL_OUT3" no="49" sr="slow"/><pin dir="output" nm="SCL_OUT4" no="34" sr="slow"/><pin dir="bidir" nm="SDA_OUT4" no="33" sr="fast"/><pin dir="bidir" nm="Data&lt;0&gt;" no="98" sr="fast"/><pin dir="bidir" nm="Data&lt;1&gt;" no="100" sr="fast"/><pin dir="bidir" nm="Data&lt;2&gt;" no="101" sr="fast"/><pin dir="bidir" nm="Data&lt;3&gt;" no="102" sr="fast"/><pin dir="bidir" nm="Data&lt;4&gt;" no="103" sr="fast"/><pin dir="bidir" nm="Data&lt;5&gt;" no="104" sr="fast"/><pin dir="bidir" nm="Data&lt;6&gt;" no="105" sr="fast"/><pin dir="bidir" nm="Data&lt;7&gt;" no="107" sr="fast"/><pin dir="bidir" nm="SDA_OUT3" no="48" sr="fast"/><pin dir="bidir" nm="SDA_OUT2" no="9" sr="fast"/><pin dir="bidir" nm="SDA_OUT1" no="22" sr="fast"/></ibis>

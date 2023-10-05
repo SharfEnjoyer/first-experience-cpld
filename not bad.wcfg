@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/ise_project/try_parallel_port/i2c_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="i2c_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/i2c_tb/scl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">scl</obj_property>
+      <obj_property name="ObjectShortName">scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/sda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sda</obj_property>
+      <obj_property name="ObjectShortName">sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/scl2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">scl2</obj_property>
+      <obj_property name="ObjectShortName">scl2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack</obj_property>
+      <obj_property name="ObjectShortName">ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/direction" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">direction</obj_property>
+      <obj_property name="ObjectShortName">direction</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/alpha" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">alpha</obj_property>
+      <obj_property name="ObjectShortName">alpha</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address[6:0]</obj_property>
+      <obj_property name="ObjectShortName">address[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/temp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">temp[7:0]</obj_property>
+      <obj_property name="ObjectShortName">temp[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/temp_reserved" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">temp_reserved[7:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_reserved[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/rw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/register" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">register[6:0]</obj_property>
+      <obj_property name="ObjectShortName">register[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/reg_temp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg_temp[6:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_temp[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/a" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">a</obj_property>
+      <obj_property name="ObjectShortName">a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_tb/uut/left_bits" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">left_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">left_bits[31:0]</obj_property>
+   </wvobject>
+</wave_config>
